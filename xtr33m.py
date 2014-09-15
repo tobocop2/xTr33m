@@ -21,4 +21,4 @@ def map_bands():
 
 result = map_bands()
 for band in result:
-    print band+'\n'+result[band]
+    print band+'\n'+result[band]+'\n\n'
