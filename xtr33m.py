@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 #Once every list of bands is retrieved for the letter, the process is repeated for bands #-Z
 def get_all_bands():
     result = {}
-    letters = ['NBR','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y','Z']
+    letters = ['NBR','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
     index = 0
     count = 0
 
