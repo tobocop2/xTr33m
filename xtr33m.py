@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 
 #This function gets the json for every letter band on The Metal Archives. Each json request returns a list of 500 bands. Every list is paired with a key representing the letter
 #Once every list of bands is retrieved for the letter, the process is repeated for bands #-Z
+#The result in the form: 'letter': [[list of bands],[list of bands]....]
 def get_all_bands():
     result = {}
     letters = ['NBR','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
