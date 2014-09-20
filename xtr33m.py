@@ -46,10 +46,13 @@ def get_band_info():
                 soup = BeautifulSoup((band_list[i][0]))
                 band_name = soup.get_text()
                 print band_name
+                if band_name.find('/'):
+                    band_name = band_name.replace('/','%')
+
                 for child in soup.findAll('a'):
                     link = child.get('href')
                     print link
-                    file_name = os.path.join(letter+'/', str(band_name)+".html")
+                    file_name = os.path.join(letter+'/', band_name+".html")
                     band_file = open(file_name, "w")
                     to_file = requests.get(link).content
                     band_file.write(to_file)
