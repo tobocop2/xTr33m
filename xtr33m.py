@@ -6,11 +6,11 @@ from bs4 import BeautifulSoup
 #This function gets the json for every letter band on The Metal Archives. Each json request returns a list of 500 bands.
 #Every list is paired with a key representing the letter
 #Once every list of bands is retrieved for the letter, the process is repeated for bands #-Z
-#The result in the form: 'letter': [[list of bands],[list of bands]....]
+#The result in the form: {'letter': [[list of bands],[list of bands]....]}
 def build_band_list():
     result = {}
     #letters = ['NBR','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-    letters = ['Z']
+    letters = ['Q']
     index = 0
     count = 0
 
@@ -30,16 +30,13 @@ def build_band_list():
                 else:
                     letters.remove(letters[index])
                     count = 0
-
     return result
 
 def get_band_info():
     result = build_band_list()
+    band_map = {}
 
     for letter in result:
-        #print len(result[letter][0])
-        #print len(result[letter][1])
-        #print result[letter]
         try:
             os.makedirs(letter)
         except OSError:
@@ -52,14 +49,21 @@ def get_band_info():
                 print band_name
                 if band_name.find('/'):
                     band_name = band_name.replace('/','%slash%')
-
                 for child in soup.findAll('a'):
                     link = child.get('href')
                     print link
+                    if not band_map.has_key(band_name):
+                        band_map[band_name] = [link]
+                    else:
+                        band_map[band_name].append(link)
                     file_name = os.path.join(letter+'/', band_name+".html")
                     band_file = open(file_name, "w")
                     to_file = requests.get(link).content
                     band_file.write(to_file)
                     band_file.close()
+
+    for band in band_map:
+        for link in band_map[band]:
+            print band+'\n'+link+'\n'
 
 get_band_info()
