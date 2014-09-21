@@ -9,8 +9,7 @@ from bs4 import BeautifulSoup
 #The result in the form: {'letter': [[list of bands],[list of bands]....]}
 def build_band_list():
     result = {}
-    #letters = ['NBR','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-    letters = ['Q']
+    letters = ['NBR','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
     index = 0
     count = 0
 
