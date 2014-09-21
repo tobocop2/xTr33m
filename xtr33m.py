@@ -23,7 +23,6 @@ def build_band_list():
                         print "getting bands for letter: %s" % letters[index]
                         result[letters[index]] = [resp.json()[key]]
                     else:
-                        #result[letters[index]].append([resp.json()[key]])
                         result[letters[index]].append(resp.json()[key])
                         print "getting bands for letter: %s" % letters[index]
                     count += 500
@@ -32,16 +31,14 @@ def build_band_list():
                     count = 0
     return result
 
+#This function goes through the all of the bands on the Archives #-Z and gets information from each band page
+#The information is stored in this form "Letter/Band/bandinfo.html"
+#A map of bands with their respective links is then generated
 def get_band_info():
     result = build_band_list()
     band_map = {}
 
     for letter in result:
-        try:
-            os.makedirs(letter)
-        except OSError:
-            if not os.path.isdir(letter):
-                raise
         for band_list in result[letter]:
             for i in range (0,len(band_list)):
                 soup = BeautifulSoup((band_list[i][0]))
@@ -56,14 +53,43 @@ def get_band_info():
                         band_map[band_name] = [link]
                     else:
                         band_map[band_name].append(link)
-                    file_name = os.path.join(letter+'/', band_name+".html")
-                    band_file = open(file_name, "w")
-                    to_file = requests.get(link).content
-                    band_file.write(to_file)
-                    band_file.close()
+
+                    write_band_info(letter,band_name,link)
 
     for band in band_map:
         for link in band_map[band]:
             print band+'\n'+link+'\n'
+
+#This function takes the information from get_band_info() and dumps the html from each band page.
+#The structure of the 'Extreme Archives' will be heavily influenced by the metal-archives
+def write_band_info(letter,band_name,link):
+    band_id = link.split('\\')[5]
+    band_folder = band_name+'-'+band_id
+
+    try:
+        os.makedirs(letter)
+    except OSError:
+        if not os.path.isdir(letter):
+            raise
+    try:
+        os.chdir(letter)
+        if not os.path.exists(band_folder):
+            os.makedirs(band_folder)
+
+        band_page ='http://www.metal-archives.com/bands/%s/%s' % (band_name,band_id)
+        releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
+        similar_artists  = 'http://www.metal-archives.com/band/ajax-recommendations/id/%s' % band_id
+
+        page_file = os.path.join('/', "%s-%s.html" % (band_name,band_id)
+        band_file = open(file_name, "w")
+        to_file = requests.get(link).content
+        band_file.write(to_file)
+        band_file.close()
+
+    except OSError:
+        if not os.path.isdir(band_folder):
+            raise
+
+
 
 get_band_info()
