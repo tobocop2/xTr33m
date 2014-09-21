@@ -45,7 +45,7 @@ def get_band_info():
                 band_name = soup.get_text()
                 print band_name
                 if band_name.find('/'):
-                    band_name = band_name.replace('/','%slash%')
+                    band_name = band_name.replace('/','\\')
                 for child in soup.findAll('a'):
                     link = child.get('href')
                     print link
@@ -111,13 +111,15 @@ def write_band_info(letter,band_name,link):
         os.chdir(release_dir)
 
         for release in soup.find_all('a',class_=['demo','album','single','other']):
-            release_name = release.get_text()
+            release_name = release.get_text().replace('/','\\')
+            print "Getting %s: %s\n" % (band_name,release_name)
             release_url = release.get('href')
-            individual_release = os.path.join('./', release_name)
+            individual_release = os.path.join('./', release_name+'.html')
             individual_file = open(individual_release, "w")
             release_to_file = requests.get(release_url).content
             individual_file.write(release_to_file)
             individual_file.close()
+        os.chdir('../../../')
 
     except OSError:
         if not os.path.isdir(band_folder):
