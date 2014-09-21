@@ -1,0 +1,681 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Quaedt - Encyclopaedia Metallum: The Metal Archives</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+					<link rel="stylesheet" type="text/css" href="/min/index.php?g=css" />
+				
+					<script type="text/javascript" src="/min/index.php?g=js"></script>
+				<script type="text/javascript">
+			var URL_SITE	= 'http://www.metal-archives.com/';
+			var URL_IMAGES	= 'http://www.metal-archives.com/images/';
+			var URL_CSS		= 'http://www.metal-archives.com/css/';
+			$(document).ready(function() {
+				var maxHeightScroll = 600;
+				var maxWidthScroll = 1280;
+				if ($(window).height() <= maxHeightScroll || $(window).width() <= maxWidthScroll) {
+					$("#header, #left_col").css("position", "absolute");
+				}
+				$(document).on('click', '.profileMenu', toggleProfileMenu);
+				$('.image').click(zoomImage).blur(closeImage); // Image zoom
+												var anchor = window.location.hash;
+				if (anchor) { // try to load appropriate tab from anchor
+					if (!$(anchor) || !$(anchor).html()) { // no element with corresponding ID; look at tab title
+						log = '';
+						$('.tabs > ul > li').each(function(k, tab) {
+							var tabLink = $('a', tab).attr('title');
+							if (tabLink && tabLink != 'undefined' && (tabLink == anchor.substr(1) || tabLink == anchor.substr(1).replace('_', ' '))) {
+								$('.tabs').tabs( { active: k } );
+							}
+						});
+					}
+				}
+			});
+
+
+		</script>
+		<noscript>
+			<style type="text/css">
+				.no-js { display: block !important; }
+			</style>
+		</noscript>
+		
+		<!--[if lt IE 8]>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+			 <link rel="stylesheet" type="text/css" href="http://www.metal-archives.com/css/default/oldie.css" />
+		<![endif]-->		
+
+		<script type="text/javascript">
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-4046749-4']);
+			  _gaq.push(['_trackPageview']);
+
+			  (function() {
+			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+		</script>
+	</head>
+	<body >
+		<div id="wrapper">
+	        <div id="header">
+	            <a href="http://www.metal-archives.com/" id="MA_logo">Metal Archives</a>
+				<div class="clear loading"><img src="http://www.metal-archives.com/images/loading.gif" alt="loading" width="12" height="12" /> loading...</div>
+	            <div id="search_box">
+		            <form id="search_form" action="http://www.metal-archives.com/search" method="get">
+						<div>
+							<label>Search:</label><br/>
+							<input name="searchString" type="text" id="searchQueryBox" size="25" value="" tabindex="1" />
+							<select name="type" tabindex="2">
+								<option value="band_name">Band name</option>
+								<option value="band_genre">Music genre</option>
+								<option value="band_themes">Lyrical themes</option>
+								<option value="album_title">Album title</option>
+								<option value="song_title">Song title</option>
+								<option value="label_name">Label</option>
+								<option value="artist_alias">Artist</option>
+								<option value="user_name">User profile</option>
+								<option value="google">Google</option>
+							</select>
+							<br/>
+							<a href="http://www.metal-archives.com/search/advanced/?searchString=&type=" class="float_left" tabindex="4">Advanced search</a>
+							<button type="submit" class="btn_submit float_right" tabindex="3">Submit</button>
+						</div>
+		            </form>
+		        </div>
+	            
+	            <div id="top_menu_box">
+	                <ul class="menu_style_1">
+	                    <li><a href="http://www.metal-archives.com/content/help">Help</a></li>
+						<li><a href="http://www.metal-archives.com/content/rules">Rules</a></li>
+						<li><a href="http://www.metal-archives.com/board/" target="_top">Forum</a></li>
+	                </ul>
+	                <ul class="menu_style_2">
+						<li><a href="http://www.metal-archives.com/content/faq">FAQ</a></li>
+												<li><a href="http://www.metal-archives.com/content/support">Support Us</a></li>
+	                    <li><a href="http://www.metal-archives.com/content/tools">Add-ons</a></li>
+	              </ul>
+	            </div>        
+	        </div>
+	        <div id="left_col">
+	            <div id="member_box">
+	            		            				                <form name="login_form" id="login_form" action="http://www.metal-archives.com/authentication/login" method="post">
+							<div>
+								<label>Username</label><br/>
+								<input type="text" name="loginUsername" size="20" />
+								<label>Password</label><br/>
+								<input type="password" name="loginPassword" size="20" />
+								<input type="hidden" name="origin" value="/bands/Quaedt/3540265894" />
+								<button type="submit" class="btn_login float_right">Login</button>
+							</div>
+		                </form>
+		                <a href="http://www.metal-archives.com/user/signup" class="float-left writeAction">Register</a>  
+		                <span class="float_right"><a href="http://www.metal-archives.com/user/forgot-password" class="float-left writeAction">Forgot login?</a>  </span>
+						<div class="clear"> </div>
+		            	            </div>
+	            <div id="left_menu_box">
+	            		                <ul class="menu_style_3 block_spacer_20">
+	                	<li>
+	                		Bands 
+	                		<ul>
+			                    <li><a href="http://www.metal-archives.com/browse/letter">alphabetical</a></li>
+			                    <li><a href="http://www.metal-archives.com/browse/country">country</a></li>
+			                    <li><a href="http://www.metal-archives.com/browse/genre">genre</a></li>
+	                    	</ul>
+	                    </li>
+	                    <li>
+	                    	Labels
+	                    	<ul>
+			                    <li><a href="http://www.metal-archives.com/label">alphabetical</a></li>
+			                    <li><a href="http://www.metal-archives.com/label/country">country</a></li>
+	                    	</ul>
+	                    </li>
+	                    <li><a href="http://www.metal-archives.com/review/browse">Reviews</a></li>
+	                </ul>
+	                <ul class="menu_style_3 block_spacer_20">
+	                    <li><a href="http://www.metal-archives.com/artist/rip">R.I.P.</a></li>
+	                    <li><a href="http://www.metal-archives.com/band/random">Random Band</a></li>
+	                    <li><a href="http://www.metal-archives.com/user/list">User rankings</a></li>
+	                	<li><a href="http://www.metal-archives.com/news">News archive</a></li>
+					</ul>
+					 <ul class="menu_style_3 ornement_30">
+	                    <li><a href="http://www.metal-archives.com/report/list">Reports</a></li>
+	                    <li><a href="http://www.metal-archives.com/todo">Contribute / To do</a></li>
+	                </ul>
+	            </div>
+	            <div id="left_text_box">
+	           		<p class="small_text center"> &copy; 2002-2014<br/>Encyclopaedia Metallum </p>
+					<p class="small_text center">Best viewed<br /> <a href="http://www.getfirefox.com" target="_blank">without</a> Internet Explorer, <br/>in 1280 x 960 resolution<br/> or higher.</p> 
+	            </div>       
+	        </div>
+	        <div id="content_wrapper">
+				<script type="text/javascript" src="http://www.metal-archives.com/js/jquery/jquery.form.js"></script>
+<script type="text/javascript">
+	var bandId = 3540265894;
+	var bandName = "Quaedt";
+	var minRecScore = 3;
+		
+		
+		
+	$(document).ready(function() {
+		$(".no-js").removeClass("no-js");
+		$('.tabs, .tabs2lvl').tabs({ beforeLoad: cacheTab });
+				 $('#band_members').tabs( { active : 1 } );		$(document).on('click', '.albumMenu', toggleAlbumMenu);
+				var browser = detectBrowser();
+		if(browser.name == "webkit" && parseFloat(browser.version) < 536) {
+			$('head').append( $('<style type="text/css">.releaseCol { width: 26%; }</style>'));
+		}
+	});
+
+</script>
+
+<div id="band_sidebar">
+
+	
+			
+	    
+	    			<div class="band_name_img">
+		        <a class="image" id="logo" title="Quaedt" href="http://www.metal-archives.com/images/3/5/4/0/3540265894_logo.jpg"><img src="http://www.metal-archives.com/images/3/5/4/0/3540265894_logo.jpg" title="Click to zoom" alt="Quaedt - Logo" border="0" /></a>
+		    </div>
+			    
+	    		    <div class="band_img">
+		        <a class="image" id="photo" title="Quaedt" href="http://www.metal-archives.com/images/3/5/4/0/3540265894_photo.jpg"><img src="http://www.metal-archives.com/images/3/5/4/0/3540265894_photo.jpg" title="Click to zoom" alt="Quaedt - Photo" border="0" /></a>
+		    </div>
+			    
+	    
+					<div id="affiliation">
+			<span class="title">Buy their stuff</span>
+			<br />
+			<ul id="buyLinks" class="menu_style_5">
+													<li>
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=2&id=387919&bid=3540265894">Search on Amazon.com
+<img src="http://www.assoc-amazon.com/e/ir?t=encymetatheme-20&amp;l=ur2&amp;o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a> 
+						 
+							more... <a href="#more" onclick="$('#sub2').toggle(); return false;">>></a><br />
+							<ul id="sub2" style="display: none; margin-top: 0px; margin-bottom: 0px;">
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=13&id=387919&bid=3540265894">Amazon Canada <img src="http://www.assoc-amazon.ca/e/ir?t=encyclometall-20&amp;l=ur2&amp;o=15" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=14&id=387919&bid=3540265894">Amazon France <img src="http://www.assoc-amazon.fr/e/ir?t=encyclometall-21&amp;l=ur2&amp;o=8" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=15&id=387919&bid=3540265894">Amazon Germany <img src="http://www.assoc-amazon.de/e/ir?t=encyclometa0a-21&amp;l=ur2&amp;o=3" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=16&id=387919&bid=3540265894">Amazon UK <img src="http://www.assoc-amazon.co.uk/e/ir?t=encyclometa0e-21&amp;l=ur2&amp;o=2" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a></li>
+															</ul>
+											</li>
+									<li>
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=3&bid=3540265894">Search on eBay</a> 
+						 
+							more... <a href="#more" onclick="$('#sub3').toggle(); return false;">>></a><br />
+							<ul id="sub3" style="display: none; margin-top: 0px; margin-bottom: 0px;">
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=38&bid=3540265894">Search on Half.com</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=17&bid=3540265894">eBay Canada</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=19&bid=3540265894">eBay UK</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=18&bid=3540265894">eBay France</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=36&bid=3540265894">eBay Spain</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=34&bid=3540265894">eBay Belgium</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=20&bid=3540265894">eBay Netherlands</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=21&bid=3540265894">eBay Italy</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=22&bid=3540265894">eBay Australia</a></li>
+															</ul>
+											</li>
+									<li>
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=5&bid=3540265894">Search on Gemm.com</a> 
+											</li>
+							</ul>
+		</div>
+	
+		
+		    
+</div>
+
+<div id="band_content">
+	<div class="tool_strip right writeAction">
+	    <ul>
+	    		        	        	<li><a title="Report a mistake or additional information for this page" href="javascript:popupReportDialog(1, 3540265894);" class="btn_report_error"> </a></li>
+        		    </ul>
+	</div>
+	
+	<div id="band_info">
+		
+			<h1 class="band_name"><a href="http://www.metal-archives.com/bands/Quaedt/3540265894">Quaedt</a></h1>
+
+		
+        		        <div class="clear block_spacer_5"></div>
+        <div id="band_stats">
+		    <dl class="float_left">
+		        <dt>Country of origin:</dt>
+		        <dd><a href="http://www.metal-archives.com/lists/BE">Belgium</a></dd>
+		        <dt>Location:</dt>
+		        <dd>Hasselt, Limburg</dd>
+		        <dt>Status:</dt>
+		        <dd class="split_up">Split-up</dd>
+		        <dt>Formed in:</dt>
+		        <dd>2007</dd> 
+		    </dl>
+		    <dl class="float_right">
+		        <dt>Genre:</dt>
+		        <dd>Black Metal</dd>
+		        <dt>Lyrical themes:</dt>
+		        <dd>Death, Darkness</dd>
+		        <dt>Last label:</dt>
+		        <dd><a href="http://www.metal-archives.com/labels/Iron_Age_Records/1445">Iron Age Records</a></dd>
+		    </dl>
+		    <dl style="width: 100%;" class="clear">
+		    	<dt>Years active:</dt>
+		        <dd>
+		        			        				        		
+		        			2007-2012		        			        </dd>
+		    </dl>
+		</div>
+	    <div class="band_comment clear">
+	    <!-- Max 400 characters. Open the rest in a dialogue box-->
+	    		    	Daniël from Natan played as live session guitarist with Quaedt for a show in Belgium on 18 september 2010 because Grimm was on holidays.<br />
+<br />
+Split up in April 2012.
+	    			</div>
+	</div>
+	
+	<!-- Error / OK messages -->
+    <div id="message"> </div>
+    <div class="clear block_spacer_5"> </div>
+	
+	<div id="band_tabs" class="tabs no-js">
+	    <ul>  
+	        <li><a href="#band_tab_discography">Discography</a></li>
+	        <li><a href="#band_tab_members">Members</a></li>
+		    		    			        <li><a href="http://www.metal-archives.com/band/ajax-recommendations/id/3540265894" title="Similar artists"><span>Similar Artists</span></a></li>
+	        	        <li><a href="http://www.metal-archives.com/link/ajax-list/type/band/id/3540265894" title="Related links"><span>Related Links</span></a></li>
+	        	    </ul>
+	    
+	    
+	    <div id="band_tab_discography">
+			<div id="band_disco" class="tabs2lvl">
+				<ul>
+	                						<li><a href="http://www.metal-archives.com/band/discography/id/3540265894/tab/all"><span>Complete discography</span></a></li>
+											<li><a href="http://www.metal-archives.com/band/discography/id/3540265894/tab/main"><span>Main</span></a></li>
+											<li><a href="http://www.metal-archives.com/band/discography/id/3540265894/tab/lives"><span>Lives</span></a></li>
+											<li><a href="http://www.metal-archives.com/band/discography/id/3540265894/tab/demos"><span>Demos</span></a></li>
+											<li><a href="http://www.metal-archives.com/band/discography/id/3540265894/tab/misc"><span>Misc.</span></a></li>
+						            </ul>
+	            	        </div> 
+	    </div>
+	    
+	    
+	    <div id="band_tab_members">
+	    	<div id="band_members" class="tabs2lvl">
+	    		
+	    				            <ul>
+		            	<li><a href="#band_tab_members_all">Complete lineup</a></li>		                <li><a href="#band_tab_members_current">Last known lineup</a></li>
+		                <li><a href="#band_tab_members_past">Past members</a></li>		                <li><a href="#band_tab_members_live">Live musicians</a></li>		            </ul>
+		            	            			            	<!-- Complete lineup -->
+		            	<div id="band_tab_members_all">
+			                <div class="ui-tabs-panel-content">
+			                    								<table class="display lineupTable" cellpadding="0" cellspacing="0">
+																
+							
+									
+											<tr class="lineupHeaders">
+							<td colspan="2" align="right">
+								Last known															</td>
+						</tr>
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Schelm/51620" class="bold">Schelm</a> 
+					
+									</td>
+				<td>
+											Bass									</td>
+			</tr>
+						
+								
+							
+									
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Ezra/31857" class="bold">Wolf</a> 
+					
+									</td>
+				<td>
+											Drums									</td>
+			</tr>
+							<tr class="lineupBandsRow">
+					<td colspan="2">
+												See also:
+						<a href="http://www.metal-archives.com/bands/Natan/16464">Natan</a>, ex-<a href="http://www.metal-archives.com/bands/Old_Path/5288">Old Path</a>, ex-<a href="http://www.metal-archives.com/bands/Walpurgis/5246">Walpurgis</a>, ex-<a href="http://www.metal-archives.com/bands/Vuurdood/3540300014">Vuurdood</a>, ex-<a href="http://www.metal-archives.com/bands/Abjathar/24095">Abjathar</a>, ex-<a href="http://www.metal-archives.com/bands/Bloodwraith/62541">Bloodwraith</a>					</td>
+				</tr>
+						
+								
+							
+									
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Dood/51605" class="bold">Dood</a> 
+					
+									</td>
+				<td>
+											Guitars									</td>
+			</tr>
+							<tr class="lineupBandsRow">
+					<td colspan="2">
+												See also:
+						ex-<a href="http://www.metal-archives.com/bands/Demonic_Empire/57994">Demonic Empire</a>					</td>
+				</tr>
+						
+								
+							
+									
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Grimm/51610" class="bold">Grimm</a> 
+					
+									</td>
+				<td>
+											Guitars									</td>
+			</tr>
+							<tr class="lineupBandsRow">
+					<td colspan="2">
+												See also:
+						ex-<a href="http://www.metal-archives.com/bands/Demonic_Empire/57994">Demonic Empire</a>					</td>
+				</tr>
+						
+								
+							
+									
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Mastema/51616" class="bold">Mastema</a> 
+					
+									</td>
+				<td>
+											Vocals									</td>
+			</tr>
+						
+								
+							
+									
+											<tr class="lineupHeaders">
+							<td colspan="2" align="right">
+								Past															</td>
+						</tr>
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Helleslaaf/51627" class="bold">Helleslaaf</a> 
+					
+									</td>
+				<td>
+											Vocals&nbsp;(2007-2008)									</td>
+			</tr>
+							<tr class="lineupBandsRow">
+					<td colspan="2">
+												See also:
+						<a href="http://www.metal-archives.com/bands/Counthell/3540287279">Counthell</a>, Ulog					</td>
+				</tr>
+						
+								
+							
+									
+											<tr class="lineupHeaders">
+							<td colspan="2" align="right">
+								Past								 (Live)							</td>
+						</tr>
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Dries/31858" class="bold">Dries</a> 
+					
+									</td>
+				<td>
+											Guitars&nbsp;(2008)									</td>
+			</tr>
+							<tr class="lineupBandsRow">
+					<td colspan="2">
+												See also:
+						<a href="http://www.metal-archives.com/bands/Natan/16464">Natan</a>, ex-<a href="http://www.metal-archives.com/bands/Sole_Remains/99928">Sole Remains</a> (live)					</td>
+				</tr>
+						
+								
+							
+									
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Dani%C3%ABl/31861" class="bold">Dani&euml;l</a> 
+					
+									</td>
+				<td>
+											Guitars&nbsp;(2010)									</td>
+			</tr>
+							<tr class="lineupBandsRow">
+					<td colspan="2">
+												See also:
+						<a href="http://www.metal-archives.com/bands/Natan/16464">Natan</a>, <a href="http://www.metal-archives.com/bands/Sole_Remains/99928">Sole Remains</a> (live), ex-<a href="http://www.metal-archives.com/bands/Walpurgis/5246">Walpurgis</a>, ex-<a href="http://www.metal-archives.com/bands/Bloodwraith/62541">Bloodwraith</a>					</td>
+				</tr>
+						
+			</table>
+	
+			                </div>
+			            </div>
+			        		            <!-- Current members-->
+		            <div id="band_tab_members_current">
+		                <div class="ui-tabs-panel-content">
+		                    								<table class="display lineupTable" cellpadding="0" cellspacing="0">
+																
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Schelm/51620" class="bold">Schelm</a> 
+					
+									</td>
+				<td>
+											Bass									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Ezra/31857" class="bold">Wolf</a> 
+					
+									</td>
+				<td>
+											Drums									</td>
+			</tr>
+							<tr class="lineupBandsRow">
+					<td colspan="2">
+												See also:
+						<a href="http://www.metal-archives.com/bands/Natan/16464">Natan</a>, ex-<a href="http://www.metal-archives.com/bands/Old_Path/5288">Old Path</a>, ex-<a href="http://www.metal-archives.com/bands/Walpurgis/5246">Walpurgis</a>, ex-<a href="http://www.metal-archives.com/bands/Vuurdood/3540300014">Vuurdood</a>, ex-<a href="http://www.metal-archives.com/bands/Abjathar/24095">Abjathar</a>, ex-<a href="http://www.metal-archives.com/bands/Bloodwraith/62541">Bloodwraith</a>					</td>
+				</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Dood/51605" class="bold">Dood</a> 
+					
+									</td>
+				<td>
+											Guitars									</td>
+			</tr>
+							<tr class="lineupBandsRow">
+					<td colspan="2">
+												See also:
+						ex-<a href="http://www.metal-archives.com/bands/Demonic_Empire/57994">Demonic Empire</a>					</td>
+				</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Grimm/51610" class="bold">Grimm</a> 
+					
+									</td>
+				<td>
+											Guitars									</td>
+			</tr>
+							<tr class="lineupBandsRow">
+					<td colspan="2">
+												See also:
+						ex-<a href="http://www.metal-archives.com/bands/Demonic_Empire/57994">Demonic Empire</a>					</td>
+				</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Mastema/51616" class="bold">Mastema</a> 
+					
+									</td>
+				<td>
+											Vocals									</td>
+			</tr>
+						
+			</table>
+	
+		                </div>
+		            </div>
+		            			            <!-- Past members-->
+			            <div id="band_tab_members_past">
+			                <div class="ui-tabs-panel-content">
+			                    								<table class="display lineupTable" cellpadding="0" cellspacing="0">
+																
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Helleslaaf/51627" class="bold">Helleslaaf</a> 
+					
+									</td>
+				<td>
+											Vocals&nbsp;(2007-2008)									</td>
+			</tr>
+							<tr class="lineupBandsRow">
+					<td colspan="2">
+												See also:
+						<a href="http://www.metal-archives.com/bands/Counthell/3540287279">Counthell</a>, Ulog					</td>
+				</tr>
+						
+			</table>
+	
+			                </div>
+			            </div>
+		            		            			            <!-- Live members-->
+			            <div id="band_tab_members_live">
+			                <div class="ui-tabs-panel-content">
+			                    								<table class="display lineupTable" cellpadding="0" cellspacing="0">
+																
+							
+									
+											<tr class="lineupHeaders">
+							<td colspan="2" align="right">
+								Past															</td>
+						</tr>
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Dries/31858" class="bold">Dries</a> 
+					
+									</td>
+				<td>
+											Guitars&nbsp;(2008)									</td>
+			</tr>
+							<tr class="lineupBandsRow">
+					<td colspan="2">
+												See also:
+						<a href="http://www.metal-archives.com/bands/Natan/16464">Natan</a>, ex-<a href="http://www.metal-archives.com/bands/Sole_Remains/99928">Sole Remains</a> (live)					</td>
+				</tr>
+						
+								
+							
+									
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Dani%C3%ABl/31861" class="bold">Dani&euml;l</a> 
+					
+									</td>
+				<td>
+											Guitars&nbsp;(2010)									</td>
+			</tr>
+							<tr class="lineupBandsRow">
+					<td colspan="2">
+												See also:
+						<a href="http://www.metal-archives.com/bands/Natan/16464">Natan</a>, <a href="http://www.metal-archives.com/bands/Sole_Remains/99928">Sole Remains</a> (live), ex-<a href="http://www.metal-archives.com/bands/Walpurgis/5246">Walpurgis</a>, ex-<a href="http://www.metal-archives.com/bands/Bloodwraith/62541">Bloodwraith</a>					</td>
+				</tr>
+						
+			</table>
+	
+			                </div>
+			            </div>
+		            		      	  
+	        </div>
+	    </div>
+	    
+	    
+	    
+	    
+		
+		
+		
+		
+		
+    </div>
+    
+    <!--**** Footer ***-->
+<div id="auditTrail">
+	<table>
+		<tr>
+			<td>Added by: <a href="http://www.metal-archives.com/users/Heinrich_Nidhogg" class="profileMenu">Heinrich_Nidhogg</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/man_of_shadows814" class="profileMenu">man_of_shadows814</a></td>
+		</tr>
+		<tr>
+			<td>Added on: 2008-10-26 16:15:59</td>
+			<td align="right">Last modified on: 2014-09-07 04:38:27</td>
+		</tr>
+		<tr>
+			<td valign="top">
+				<a href="http://www.metal-archives.com/history/view/type/band/id/3540265894">View update history</a> 
+				 | <a href="http://www.metal-archives.com/report/by-object/type/band/id/3540265894/mode/page">View report history</a> 			</td>
+			<td align="right" valign="top">
+											</td>
+		</tr>
+			</table>
+</div>
+
+</div>
+ 
+
+<div id="readMoreDialog" title="Additional notes" class="displayNone"> </div>
+
+	        </div>
+	    </div>
+	</body>
+</html>

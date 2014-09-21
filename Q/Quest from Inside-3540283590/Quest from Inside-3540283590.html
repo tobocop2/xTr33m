@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Quest from Inside - Encyclopaedia Metallum: The Metal Archives</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+					<link rel="stylesheet" type="text/css" href="/min/index.php?g=css" />
+				
+					<script type="text/javascript" src="/min/index.php?g=js"></script>
+				<script type="text/javascript">
+			var URL_SITE	= 'http://www.metal-archives.com/';
+			var URL_IMAGES	= 'http://www.metal-archives.com/images/';
+			var URL_CSS		= 'http://www.metal-archives.com/css/';
+			$(document).ready(function() {
+				var maxHeightScroll = 600;
+				var maxWidthScroll = 1280;
+				if ($(window).height() <= maxHeightScroll || $(window).width() <= maxWidthScroll) {
+					$("#header, #left_col").css("position", "absolute");
+				}
+				$(document).on('click', '.profileMenu', toggleProfileMenu);
+				$('.image').click(zoomImage).blur(closeImage); // Image zoom
+												var anchor = window.location.hash;
+				if (anchor) { // try to load appropriate tab from anchor
+					if (!$(anchor) || !$(anchor).html()) { // no element with corresponding ID; look at tab title
+						log = '';
+						$('.tabs > ul > li').each(function(k, tab) {
+							var tabLink = $('a', tab).attr('title');
+							if (tabLink && tabLink != 'undefined' && (tabLink == anchor.substr(1) || tabLink == anchor.substr(1).replace('_', ' '))) {
+								$('.tabs').tabs( { active: k } );
+							}
+						});
+					}
+				}
+			});
+
+
+		</script>
+		<noscript>
+			<style type="text/css">
+				.no-js { display: block !important; }
+			</style>
+		</noscript>
+		
+		<!--[if lt IE 8]>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+			 <link rel="stylesheet" type="text/css" href="http://www.metal-archives.com/css/default/oldie.css" />
+		<![endif]-->		
+
+		<script type="text/javascript">
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-4046749-4']);
+			  _gaq.push(['_trackPageview']);
+
+			  (function() {
+			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+		</script>
+	</head>
+	<body >
+		<div id="wrapper">
+	        <div id="header">
+	            <a href="http://www.metal-archives.com/" id="MA_logo">Metal Archives</a>
+				<div class="clear loading"><img src="http://www.metal-archives.com/images/loading.gif" alt="loading" width="12" height="12" /> loading...</div>
+	            <div id="search_box">
+		            <form id="search_form" action="http://www.metal-archives.com/search" method="get">
+						<div>
+							<label>Search:</label><br/>
+							<input name="searchString" type="text" id="searchQueryBox" size="25" value="" tabindex="1" />
+							<select name="type" tabindex="2">
+								<option value="band_name">Band name</option>
+								<option value="band_genre">Music genre</option>
+								<option value="band_themes">Lyrical themes</option>
+								<option value="album_title">Album title</option>
+								<option value="song_title">Song title</option>
+								<option value="label_name">Label</option>
+								<option value="artist_alias">Artist</option>
+								<option value="user_name">User profile</option>
+								<option value="google">Google</option>
+							</select>
+							<br/>
+							<a href="http://www.metal-archives.com/search/advanced/?searchString=&type=" class="float_left" tabindex="4">Advanced search</a>
+							<button type="submit" class="btn_submit float_right" tabindex="3">Submit</button>
+						</div>
+		            </form>
+		        </div>
+	            
+	            <div id="top_menu_box">
+	                <ul class="menu_style_1">
+	                    <li><a href="http://www.metal-archives.com/content/help">Help</a></li>
+						<li><a href="http://www.metal-archives.com/content/rules">Rules</a></li>
+						<li><a href="http://www.metal-archives.com/board/" target="_top">Forum</a></li>
+	                </ul>
+	                <ul class="menu_style_2">
+						<li><a href="http://www.metal-archives.com/content/faq">FAQ</a></li>
+												<li><a href="http://www.metal-archives.com/content/support">Support Us</a></li>
+	                    <li><a href="http://www.metal-archives.com/content/tools">Add-ons</a></li>
+	              </ul>
+	            </div>        
+	        </div>
+	        <div id="left_col">
+	            <div id="member_box">
+	            		            				                <form name="login_form" id="login_form" action="http://www.metal-archives.com/authentication/login" method="post">
+							<div>
+								<label>Username</label><br/>
+								<input type="text" name="loginUsername" size="20" />
+								<label>Password</label><br/>
+								<input type="password" name="loginPassword" size="20" />
+								<input type="hidden" name="origin" value="/bands/Quest%20from%20Inside/3540283590" />
+								<button type="submit" class="btn_login float_right">Login</button>
+							</div>
+		                </form>
+		                <a href="http://www.metal-archives.com/user/signup" class="float-left writeAction">Register</a>  
+		                <span class="float_right"><a href="http://www.metal-archives.com/user/forgot-password" class="float-left writeAction">Forgot login?</a>  </span>
+						<div class="clear"> </div>
+		            	            </div>
+	            <div id="left_menu_box">
+	            		                <ul class="menu_style_3 block_spacer_20">
+	                	<li>
+	                		Bands 
+	                		<ul>
+			                    <li><a href="http://www.metal-archives.com/browse/letter">alphabetical</a></li>
+			                    <li><a href="http://www.metal-archives.com/browse/country">country</a></li>
+			                    <li><a href="http://www.metal-archives.com/browse/genre">genre</a></li>
+	                    	</ul>
+	                    </li>
+	                    <li>
+	                    	Labels
+	                    	<ul>
+			                    <li><a href="http://www.metal-archives.com/label">alphabetical</a></li>
+			                    <li><a href="http://www.metal-archives.com/label/country">country</a></li>
+	                    	</ul>
+	                    </li>
+	                    <li><a href="http://www.metal-archives.com/review/browse">Reviews</a></li>
+	                </ul>
+	                <ul class="menu_style_3 block_spacer_20">
+	                    <li><a href="http://www.metal-archives.com/artist/rip">R.I.P.</a></li>
+	                    <li><a href="http://www.metal-archives.com/band/random">Random Band</a></li>
+	                    <li><a href="http://www.metal-archives.com/user/list">User rankings</a></li>
+	                	<li><a href="http://www.metal-archives.com/news">News archive</a></li>
+					</ul>
+					 <ul class="menu_style_3 ornement_30">
+	                    <li><a href="http://www.metal-archives.com/report/list">Reports</a></li>
+	                    <li><a href="http://www.metal-archives.com/todo">Contribute / To do</a></li>
+	                </ul>
+	            </div>
+	            <div id="left_text_box">
+	           		<p class="small_text center"> &copy; 2002-2014<br/>Encyclopaedia Metallum </p>
+					<p class="small_text center">Best viewed<br /> <a href="http://www.getfirefox.com" target="_blank">without</a> Internet Explorer, <br/>in 1280 x 960 resolution<br/> or higher.</p> 
+	            </div>       
+	        </div>
+	        <div id="content_wrapper">
+				<script type="text/javascript" src="http://www.metal-archives.com/js/jquery/jquery.form.js"></script>
+<script type="text/javascript">
+	var bandId = 3540283590;
+	var bandName = "Quest from Inside";
+	var minRecScore = 3;
+		
+		
+		
+	$(document).ready(function() {
+		$(".no-js").removeClass("no-js");
+		$('.tabs, .tabs2lvl').tabs({ beforeLoad: cacheTab });
+						$(document).on('click', '.albumMenu', toggleAlbumMenu);
+				var browser = detectBrowser();
+		if(browser.name == "webkit" && parseFloat(browser.version) < 536) {
+			$('head').append( $('<style type="text/css">.releaseCol { width: 26%; }</style>'));
+		}
+	});
+
+</script>
+
+<div id="band_sidebar">
+
+	
+			
+	    
+	    			<div class="band_name_img">
+		        <a class="image" id="logo" title="Quest from Inside" href="http://www.metal-archives.com/images/3/5/4/0/3540283590_logo.jpg"><img src="http://www.metal-archives.com/images/3/5/4/0/3540283590_logo.jpg" title="Click to zoom" alt="Quest from Inside - Logo" border="0" /></a>
+		    </div>
+			    
+	    		    <div class="band_img">
+		        <a class="image" id="photo" title="Quest from Inside" href="http://www.metal-archives.com/images/3/5/4/0/3540283590_photo.jpg"><img src="http://www.metal-archives.com/images/3/5/4/0/3540283590_photo.jpg" title="Click to zoom" alt="Quest from Inside - Photo" border="0" /></a>
+		    </div>
+			    
+	    
+					<div id="affiliation">
+			<span class="title">Buy their stuff</span>
+			<br />
+			<ul id="buyLinks" class="menu_style_5">
+													<li>
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=3&bid=3540283590">Search on eBay</a> 
+						 
+							more... <a href="#more" onclick="$('#sub3').toggle(); return false;">>></a><br />
+							<ul id="sub3" style="display: none; margin-top: 0px; margin-bottom: 0px;">
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=38&bid=3540283590">Search on Half.com</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=17&bid=3540283590">eBay Canada</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=19&bid=3540283590">eBay UK</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=18&bid=3540283590">eBay France</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=36&bid=3540283590">eBay Spain</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=34&bid=3540283590">eBay Belgium</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=20&bid=3540283590">eBay Netherlands</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=21&bid=3540283590">eBay Italy</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=22&bid=3540283590">eBay Australia</a></li>
+															</ul>
+											</li>
+									<li>
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=5&bid=3540283590">Search on Gemm.com</a> 
+											</li>
+									<li>
+						 
+											</li>
+							</ul>
+		</div>
+	
+		
+		    
+</div>
+
+<div id="band_content">
+	<div class="tool_strip right writeAction">
+	    <ul>
+	    		        	        	<li><a title="Report a mistake or additional information for this page" href="javascript:popupReportDialog(1, 3540283590);" class="btn_report_error"> </a></li>
+        		    </ul>
+	</div>
+	
+	<div id="band_info">
+		
+			<h1 class="band_name"><a href="http://www.metal-archives.com/bands/Quest_from_Inside/3540283590">Quest from Inside</a></h1>
+
+		
+        		        <div class="clear block_spacer_5"></div>
+        <div id="band_stats">
+		    <dl class="float_left">
+		        <dt>Country of origin:</dt>
+		        <dd><a href="http://www.metal-archives.com/lists/HU">Hungary</a></dd>
+		        <dt>Location:</dt>
+		        <dd>Szentes-Csongrad</dd>
+		        <dt>Status:</dt>
+		        <dd class="active">Active</dd>
+		        <dt>Formed in:</dt>
+		        <dd>2004</dd> 
+		    </dl>
+		    <dl class="float_right">
+		        <dt>Genre:</dt>
+		        <dd>Melodic Death Metal/Metalcore</dd>
+		        <dt>Lyrical themes:</dt>
+		        <dd>N/A</dd>
+		        <dt>Current label:</dt>
+		        <dd>Unsigned/independent</dd>
+		    </dl>
+		    <dl style="width: 100%;" class="clear">
+		    	<dt>Years active:</dt>
+		        <dd>
+		        			        		2004-present		        			        </dd>
+		    </dl>
+		</div>
+	    <div class="band_comment clear">
+	    <!-- Max 400 characters. Open the rest in a dialogue box-->
+	    		    	
+	    			</div>
+	</div>
+	
+	<!-- Error / OK messages -->
+    <div id="message"> </div>
+    <div class="clear block_spacer_5"> </div>
+	
+	<div id="band_tabs" class="tabs no-js">
+	    <ul>  
+	        <li><a href="#band_tab_discography">Discography</a></li>
+	        <li><a href="#band_tab_members">Members</a></li>
+		    		    			        <li><a href="http://www.metal-archives.com/band/ajax-recommendations/id/3540283590" title="Similar artists"><span>Similar Artists</span></a></li>
+	        	        <li><a href="http://www.metal-archives.com/link/ajax-list/type/band/id/3540283590" title="Related links"><span>Related Links</span></a></li>
+	        	    </ul>
+	    
+	    
+	    <div id="band_tab_discography">
+			<div id="band_disco" class="tabs2lvl">
+				<ul>
+	                						<li><a href="http://www.metal-archives.com/band/discography/id/3540283590/tab/all"><span>Complete discography</span></a></li>
+											<li><a href="http://www.metal-archives.com/band/discography/id/3540283590/tab/main"><span>Main</span></a></li>
+											<li><a href="http://www.metal-archives.com/band/discography/id/3540283590/tab/lives"><span>Lives</span></a></li>
+											<li><a href="http://www.metal-archives.com/band/discography/id/3540283590/tab/demos"><span>Demos</span></a></li>
+											<li><a href="http://www.metal-archives.com/band/discography/id/3540283590/tab/misc"><span>Misc.</span></a></li>
+						            </ul>
+	            	        </div> 
+	    </div>
+	    
+	    
+	    <div id="band_tab_members">
+	    	<div id="band_members" class="tabs2lvl">
+	    		
+	    				            <ul>
+		            			                <li><a href="#band_tab_members_current">Current lineup</a></li>
+		                		                		            </ul>
+		            	            			            <!-- Current members-->
+		            <div id="band_tab_members_current">
+		                <div class="ui-tabs-panel-content">
+		                    								<table class="display lineupTable" cellpadding="0" cellspacing="0">
+																
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/%C3%81kos_T%C3%A1pai/84018" class="bold">&Aacute;kos</a> 
+					
+									</td>
+				<td>
+											Bass									</td>
+			</tr>
+							<tr class="lineupBandsRow">
+					<td colspan="2">
+												See also:
+						<a href="http://www.metal-archives.com/bands/Burial_of_Abel/98466">Burial of Abel</a>					</td>
+				</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Attila/333558" class="bold">Attila</a> 
+					
+									</td>
+				<td>
+											Drums									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Zsolt_Szaszk%C3%B3/84017" class="bold">Zsolt</a> 
+					
+									</td>
+				<td>
+											Guitars									</td>
+			</tr>
+							<tr class="lineupBandsRow">
+					<td colspan="2">
+												See also:
+						<a href="http://www.metal-archives.com/bands/Burial_of_Abel/98466">Burial of Abel</a>					</td>
+				</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/%C3%81rpi/333560" class="bold">&Aacute;rpi</a> 
+					
+									</td>
+				<td>
+											Guitars									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="200" valign="top">
+					<a href="http://www.metal-archives.com/artists/Gergo/333559" class="bold">Gergo</a> 
+					
+									</td>
+				<td>
+											Vocals									</td>
+			</tr>
+							<tr class="lineupBandsRow">
+					<td colspan="2">
+												See also:
+						ex-<a href="http://www.metal-archives.com/bands/Forgotten_Truth/69326">Forgotten Truth</a>, ex-Fire The Liar, ex-Flood Has Come, ex-Lights Go Out					</td>
+				</tr>
+						
+			</table>
+	
+		                </div>
+		            </div>
+		            		            		      	  
+	        </div>
+	    </div>
+	    
+	    
+	    
+	    
+		
+		
+		
+		
+		
+    </div>
+    
+    <!--**** Footer ***-->
+<div id="auditTrail">
+	<table>
+		<tr>
+			<td>Added by: <a href="http://www.metal-archives.com/users/thrashmania80gr" class="profileMenu">thrashmania80gr</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Obscurum" class="profileMenu">Obscurum</a></td>
+		</tr>
+		<tr>
+			<td>Added on: 2009-06-10 06:41:10</td>
+			<td align="right">Last modified on: 2013-04-01 01:27:34</td>
+		</tr>
+		<tr>
+			<td valign="top">
+				<a href="http://www.metal-archives.com/history/view/type/band/id/3540283590">View update history</a> 
+							</td>
+			<td align="right" valign="top">
+											</td>
+		</tr>
+			</table>
+</div>
+
+</div>
+ 
+
+<div id="readMoreDialog" title="Additional notes" class="displayNone"> </div>
+
+	        </div>
+	    </div>
+	</body>
+</html>

@@ -76,7 +76,6 @@ def write_band_info(letter,band_name,link):
         if not os.path.exists(band_folder):
             os.makedirs(band_folder)
         os.chdir(band_folder)
-        print os.curdir
 
         band_page ='http://www.metal-archives.com/bands/%s/%s' % (band_name,band_id)
         releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
@@ -108,8 +107,8 @@ def write_band_info(letter,band_name,link):
         except OSError:
             if not os.path.isdir(release_dir):
                 raise
-        os.chdir(release_dir)
 
+        os.chdir(release_dir)
         for release in soup.find_all('a',class_=['demo','album','single','other']):
             release_name = release.get_text().replace('/','\\')
             print "Getting %s: %s\n" % (band_name,release_name)
