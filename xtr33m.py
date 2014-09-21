@@ -80,16 +80,31 @@ def write_band_info(letter,band_name,link):
         releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
         similar_artists  = 'http://www.metal-archives.com/band/ajax-recommendations/id/%s' % band_id
 
-        page_file = os.path.join('/', "%s-%s.html" % (band_name,band_id)
-        band_file = open(file_name, "w")
-        to_file = requests.get(link).content
-        band_file.write(to_file)
-        band_file.close()
+        file1 = os.path.join('/', "%s-%s.html" % (band_name,band_id))
+        page_file = open(file1, "w")
+        to_file1 = requests.get(band_page).content
+        page_file.write(to_file1)
+        page_file.close()
+
+        file2 = os.path.join('/', "%s-%s-releases.html" % (band_name,band_id))
+        releases_file = open(file2, "w")
+        to_file2 = requests.get(releases).content
+        releases_file.write(to_file1)
+        releases_file.close()
+        #need to get albums, singles, demos, and other
+        for release in soup.find_all(class_=['demo','album','single','other']):
+            print release.get('href')
+
+
+        file3 = os.path.join('/', "%s-%s-similar-artists.html" % (band_name,band_id))
+        sa_file = open(file2, "w")
+        to_file3 = requests.get(similar_artists).content
+        sa_file.write(to_file1)
+        sa_file.close()
 
     except OSError:
         if not os.path.isdir(band_folder):
             raise
 
-
-
-get_band_info()
+if __name__ == '__main__':
+    get_band_info()
