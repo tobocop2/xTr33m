@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 def build_band_list():
     result = {}
     #letters = ['NBR','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-    letters = ['NBR']
+    letters = ['Z']
     index = 0
     count = 0
 
@@ -23,7 +23,8 @@ def build_band_list():
                         print "getting bands for letter: %s" % letters[index]
                         result[letters[index]] = [resp.json()[key]]
                     else:
-                        result[letters[index]].append([resp.json()[key]])
+                        #result[letters[index]].append([resp.json()[key]])
+                        result[letters[index]].append(resp.json()[key])
                         print "getting bands for letter: %s" % letters[index]
                     count += 500
                 else:
@@ -36,6 +37,9 @@ def get_band_info():
     result = build_band_list()
 
     for letter in result:
+        #print len(result[letter][0])
+        #print len(result[letter][1])
+        #print result[letter]
         try:
             os.makedirs(letter)
         except OSError:
@@ -47,7 +51,7 @@ def get_band_info():
                 band_name = soup.get_text()
                 print band_name
                 if band_name.find('/'):
-                    band_name = band_name.replace('/','%')
+                    band_name = band_name.replace('/','%slash%')
 
                 for child in soup.findAll('a'):
                     link = child.get('href')
