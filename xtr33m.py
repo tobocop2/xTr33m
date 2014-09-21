@@ -63,7 +63,7 @@ def get_band_info():
 #This function takes the information from get_band_info() and dumps the html from each band page.
 #The structure of the 'Extreme Archives' will be heavily influenced by the metal-archives
 def write_band_info(letter,band_name,link):
-    band_id = link.split('\\')[5]
+    band_id = link.split('/')[5]
     band_folder = band_name+'-'+band_id
 
     try:
@@ -75,32 +75,49 @@ def write_band_info(letter,band_name,link):
         os.chdir(letter)
         if not os.path.exists(band_folder):
             os.makedirs(band_folder)
+        os.chdir(band_folder)
+        print os.curdir
 
         band_page ='http://www.metal-archives.com/bands/%s/%s' % (band_name,band_id)
         releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
         similar_artists  = 'http://www.metal-archives.com/band/ajax-recommendations/id/%s' % band_id
 
-        file1 = os.path.join('/', "%s-%s.html" % (band_name,band_id))
+        file1 = os.path.join('./', "%s-%s.html" % (band_name,band_id))
         page_file = open(file1, "w")
         to_file1 = requests.get(band_page).content
         page_file.write(to_file1)
         page_file.close()
 
-        file2 = os.path.join('/', "%s-%s-releases.html" % (band_name,band_id))
-        releases_file = open(file2, "w")
-        to_file2 = requests.get(releases).content
-        releases_file.write(to_file1)
-        releases_file.close()
-        #need to get albums, singles, demos, and other
-        for release in soup.find_all(class_=['demo','album','single','other']):
-            print release.get('href')
-
-
-        file3 = os.path.join('/', "%s-%s-similar-artists.html" % (band_name,band_id))
+        file2 = os.path.join('./', "%s-%s-similar-artists.html" % (band_name,band_id))
         sa_file = open(file2, "w")
-        to_file3 = requests.get(similar_artists).content
-        sa_file.write(to_file1)
+        to_file2 = requests.get(similar_artists).content
+        sa_file.write(to_file2)
         sa_file.close()
+
+        file3 = os.path.join('./', "%s-%s-releases.html" % (band_name,band_id))
+        releases_file = open(file3, "w")
+        to_file3 = requests.get(releases).content
+        soup = BeautifulSoup(to_file3)
+        releases_file.write(to_file3)
+        releases_file.close()
+
+        #need to get albums, singles, demos, and other
+        try:
+            release_dir = 'Releases'
+            os.makedirs(release_dir)
+        except OSError:
+            if not os.path.isdir(release_dir):
+                raise
+        os.chdir(release_dir)
+
+        for release in soup.find_all('a',class_=['demo','album','single','other']):
+            release_name = release.get_text()
+            release_url = release.get('href')
+            individual_release = os.path.join('./', release_name)
+            individual_file = open(individual_release, "w")
+            release_to_file = requests.get(release_url).content
+            individual_file.write(release_to_file)
+            individual_file.close()
 
     except OSError:
         if not os.path.isdir(band_folder):
