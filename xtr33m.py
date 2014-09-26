@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 def build_band_list():
     result = {}
     letters = ['NBR','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+    letters = ['Q']
     index = 0
     count = 0
 
@@ -47,13 +48,13 @@ def get_band_info():
                     band_name = band_name.replace('/','\\')
                 for child in soup.findAll('a'):
                     link = child.get('href')
-                    print link
-                    if not band_map.has_key(band_name):
-                        band_map[band_name] = [link]
-                    else:
-                        band_map[band_name].append(link)
+                print link
+                if not band_map.has_key(band_name):
+                    band_map[band_name] = [link]
+                else:
+                    band_map[band_name].append(link)
 
-                    write_band_info(letter,band_name,link)
+                write_band_info(letter,band_name,link)
 
     for band in band_map:
         for link in band_map[band]:
@@ -93,10 +94,12 @@ def write_band_info(letter,band_name,link):
         sa_file.close()
 
         file3 = os.path.join('./', "%s-%s-releases.html" % (band_name,band_id))
-        releases_file = open(file3, "w")
-        to_file3 = requests.get(releases).content
-        soup = BeautifulSoup(to_file3)
-        releases_file.write(to_file3)
+        releases_file = open(file3, "a")
+        release_resp = requests.get(releases).content
+        soup = BeautifulSoup(release_resp)
+        for release in soup.find_all(class_=['single','demo','album','demo']):
+            print release.get_text()
+            releases_file.write(release.get_text())
         releases_file.close()
 
         #need to get albums, singles, demos, and other
