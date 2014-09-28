@@ -32,7 +32,7 @@ def build_band_list():
     return result
 
 #This function goes through the all of the bands on the Archives #-Z and gets information from each band page
-#The information is stored in this form "Letter/Band/bandinfo.html"
+#The information is stored in this form "Letter/Band/bandinfo.txt"
 #A map of bands with their respective links is then generated
 def get_band_info():
     result = build_band_list()
@@ -60,7 +60,7 @@ def get_band_info():
         for link in band_map[band]:
             print band+'\n'+link+'\n'
 
-#This function takes the information from get_band_info() and dumps the html from each band page.
+#This function takes the information from get_band_info() and dumps the txt from each band page.
 #The structure of the 'Extreme Archives' will be heavily influenced by the metal-archives
 def write_band_info(letter,band_name,link):
     band_id = link.split('/')[5]
@@ -82,29 +82,32 @@ def write_band_info(letter,band_name,link):
         similar_artists = 'http://www.metal-archives.com/band/ajax-recommendations/id/%s/showMoreSimilar/1' % band_id
         band_description = 'http://www.metal-archives.com/band/read-more/id/%s' % band_id
 
-        file0 = os.path.join('./',"%s-%s-Description" %s (band_name,band_id))
-        descrption_file = open(file0,"w")
+        file0 = os.path.join('./',"%s-%s-Description" % (band_name,band_id))
+        description_file = open(file0,"w")
         description_response = requests.get(band_description).content
         soup = BeautifulSoup(description_response)
         for description in soup:
-            description_file.write(description.get_text()+'\n')
+            band_description = description.get_text()
+            description_file.write(band_description.encode('ascii','ignore')+'\n')
         description_file.close()
 
-
-        '''
-        #'Will be using this to start with the parsing of the band page:
-
+        file1 = os.path.join('./', "%s-%s-content.txt" % (band_name,band_id))
+        page_file = open(file1, "a")
+        page_file_response = requests.get(band_page).content
+        soup = BeautifulSoup(page_file_response)
         for child in soup.find_all(id='band_content'):
-            print child.get_text()
-        '''
-
-        file1 = os.path.join('./', "%s-%s.html" % (band_name,band_id))
-        page_file = open(file1, "w")
-        to_file1 = requests.get(band_page).content
-        page_file.write(to_file1)
+                band_name = child.find(class_='band_name').get_text()
+                print band_name
+                page_file.write(band_name.encode('ascii','ignore'))
+                band_stats = child.find(id='band_stats').get_text()
+                print band_stats
+                page_file.write(band_stats.encode('ascii','ignore')+'\n')
+                if child.find(id='band_tab_members_all') is not None:
+                    lineup = child.find(id='band_tab_members_all').get_text()
+                    page_file.write(lineup.encode('ascii','ignore')+'\n')
         page_file.close()
 
-        file2 = os.path.join('./', "%s-%s-similar-artists.html" % (band_name,band_id))
+        file2 = os.path.join('./', "%s-%s-similar-artists.txt" % (band_name,band_id))
         similar_artist_file = open(file2, "a")
         similar_artist_response = requests.get(similar_artists).content
         soup = BeautifulSoup(similar_artist_response)
@@ -112,16 +115,16 @@ def write_band_info(letter,band_name,link):
             for child in artist.find_all('td'):
                 if not child.has_attr('colspan') and not child.find_all('span'):
                     print 'Similar artists %s: ' % child.get_text()
-                    similar_artist_file.write(child.get_text()+'\n')
+                    similar_artist_file.write(child.get_text().encode('ascii','ignore')+'\n')
         similar_artist_file.close()
 
-        file3 = os.path.join('./', "%s-%s-releases.html" % (band_name,band_id))
+        file3 = os.path.join('./', "%s-%s-r.encode('ascii','ignore')eleases.txt" % (band_name,band_id))
         releases_file = open(file3, "a")
         release_resp = requests.get(releases).content
         soup = BeautifulSoup(release_resp)
         for release in soup.find_all(class_=['single','demo','album','demo']):
             print release.get_text()
-            releases_file.write(release.get_text()+'\n')
+            releases_file.write(release.get_text().encode('ascii','ignore')+'\n')
         releases_file.close()
 
         #need to get albums, singles, demos, and other
@@ -137,7 +140,7 @@ def write_band_info(letter,band_name,link):
             release_name = release.get_text().replace('/','\\')
             print "Getting %s: %s\n" % (band_name,release_name)
             release_url = release.get('href')
-            individual_release = os.path.join('./', release_name+'.html')
+            individual_release = os.path.join('./', release_name+'.txt')
             individual_file = open(individual_release, "w")
             release_to_file = requests.get(release_url).content
             individual_file.write(release_to_file)
