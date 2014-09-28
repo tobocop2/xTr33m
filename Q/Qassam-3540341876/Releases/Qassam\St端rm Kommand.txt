@@ -1,0 +1,824 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Stürm Kommand / Qassam - Qassam/Stürm Kommand - Encyclopaedia Metallum: The Metal Archives</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+					<link rel="stylesheet" type="text/css" href="/min/index.php?g=css" />
+				
+					<script type="text/javascript" src="/min/index.php?g=js"></script>
+				<script type="text/javascript">
+			var URL_SITE	= 'http://www.metal-archives.com/';
+			var URL_IMAGES	= 'http://www.metal-archives.com/images/';
+			var URL_CSS		= 'http://www.metal-archives.com/css/';
+			$(document).ready(function() {
+				var maxHeightScroll = 600;
+				var maxWidthScroll = 1280;
+				if ($(window).height() <= maxHeightScroll || $(window).width() <= maxWidthScroll) {
+					$("#header, #left_col").css("position", "absolute");
+				}
+				$(document).on('click', '.profileMenu', toggleProfileMenu);
+				$('.image').click(zoomImage).blur(closeImage); // Image zoom
+												var anchor = window.location.hash;
+				if (anchor) { // try to load appropriate tab from anchor
+					if (!$(anchor) || !$(anchor).html()) { // no element with corresponding ID; look at tab title
+						log = '';
+						$('.tabs > ul > li').each(function(k, tab) {
+							var tabLink = $('a', tab).attr('title');
+							if (tabLink && tabLink != 'undefined' && (tabLink == anchor.substr(1) || tabLink == anchor.substr(1).replace('_', ' '))) {
+								$('.tabs').tabs( { active: k } );
+							}
+						});
+					}
+				}
+			});
+
+
+		</script>
+		<noscript>
+			<style type="text/css">
+				.no-js { display: block !important; }
+			</style>
+		</noscript>
+		
+		<!--[if lt IE 8]>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+			 <link rel="stylesheet" type="text/css" href="http://www.metal-archives.com/css/default/oldie.css" />
+		<![endif]-->		
+
+		<script type="text/javascript">
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-4046749-4']);
+			  _gaq.push(['_trackPageview']);
+
+			  (function() {
+			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+		</script>
+	</head>
+	<body >
+		<div id="wrapper">
+	        <div id="header">
+	            <a href="http://www.metal-archives.com/" id="MA_logo">Metal Archives</a>
+				<div class="clear loading"><img src="http://www.metal-archives.com/images/loading.gif" alt="loading" width="12" height="12" /> loading...</div>
+	            <div id="search_box">
+		            <form id="search_form" action="http://www.metal-archives.com/search" method="get">
+						<div>
+							<label>Search:</label><br/>
+							<input name="searchString" type="text" id="searchQueryBox" size="25" value="" tabindex="1" />
+							<select name="type" tabindex="2">
+								<option value="band_name">Band name</option>
+								<option value="band_genre">Music genre</option>
+								<option value="band_themes">Lyrical themes</option>
+								<option value="album_title">Album title</option>
+								<option value="song_title">Song title</option>
+								<option value="label_name">Label</option>
+								<option value="artist_alias">Artist</option>
+								<option value="user_name">User profile</option>
+								<option value="google">Google</option>
+							</select>
+							<br/>
+							<a href="http://www.metal-archives.com/search/advanced/?searchString=&type=" class="float_left" tabindex="4">Advanced search</a>
+							<button type="submit" class="btn_submit float_right" tabindex="3">Submit</button>
+						</div>
+		            </form>
+		        </div>
+	            
+	            <div id="top_menu_box">
+	                <ul class="menu_style_1">
+	                    <li><a href="http://www.metal-archives.com/content/help">Help</a></li>
+						<li><a href="http://www.metal-archives.com/content/rules">Rules</a></li>
+						<li><a href="http://www.metal-archives.com/board/" target="_top">Forum</a></li>
+	                </ul>
+	                <ul class="menu_style_2">
+						<li><a href="http://www.metal-archives.com/content/faq">FAQ</a></li>
+												<li><a href="http://www.metal-archives.com/content/support">Support Us</a></li>
+	                    <li><a href="http://www.metal-archives.com/content/tools">Add-ons</a></li>
+	              </ul>
+	            </div>        
+	        </div>
+	        <div id="left_col">
+	            <div id="member_box">
+	            		            				                <form name="login_form" id="login_form" action="http://www.metal-archives.com/authentication/login" method="post">
+							<div>
+								<label>Username</label><br/>
+								<input type="text" name="loginUsername" size="20" />
+								<label>Password</label><br/>
+								<input type="password" name="loginPassword" size="20" />
+								<input type="hidden" name="origin" value="/albums/Qassam/Qassam-St%C3%BCrm_Kommand/377927" />
+								<button type="submit" class="btn_login float_right">Login</button>
+							</div>
+		                </form>
+		                <a href="http://www.metal-archives.com/user/signup" class="float-left writeAction">Register</a>  
+		                <span class="float_right"><a href="http://www.metal-archives.com/user/forgot-password" class="float-left writeAction">Forgot login?</a>  </span>
+						<div class="clear"> </div>
+		            	            </div>
+	            <div id="left_menu_box">
+	            		                <ul class="menu_style_3 block_spacer_20">
+	                	<li>
+	                		Bands 
+	                		<ul>
+			                    <li><a href="http://www.metal-archives.com/browse/letter">alphabetical</a></li>
+			                    <li><a href="http://www.metal-archives.com/browse/country">country</a></li>
+			                    <li><a href="http://www.metal-archives.com/browse/genre">genre</a></li>
+	                    	</ul>
+	                    </li>
+	                    <li>
+	                    	Labels
+	                    	<ul>
+			                    <li><a href="http://www.metal-archives.com/label">alphabetical</a></li>
+			                    <li><a href="http://www.metal-archives.com/label/country">country</a></li>
+	                    	</ul>
+	                    </li>
+	                    <li><a href="http://www.metal-archives.com/review/browse">Reviews</a></li>
+	                </ul>
+	                <ul class="menu_style_3 block_spacer_20">
+	                    <li><a href="http://www.metal-archives.com/artist/rip">R.I.P.</a></li>
+	                    <li><a href="http://www.metal-archives.com/band/random">Random Band</a></li>
+	                    <li><a href="http://www.metal-archives.com/user/list">User rankings</a></li>
+	                	<li><a href="http://www.metal-archives.com/news">News archive</a></li>
+					</ul>
+					 <ul class="menu_style_3 ornement_30">
+	                    <li><a href="http://www.metal-archives.com/report/list">Reports</a></li>
+	                    <li><a href="http://www.metal-archives.com/todo">Contribute / To do</a></li>
+	                </ul>
+	            </div>
+	            <div id="left_text_box">
+	           		<p class="small_text center"> &copy; 2002-2014<br/>Encyclopaedia Metallum </p>
+					<p class="small_text center">Best viewed<br /> <a href="http://www.getfirefox.com" target="_blank">without</a> Internet Explorer, <br/>in 1280 x 960 resolution<br/> or higher.</p> 
+	            </div>       
+	        </div>
+	        <div id="content_wrapper">
+				<script type="text/javascript" src="http://www.metal-archives.com/js/jquery/jquery.form.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		$(".no-js").removeClass("no-js");
+		$('#album_tabs').tabs({ beforeLoad: cacheTab }).show();
+		$('#album_members').tabs();
+		$('.albumMenu').click(toggleAlbumMenu);
+									toggleLyrics(0);
+			});
+	
+	function hideToolMenu(event) {
+		 $('.toolMenu-content').hide();
+	}
+    
+    	    $(document).ready(function() {
+			$('#bandBackBtn').click(bandLinkMenu);
+		});
+	    function bandLinkMenu() {
+	    	var link = $(this);
+			var positions = link.position();
+			var bandMenu = $('#bandMenu');
+			// Create menu if it's not already loaded
+			if (bandMenu.length == 0) {
+				bandMenu = $('<div class="toolMenu" style="width: 300px;" id="bandMenu"></div>');
+				bandMenu.append(
+		             '<div id="bandLinkMenu" class="toolMenu-content ui-corner-all displayNone">' +
+		             	'<a class="toolMenu-close ui-state-active" onclick="$(\'#bandLinkMenu\').hide(\'slow\'); return false;" href="#"><span class="ui-icon ui-icon-closethick">close</span></a>' +
+		             	'Back to: <a href="http://www.metal-archives.com/bands/St%C3%BCrm_Kommand/53763#band_tab_discography">Stürm Kommand</a> / <a href="http://www.metal-archives.com/bands/Qassam/3540341876#band_tab_discography">Qassam</a>' +
+		             '</div>'
+				);
+		        bandMenu.css('top', positions.top).css('left', positions.left - 200).css('position', 'absolute');
+		        link.parent().append(bandMenu);
+			}
+			// Show menu
+			$('#bandLinkMenu').show('slow');
+			
+			$("html").click(hideMenus);
+			
+			return false;
+	    }
+	   
+</script>
+
+<div id="album_sidebar">
+
+	<a href="http://www.metal-archives.com/bands/St%C3%BCrm_Kommand/53763#band_tab_discography">Stürm Kommand</a> / <a href="http://www.metal-archives.com/bands/Qassam/3540341876#band_tab_discography">Qassam</a>
+	
+						> Qassam/Stürm Kommand
+					
+			<!-- *** Album cover *** -->
+		<div class="album_img">
+			<a class="image" id="cover" title="Stürm Kommand / Qassam - Qassam/St&uuml;rm Kommand" href="http://www.metal-archives.com/images/3/7/7/9/377927.jpg?1401"><img src="http://www.metal-archives.com/images/3/7/7/9/377927.jpg?1401" title="Click to zoom" alt="Stürm Kommand / Qassam - Qassam/St&uuml;rm Kommand" border="0" /></a>
+		</div>
+			
+			<!-- *** Affiliation block *** -->
+					<div id="affiliation">
+			<span class="title">Buy from...</span>
+			<br />
+			<ul id="buyLinks" class="menu_style_5">
+													<li>
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=29&rid=377927">Search on eBay</a> 
+						 
+							more... <a href="#more" onclick="$('#sub29').toggle(); return false;">>></a><br />
+							<ul id="sub29" style="display: none; margin-top: 0px; margin-bottom: 0px;">
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=39&rid=377927">Search on Half.com</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=23&rid=377927">eBay Canada</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=25&rid=377927">eBay UK</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=24&rid=377927">eBay France</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=37&rid=377927">eBay Spain</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=35&rid=377927">eBay Belgium</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=26&rid=377927">eBay Netherlands</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=27&rid=377927">eBay Italy</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=28&rid=377927">eBay Australia</a></li>
+															</ul>
+											</li>
+									<li>
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=7&rid=377927">Search on Gemm.com</a> 
+											</li>
+							</ul>
+		</div>
+	
+		
+		<!-- *** Discography / Chronology *** -->
+		
+			<table cellspacing="1" cellpadding="1" width="262" class="chronology">
+			<tr class="hidden">
+				<th class="spacer"></th>
+				<th colspan="2"></th>
+				<th class="spacer"></th>
+			</tr>
+							<tr>
+					<th colspan="4"><span>Stürm Kommand</span> discography (misc)</th>
+				</tr>
+				<tr class="prevNext">
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/St%C3%BCrm_Kommand/Genitor_Luminis/212990" title="Genitor Luminis (Split)"><</a> </td>
+					<td class="prev">
+													<a href="http://www.metal-archives.com/albums/St%C3%BCrm_Kommand/Genitor_Luminis/212990" title="Genitor Luminis (Split)">Genitor Luminis</a><br />(2008)
+											</td>
+					
+					<td class="next">
+													<a href="http://www.metal-archives.com/albums/St%C3%BCrm_Kommand/United_by_Blood%2C_Gathered_by_Iron/305025" title="United by Blood, Gathered by Iron (Split)">United by Blood, Gathered by Iron</a><br />(2011)
+											</td>
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/St%C3%BCrm_Kommand/United_by_Blood%2C_Gathered_by_Iron/305025" title="United by Blood, Gathered by Iron (Split)">></a> </td>
+				</tr>
+										<tr>
+					<th colspan="4"><span>Stürm Kommand</span> discography (all)</th>
+				</tr>
+				<tr class="prevNext">
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/St%C3%BCrm_Kommand/Annihilation_Kommand/258882" title="Annihilation Kommand (Demo)"><</a> </td>
+					<td class="prev">
+													<a href="http://www.metal-archives.com/albums/St%C3%BCrm_Kommand/Annihilation_Kommand/258882" title="Annihilation Kommand (Demo)">Annihilation Kommand</a><br />(2009)
+											</td>
+					
+					<td class="next">
+													<a href="http://www.metal-archives.com/albums/St%C3%BCrm_Kommand/United_by_Blood%2C_Gathered_by_Iron/305025" title="United by Blood, Gathered by Iron (Split)">United by Blood, Gathered by Iron</a><br />(2011)
+											</td>
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/St%C3%BCrm_Kommand/United_by_Blood%2C_Gathered_by_Iron/305025" title="United by Blood, Gathered by Iron (Split)">></a> </td>
+				</tr>
+					</table>
+			<table cellspacing="1" cellpadding="1" width="262" class="chronology">
+			<tr class="hidden">
+				<th class="spacer"></th>
+				<th colspan="2"></th>
+				<th class="spacer"></th>
+			</tr>
+							<tr>
+					<th colspan="4"><span>Qassam</span> discography (misc)</th>
+				</tr>
+				<tr class="prevNext">
+					<td class="arrows"> </td>
+					<td class="prev">
+											</td>
+					
+					<td class="next">
+													<a href="http://www.metal-archives.com/albums/Qassam/Combat-ritual_ReHEARSEal_-_Possession_into_Exploding_and_Devastation/390562" title="Combat-ritual ReHEARSEal / Possession into Exploding and Devastation (Split)">Combat-ritual ReHEARSEal / Possession into Exploding and Devastation</a><br />(2011)
+											</td>
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Qassam/Combat-ritual_ReHEARSEal_-_Possession_into_Exploding_and_Devastation/390562" title="Combat-ritual ReHEARSEal / Possession into Exploding and Devastation (Split)">></a> </td>
+				</tr>
+										<tr>
+					<th colspan="4"><span>Qassam</span> discography (all)</th>
+				</tr>
+				<tr class="prevNext">
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Qassam/Promo_2011/341372" title="Promo 2011 (Demo)"><</a> </td>
+					<td class="prev">
+													<a href="http://www.metal-archives.com/albums/Qassam/Promo_2011/341372" title="Promo 2011 (Demo)">Promo 2011</a><br />(2011)
+											</td>
+					
+					<td class="next">
+													<a href="http://www.metal-archives.com/albums/Qassam/Combat-ritual_ReHEARSEal_-_Possession_into_Exploding_and_Devastation/390562" title="Combat-ritual ReHEARSEal / Possession into Exploding and Devastation (Split)">Combat-ritual ReHEARSEal / Possession into Exploding and Devastation</a><br />(2011)
+											</td>
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Qassam/Combat-ritual_ReHEARSEal_-_Possession_into_Exploding_and_Devastation/390562" title="Combat-ritual ReHEARSEal / Possession into Exploding and Devastation (Split)">></a> </td>
+				</tr>
+					</table>
+	
+		
+	</div>
+
+<div id="album_content">
+	<div class="tool_strip right">
+		<ul>
+			          		<li><a title="Report a mistake or additional information for this page" href="javascript:popupReportDialog(4, 377927);" class="btn_report_error writeAction"> </a></li>
+      		          	<li>
+	          		          		<a href="#" title="Back to Stürm Kommand / Qassam" class="btn_back" id="bandBackBtn"> </a>
+	          	          	</li>
+        </ul>
+    </div>
+    <!-- ********** ALBUM IMFO ********** -->
+    <div id="album_info">
+		<!-- Headers -->
+			<h1 class="album_name"><a href="http://www.metal-archives.com/albums/St%C3%BCrm_Kommand_-_Qassam/Qassam-St%C3%BCrm_Kommand/377927">Qassam/Stürm Kommand</a></h1>
+	<h2 class="band_name"><a href="http://www.metal-archives.com/bands/St%C3%BCrm_Kommand/53763">Stürm Kommand</a> / <a href="http://www.metal-archives.com/bands/Qassam/3540341876">Qassam</a></h2>
+
+                <!-- Error / OK messages -->
+        <div class="clear block_spacer_5"></div>
+        <div id="message"> </div>
+        <!-- Album details -->
+        <div class="clear block_spacer_20"></div>
+        	<dl class="float_left">
+	          <dt>Type:</dt>
+	          <dd>Split</dd>
+	          <dt>Release date:</dt>
+	          <dd>2011</dd>
+			  <dt>Catalog ID:</dt>
+	          <dd>N/A</dd>
+			  			  	        </dl>
+			<dl class="float_right">
+	          <dt>Label:</dt>
+	          <dd>Independent</dd>
+			  <dt>Format:</dt>
+	          <dd>Cassette</dd>
+			  	          <dt>Reviews:</dt>
+	          <dd>
+									None yet
+					          </dd>
+	        </dl>
+      </div>        
+      <div id="album_tabs" class="clear tabs block_spacer_top_20 ui-tabs no-js">
+          <ul class="ui-tabs-nav">
+            <li><a href="#album_tabs_tracklist">Songs</a></li>
+            <li><a href="#album_tabs_lineup">Lineup</a></li>
+			            <li><a href="#album_tabs_reviews">Reviews</a></li>            <li><a href="#album_tabs_notes">Additional notes</a></li>                      </ul>
+          <!-- ***** Songs *******-->
+          <div id="album_tabs_tracklist" class="ui-tabs-hide">
+            <div id="album_songs" class="tabs2lvl">
+              <!--<div class="tool_strip top right">
+                <ul>
+                  <li><a href="#" class="btn_add">Add</a></li>
+                </ul>
+              </div>-->
+            </div>
+            <div class="ui-tabs-panel-content block_spacer_top_20">
+				<script type="text/javascript">
+function toggleLyrics(songId) {
+    var lyricsRow = $('#song' + songId);
+    lyricsRow.toggle();
+    var lyrics = $('#lyrics_' + songId);
+	if (lyrics.html() == '(loading lyrics...)') {
+    	var realId = songId;
+		if(!$.isNumeric(songId.substring(songId.length -1, songId.length))) {
+			realId = songId.substring(0, songId.length -1);
+		}
+		lyrics.load(URL_SITE + "release/ajax-view-lyrics/id/" + realId);
+    }
+    // toggle link
+    var linkLabel = "lyrics";
+    $("#lyricsButton" + songId).text(lyricsRow.css("display") == "none" ? "Show " + linkLabel : "Hide " + linkLabel);
+    return false;
+}
+
+</script>
+
+<table class="display table_lyrics" cellpadding="0" cellspacing="0">
+	<tbody>
+		
+																				
+					
+										
+				
+		
+		
+																				<tr class="sideRow">
+												<td colspan="4">Side A</td>
+					</tr>
+													<tr class="even">
+				<td width="20"><a name="2623319A" class="anchor"> </a>1.</td>
+				<td class="wrapWords">
+																									Qassam - 
+																Intro
+				</td>
+				<td align="right">01:29</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623319A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623319A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="2623320A" class="anchor"> </a>2.</td>
+				<td class="wrapWords">
+																									Qassam - 
+																Six Millions More...
+				</td>
+				<td align="right">01:02</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623320A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623320A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="2623321A" class="anchor"> </a>3.</td>
+				<td class="wrapWords">
+																									Qassam - 
+																QaSSam
+				</td>
+				<td align="right">02:12</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623321A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623321A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="2623322A" class="anchor"> </a>4.</td>
+				<td class="wrapWords">
+																									Qassam - 
+																T.W.H.A.F.W.I.H.
+				</td>
+				<td align="right">01:19</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623322A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623322A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="2623323A" class="anchor"> </a>5.</td>
+				<td class="wrapWords">
+																									Qassam - 
+																SPID (Korrozia Metalla Cover)
+				</td>
+				<td align="right">02:24</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623323A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623323A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="2623324A" class="anchor"> </a>6.</td>
+				<td class="wrapWords">
+																									Qassam - 
+																Death to Everything
+				</td>
+				<td align="right">02:45</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623324A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623324A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="2623325A" class="anchor"> </a>7.</td>
+				<td class="wrapWords">
+																									Qassam - 
+																Satans Servants
+				</td>
+				<td align="right">02:52</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623325A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623325A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="2623326A" class="anchor"> </a>8.</td>
+				<td class="wrapWords">
+																									Qassam - 
+																Blasphemer (Sodom Cover)
+				</td>
+				<td align="right">02:59</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623326A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623326A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="2623327A" class="anchor"> </a>9.</td>
+				<td class="wrapWords">
+																									Qassam - 
+																War Criminals
+				</td>
+				<td align="right">02:39</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623327A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623327A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="2623328A" class="anchor"> </a>10.</td>
+				<td class="wrapWords">
+																									Qassam - 
+																Atomic Sun Is Rising
+				</td>
+				<td align="right">03:08</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623328A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623328A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="2623329A" class="anchor"> </a>11.</td>
+				<td class="wrapWords">
+																									Qassam - 
+																A Vér Kötelez (Archivum Cover)
+				</td>
+				<td align="right">02:19</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623329A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623329A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="2623330A" class="anchor"> </a>12.</td>
+				<td class="wrapWords">
+																									Qassam - 
+																QaSSam
+				</td>
+				<td align="right">02:28</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623330A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623330A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="2623331A" class="anchor"> </a>13.</td>
+				<td class="wrapWords">
+																									Stürm Kommand - 
+																Total Warfare Against the Abominable Race and Their Servants
+				</td>
+				<td align="right">02:06</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623331A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623331A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="2623332A" class="anchor"> </a>14.</td>
+				<td class="wrapWords">
+																									Stürm Kommand - 
+																Panzers Rolling Over the Putrid Corpses of Our Enemies
+				</td>
+				<td align="right">02:09</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623332A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623332A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="2623333A" class="anchor"> </a>15.</td>
+				<td class="wrapWords">
+																									Stürm Kommand - 
+																The Final (True) Holocaust
+				</td>
+				<td align="right">01:33</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623333A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623333A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="2623334A" class="anchor"> </a>16.</td>
+				<td class="wrapWords">
+																									Stürm Kommand - 
+																Killing Your Filthy Children with Menora Bavonet
+				</td>
+				<td align="right">01:11</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623334A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623334A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="2623335A" class="anchor"> </a>17.</td>
+				<td class="wrapWords">
+																									Stürm Kommand - 
+																J. Destruction (Holocaustial Slaughter)
+				</td>
+				<td align="right">01:56</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623335A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623335A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="2623336A" class="anchor"> </a>18.</td>
+				<td class="wrapWords">
+																									Stürm Kommand - 
+																Annihilation Kommand (Holocaustial Slaughter)
+				</td>
+				<td align="right">01:55</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623336A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623336A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="2623337A" class="anchor"> </a>19.</td>
+				<td class="wrapWords">
+																									Stürm Kommand - 
+																Hóhér (Fantom Cover)
+				</td>
+				<td align="right">02:27</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623337A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623337A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="2623338A" class="anchor"> </a>20.</td>
+				<td class="wrapWords">
+																									Stürm Kommand - 
+																Mivapla Tonhs Tab Havkitah
+				</td>
+				<td align="right">01:54</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623338A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623338A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="2623339A" class="anchor"> </a>21.</td>
+				<td class="wrapWords">
+																									Stürm Kommand - 
+																Shalom Titus, Shalom!
+				</td>
+				<td align="right">02:01</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623339A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623339A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="2623340A" class="anchor"> </a>22.</td>
+				<td class="wrapWords">
+																									Stürm Kommand - 
+																Satan Commands (Poison Cover)
+				</td>
+				<td align="right">03:23</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623340A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623340A">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="2623341A" class="anchor"> </a>23.</td>
+				<td class="wrapWords">
+																									Stürm Kommand - 
+																Mass-Murder Ritual in the Name of Our Sacred Cause
+				</td>
+				<td align="right">01:49</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song2623341A" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_2623341A">(loading lyrics...)</td>
+			</tr>
+		
+									<tr>
+				<td colspan="2">&nbsp;</td>
+				<td align="right"><strong>50:00</strong></td>
+				<td>&nbsp;</td>
+			</tr>
+				</tbody>
+</table>
+            </div>
+          </div>
+          <!-- //***** Songs *******-->
+          <!-- **** Lineup ******-->
+          
+        <div id="album_tabs_lineup">
+	    	<div id="album_members" class="tabs2lvl">
+	    		
+	    							<ul>
+		            			            	<li><a href="#album_members_lineup">Band members</a></li>	            			            				            </ul>
+		            	            		            				            <!-- Album members-->
+			            <div id="album_members_lineup">
+			                <div class="ui-tabs-panel-content">
+			                    	<em>(None)</em>
+
+			                </div>
+			            </div>
+		            							            	             
+	        </div>
+	    </div>
+          <!-- //**** lineup ******-->
+		  
+		<!-- **** Other versions ****-->
+		<!-- AJAX -->
+		<!-- //**** Other versions ****-->
+		  
+          <!-- **** Reviews ******-->
+                <div id="album_tabs_reviews" class="ui-tabs-hide">
+            <div id="album_reviews" class="tabs2lvl">
+              <div class="tool_strip top right writeAction">
+              		                <ul>
+	                  <li><a href="http://www.metal-archives.com/review/write/releaseId/377927" class="btn_add">Add</a></li>
+	                </ul>
+                              </div>
+            </div>
+            <div class="ui-tabs-panel-content block_spacer_top_36">
+                        	There are no reviews for Qassam/Stürm Kommand yet. 
+            		            			<span class="writeAction">You can <a href="http://www.metal-archives.com/review/write/releaseId/377927">write</a> one.</span>
+        			                        </div>
+          </div>
+          <!-- //**** Reviews ******-->
+                          	<!-- ****** Additional notes *******-->
+	          <div id="album_tabs_notes" class="ui-tabs-hide">
+	            <div id="album_notes" class="tabs2lvl"></div>
+	            <div class="ui-tabs-panel-content  block_spacer_top_20">
+	              <p class="block_spacer_20">Tape limited 100 handnumbered copies.</p>
+				  				  	            </div>
+	          </div>
+          	<!-- //****** Additional notes *******-->
+                  </div>
+        <!--**** Footer ***-->
+<div id="auditTrail">
+	<table>
+		<tr>
+			<td>Added by: <a href="http://www.metal-archives.com/users/Gravelander89" class="profileMenu">Gravelander89</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/TARROTH" class="profileMenu">TARROTH</a></td>
+		</tr>
+		<tr>
+			<td>Added on: 2013-05-28 03:57:51</td>
+			<td align="right">Last modified on: 2014-06-05 15:23:27</td>
+		</tr>
+		<tr>
+			<td valign="top">
+				<a href="http://www.metal-archives.com/history/view/type/release/id/377927">View update history</a> 
+							</td>
+			<td align="right" valign="top">
+											</td>
+		</tr>
+			</table>
+</div>
+    <!-- // ********** ALBUM IMFO ********** -->
+</div>
+	        </div>
+	    </div>
+	</body>
+</html>

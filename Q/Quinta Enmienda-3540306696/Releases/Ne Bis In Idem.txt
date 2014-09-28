@@ -1,0 +1,600 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Quinta Enmienda - Ne Bis In Idem - Encyclopaedia Metallum: The Metal Archives</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+					<link rel="stylesheet" type="text/css" href="/min/index.php?g=css" />
+				
+					<script type="text/javascript" src="/min/index.php?g=js"></script>
+				<script type="text/javascript">
+			var URL_SITE	= 'http://www.metal-archives.com/';
+			var URL_IMAGES	= 'http://www.metal-archives.com/images/';
+			var URL_CSS		= 'http://www.metal-archives.com/css/';
+			$(document).ready(function() {
+				var maxHeightScroll = 600;
+				var maxWidthScroll = 1280;
+				if ($(window).height() <= maxHeightScroll || $(window).width() <= maxWidthScroll) {
+					$("#header, #left_col").css("position", "absolute");
+				}
+				$(document).on('click', '.profileMenu', toggleProfileMenu);
+				$('.image').click(zoomImage).blur(closeImage); // Image zoom
+												var anchor = window.location.hash;
+				if (anchor) { // try to load appropriate tab from anchor
+					if (!$(anchor) || !$(anchor).html()) { // no element with corresponding ID; look at tab title
+						log = '';
+						$('.tabs > ul > li').each(function(k, tab) {
+							var tabLink = $('a', tab).attr('title');
+							if (tabLink && tabLink != 'undefined' && (tabLink == anchor.substr(1) || tabLink == anchor.substr(1).replace('_', ' '))) {
+								$('.tabs').tabs( { active: k } );
+							}
+						});
+					}
+				}
+			});
+
+
+		</script>
+		<noscript>
+			<style type="text/css">
+				.no-js { display: block !important; }
+			</style>
+		</noscript>
+		
+		<!--[if lt IE 8]>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+			 <link rel="stylesheet" type="text/css" href="http://www.metal-archives.com/css/default/oldie.css" />
+		<![endif]-->		
+
+		<script type="text/javascript">
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-4046749-4']);
+			  _gaq.push(['_trackPageview']);
+
+			  (function() {
+			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+		</script>
+	</head>
+	<body >
+		<div id="wrapper">
+	        <div id="header">
+	            <a href="http://www.metal-archives.com/" id="MA_logo">Metal Archives</a>
+				<div class="clear loading"><img src="http://www.metal-archives.com/images/loading.gif" alt="loading" width="12" height="12" /> loading...</div>
+	            <div id="search_box">
+		            <form id="search_form" action="http://www.metal-archives.com/search" method="get">
+						<div>
+							<label>Search:</label><br/>
+							<input name="searchString" type="text" id="searchQueryBox" size="25" value="" tabindex="1" />
+							<select name="type" tabindex="2">
+								<option value="band_name">Band name</option>
+								<option value="band_genre">Music genre</option>
+								<option value="band_themes">Lyrical themes</option>
+								<option value="album_title">Album title</option>
+								<option value="song_title">Song title</option>
+								<option value="label_name">Label</option>
+								<option value="artist_alias">Artist</option>
+								<option value="user_name">User profile</option>
+								<option value="google">Google</option>
+							</select>
+							<br/>
+							<a href="http://www.metal-archives.com/search/advanced/?searchString=&type=" class="float_left" tabindex="4">Advanced search</a>
+							<button type="submit" class="btn_submit float_right" tabindex="3">Submit</button>
+						</div>
+		            </form>
+		        </div>
+	            
+	            <div id="top_menu_box">
+	                <ul class="menu_style_1">
+	                    <li><a href="http://www.metal-archives.com/content/help">Help</a></li>
+						<li><a href="http://www.metal-archives.com/content/rules">Rules</a></li>
+						<li><a href="http://www.metal-archives.com/board/" target="_top">Forum</a></li>
+	                </ul>
+	                <ul class="menu_style_2">
+						<li><a href="http://www.metal-archives.com/content/faq">FAQ</a></li>
+												<li><a href="http://www.metal-archives.com/content/support">Support Us</a></li>
+	                    <li><a href="http://www.metal-archives.com/content/tools">Add-ons</a></li>
+	              </ul>
+	            </div>        
+	        </div>
+	        <div id="left_col">
+	            <div id="member_box">
+	            		            				                <form name="login_form" id="login_form" action="http://www.metal-archives.com/authentication/login" method="post">
+							<div>
+								<label>Username</label><br/>
+								<input type="text" name="loginUsername" size="20" />
+								<label>Password</label><br/>
+								<input type="password" name="loginPassword" size="20" />
+								<input type="hidden" name="origin" value="/albums/Quinta_Enmienda/Ne_Bis_In_Idem/278753" />
+								<button type="submit" class="btn_login float_right">Login</button>
+							</div>
+		                </form>
+		                <a href="http://www.metal-archives.com/user/signup" class="float-left writeAction">Register</a>  
+		                <span class="float_right"><a href="http://www.metal-archives.com/user/forgot-password" class="float-left writeAction">Forgot login?</a>  </span>
+						<div class="clear"> </div>
+		            	            </div>
+	            <div id="left_menu_box">
+	            		                <ul class="menu_style_3 block_spacer_20">
+	                	<li>
+	                		Bands 
+	                		<ul>
+			                    <li><a href="http://www.metal-archives.com/browse/letter">alphabetical</a></li>
+			                    <li><a href="http://www.metal-archives.com/browse/country">country</a></li>
+			                    <li><a href="http://www.metal-archives.com/browse/genre">genre</a></li>
+	                    	</ul>
+	                    </li>
+	                    <li>
+	                    	Labels
+	                    	<ul>
+			                    <li><a href="http://www.metal-archives.com/label">alphabetical</a></li>
+			                    <li><a href="http://www.metal-archives.com/label/country">country</a></li>
+	                    	</ul>
+	                    </li>
+	                    <li><a href="http://www.metal-archives.com/review/browse">Reviews</a></li>
+	                </ul>
+	                <ul class="menu_style_3 block_spacer_20">
+	                    <li><a href="http://www.metal-archives.com/artist/rip">R.I.P.</a></li>
+	                    <li><a href="http://www.metal-archives.com/band/random">Random Band</a></li>
+	                    <li><a href="http://www.metal-archives.com/user/list">User rankings</a></li>
+	                	<li><a href="http://www.metal-archives.com/news">News archive</a></li>
+					</ul>
+					 <ul class="menu_style_3 ornement_30">
+	                    <li><a href="http://www.metal-archives.com/report/list">Reports</a></li>
+	                    <li><a href="http://www.metal-archives.com/todo">Contribute / To do</a></li>
+	                </ul>
+	            </div>
+	            <div id="left_text_box">
+	           		<p class="small_text center"> &copy; 2002-2014<br/>Encyclopaedia Metallum </p>
+					<p class="small_text center">Best viewed<br /> <a href="http://www.getfirefox.com" target="_blank">without</a> Internet Explorer, <br/>in 1280 x 960 resolution<br/> or higher.</p> 
+	            </div>       
+	        </div>
+	        <div id="content_wrapper">
+				<script type="text/javascript" src="http://www.metal-archives.com/js/jquery/jquery.form.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		$(".no-js").removeClass("no-js");
+		$('#album_tabs').tabs({ beforeLoad: cacheTab }).show();
+		$('#album_members').tabs();
+		$('.albumMenu').click(toggleAlbumMenu);
+									toggleLyrics(0);
+			});
+	
+	function hideToolMenu(event) {
+		 $('.toolMenu-content').hide();
+	}
+    
+    
+</script>
+
+<div id="album_sidebar">
+
+	<a href="http://www.metal-archives.com/bands/Quinta_Enmienda/3540306696#band_tab_discography">Quinta Enmienda</a>
+	
+						> Ne Bis In Idem
+					
+			<!-- *** Album cover *** -->
+		<div class="album_img">
+			<a class="image" id="cover" title="Quinta Enmienda - Ne Bis In Idem" href="http://www.metal-archives.com/images/2/7/8/7/278753.jpg"><img src="http://www.metal-archives.com/images/2/7/8/7/278753.jpg" title="Click to zoom" alt="Quinta Enmienda - Ne Bis In Idem" border="0" /></a>
+		</div>
+			
+			<!-- *** Affiliation block *** -->
+					<div id="affiliation">
+			<span class="title">Buy from...</span>
+			<br />
+			<ul id="buyLinks" class="menu_style_5">
+													<li>
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=29&rid=278753">Search on eBay</a> 
+						 
+							more... <a href="#more" onclick="$('#sub29').toggle(); return false;">>></a><br />
+							<ul id="sub29" style="display: none; margin-top: 0px; margin-bottom: 0px;">
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=39&rid=278753">Search on Half.com</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=23&rid=278753">eBay Canada</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=25&rid=278753">eBay UK</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=24&rid=278753">eBay France</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=37&rid=278753">eBay Spain</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=35&rid=278753">eBay Belgium</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=26&rid=278753">eBay Netherlands</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=27&rid=278753">eBay Italy</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=28&rid=278753">eBay Australia</a></li>
+															</ul>
+											</li>
+									<li>
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=7&rid=278753">Search on Gemm.com</a> 
+											</li>
+							</ul>
+		</div>
+	
+		
+		<!-- *** Discography / Chronology *** -->
+		
+			<table cellspacing="1" cellpadding="1" width="262" class="chronology">
+			<tr class="hidden">
+				<th class="spacer"></th>
+				<th colspan="2"></th>
+				<th class="spacer"></th>
+			</tr>
+										<tr>
+					<th colspan="4"><span>Quinta Enmienda</span> discography (all)</th>
+				</tr>
+				<tr class="prevNext">
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quinta_Enmienda/Quinta_Enmienda_%28Single%29/273426" title="Quinta Enmienda (Single) (Single)"><</a> </td>
+					<td class="prev">
+													<a href="http://www.metal-archives.com/albums/Quinta_Enmienda/Quinta_Enmienda_%28Single%29/273426" title="Quinta Enmienda (Single) (Single)">Quinta Enmienda (Single)</a><br />(2010)
+											</td>
+					
+					<td class="next">
+											</td>
+					<td class="arrows"> </td>
+				</tr>
+					</table>
+	
+		
+	</div>
+
+<div id="album_content">
+	<div class="tool_strip right">
+		<ul>
+			          		<li><a title="Report a mistake or additional information for this page" href="javascript:popupReportDialog(4, 278753);" class="btn_report_error writeAction"> </a></li>
+      		          	<li>
+	          		          		<a href="http://www.metal-archives.com/bands/Quinta_Enmienda/3540306696" title="Back to Quinta Enmienda" class="btn_back"> </a>
+	      		          	</li>
+        </ul>
+    </div>
+    <!-- ********** ALBUM IMFO ********** -->
+    <div id="album_info">
+		<!-- Headers -->
+			<h1 class="album_name"><a href="http://www.metal-archives.com/albums/Quinta_Enmienda/Ne_Bis_In_Idem/278753">Ne Bis In Idem</a></h1>
+	<h2 class="band_name"><a href="http://www.metal-archives.com/bands/Quinta_Enmienda/3540306696">Quinta Enmienda</a></h2>
+
+                <!-- Error / OK messages -->
+        <div class="clear block_spacer_5"></div>
+        <div id="message"> </div>
+        <!-- Album details -->
+        <div class="clear block_spacer_20"></div>
+        	<dl class="float_left">
+	          <dt>Type:</dt>
+	          <dd>Full-length</dd>
+	          <dt>Release date:</dt>
+	          <dd>May 21st, 2010</dd>
+			  <dt>Catalog ID:</dt>
+	          <dd>N/A</dd>
+			  			  	        </dl>
+			<dl class="float_right">
+	          <dt>Label:</dt>
+	          <dd>Independent</dd>
+			  <dt>Format:</dt>
+	          <dd>Unknown</dd>
+			  	          <dt>Reviews:</dt>
+	          <dd>
+									None yet
+					          </dd>
+	        </dl>
+      </div>        
+      <div id="album_tabs" class="clear tabs block_spacer_top_20 ui-tabs no-js">
+          <ul class="ui-tabs-nav">
+            <li><a href="#album_tabs_tracklist">Songs</a></li>
+            <li><a href="#album_tabs_lineup">Lineup</a></li>
+			            <li><a href="#album_tabs_reviews">Reviews</a></li>                                  </ul>
+          <!-- ***** Songs *******-->
+          <div id="album_tabs_tracklist" class="ui-tabs-hide">
+            <div id="album_songs" class="tabs2lvl">
+              <!--<div class="tool_strip top right">
+                <ul>
+                  <li><a href="#" class="btn_add">Add</a></li>
+                </ul>
+              </div>-->
+            </div>
+            <div class="ui-tabs-panel-content block_spacer_top_20">
+				<script type="text/javascript">
+function toggleLyrics(songId) {
+    var lyricsRow = $('#song' + songId);
+    lyricsRow.toggle();
+    var lyrics = $('#lyrics_' + songId);
+	if (lyrics.html() == '(loading lyrics...)') {
+    	var realId = songId;
+		if(!$.isNumeric(songId.substring(songId.length -1, songId.length))) {
+			realId = songId.substring(0, songId.length -1);
+		}
+		lyrics.load(URL_SITE + "release/ajax-view-lyrics/id/" + realId);
+    }
+    // toggle link
+    var linkLabel = "lyrics";
+    $("#lyricsButton" + songId).text(lyricsRow.css("display") == "none" ? "Show " + linkLabel : "Hide " + linkLabel);
+    return false;
+}
+
+</script>
+
+<table class="display table_lyrics" cellpadding="0" cellspacing="0">
+	<tbody>
+		
+							
+					
+										
+				
+		
+		
+													<tr class="even">
+				<td width="20"><a name="1956877" class="anchor"> </a>1.</td>
+				<td class="wrapWords">
+										Intro
+				</td>
+				<td align="right">01:47</td>
+				<td nowrap="nowrap">&nbsp;
+									</td>
+			</tr>
+			<tr id="song1956877" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_1956877">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="1956878" class="anchor"> </a>2.</td>
+				<td class="wrapWords">
+										Mi libertad
+				</td>
+				<td align="right">05:12</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton1956878" href="#1956878" onclick="toggleLyrics('1956878'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song1956878" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_1956878">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="1956879" class="anchor"> </a>3.</td>
+				<td class="wrapWords">
+										El viejo código
+				</td>
+				<td align="right">04:55</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton1956879" href="#1956879" onclick="toggleLyrics('1956879'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song1956879" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_1956879">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="1956880" class="anchor"> </a>4.</td>
+				<td class="wrapWords">
+										Dulce prisión
+				</td>
+				<td align="right">04:59</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton1956880" href="#1956880" onclick="toggleLyrics('1956880'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song1956880" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_1956880">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="1956881" class="anchor"> </a>5.</td>
+				<td class="wrapWords">
+										Oscuro amanecer
+				</td>
+				<td align="right">06:41</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton1956881" href="#1956881" onclick="toggleLyrics('1956881'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song1956881" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_1956881">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="1956882" class="anchor"> </a>6.</td>
+				<td class="wrapWords">
+										Desde el infierno
+				</td>
+				<td align="right">06:12</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton1956882" href="#1956882" onclick="toggleLyrics('1956882'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song1956882" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_1956882">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="1956883" class="anchor"> </a>7.</td>
+				<td class="wrapWords">
+										Exiliado
+				</td>
+				<td align="right">05:18</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton1956883" href="#1956883" onclick="toggleLyrics('1956883'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song1956883" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_1956883">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="1956884" class="anchor"> </a>8.</td>
+				<td class="wrapWords">
+										Prisionero
+				</td>
+				<td align="right">03:55</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton1956884" href="#1956884" onclick="toggleLyrics('1956884'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song1956884" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_1956884">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="1956885" class="anchor"> </a>9.</td>
+				<td class="wrapWords">
+										Quinta Enmienda
+				</td>
+				<td align="right">09:33</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton1956885" href="#1956885" onclick="toggleLyrics('1956885'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song1956885" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_1956885">(loading lyrics...)</td>
+			</tr>
+		
+									<tr>
+				<td colspan="2">&nbsp;</td>
+				<td align="right"><strong>48:32</strong></td>
+				<td>&nbsp;</td>
+			</tr>
+				</tbody>
+</table>
+            </div>
+          </div>
+          <!-- //***** Songs *******-->
+          <!-- **** Lineup ******-->
+          
+        <div id="album_tabs_lineup">
+	    	<div id="album_members" class="tabs2lvl">
+	    		
+	    							<ul>
+		            			            	<li><a href="#album_members_lineup">Band members</a></li>	            			            				            </ul>
+		            	            		            				            <!-- Album members-->
+			            <div id="album_members_lineup">
+			                <div class="ui-tabs-panel-content">
+			                    								<table class="display lineupTable" cellpadding="0" cellspacing="0">
+																
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Miguel_Gonz%C3%A1lez/129609">Miguel Gonz&aacute;lez</a> 
+					
+									</td>
+				<td>
+											Vocals, Guitars (lead &amp; rhythm)									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Daniel_Mart%C3%ADnez/129611">Daniel Mart&iacute;nez</a> 
+					
+									</td>
+				<td>
+											Guitars (lead &amp; rhythm)									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Sergio_Mart%C3%ADnez/129613">Sergio Mart&iacute;nez</a> 
+					
+									</td>
+				<td>
+											Bass									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Iv%C3%A1n_M%C3%A9ndez/129614">Iv&aacute;n M&eacute;ndez</a> 
+					
+									</td>
+				<td>
+											Drums									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Patxi/129628">Patxi</a> 
+					
+									</td>
+				<td>
+											Keyboards									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Jes%C3%BAs_Mart%C3%ADn/129612">Jes&uacute;s Mart&iacute;n</a> 
+					
+									</td>
+				<td>
+											Keyboard Solo in track  9									</td>
+			</tr>
+						
+			</table>
+	
+			                </div>
+			            </div>
+		            							            	             
+	        </div>
+	    </div>
+          <!-- //**** lineup ******-->
+		  
+		<!-- **** Other versions ****-->
+		<!-- AJAX -->
+		<!-- //**** Other versions ****-->
+		  
+          <!-- **** Reviews ******-->
+                <div id="album_tabs_reviews" class="ui-tabs-hide">
+            <div id="album_reviews" class="tabs2lvl">
+              <div class="tool_strip top right writeAction">
+              		                <ul>
+	                  <li><a href="http://www.metal-archives.com/review/write/releaseId/278753" class="btn_add">Add</a></li>
+	                </ul>
+                              </div>
+            </div>
+            <div class="ui-tabs-panel-content block_spacer_top_36">
+                        	There are no reviews for Ne Bis In Idem yet. 
+            		            			<span class="writeAction">You can <a href="http://www.metal-archives.com/review/write/releaseId/278753">write</a> one.</span>
+        			                        </div>
+          </div>
+          <!-- //**** Reviews ******-->
+                        </div>
+        <!--**** Footer ***-->
+<div id="auditTrail">
+	<table>
+		<tr>
+			<td>Added by: <a href="http://www.metal-archives.com/users/Cyberquake" class="profileMenu">Cyberquake</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Tueur" class="profileMenu">Tueur</a></td>
+		</tr>
+		<tr>
+			<td>Added on: 2010-07-08 08:25:23</td>
+			<td align="right">Last modified on: 2013-08-31 16:36:48</td>
+		</tr>
+		<tr>
+			<td valign="top">
+				<a href="http://www.metal-archives.com/history/view/type/release/id/278753">View update history</a> 
+							</td>
+			<td align="right" valign="top">
+											</td>
+		</tr>
+			</table>
+</div>
+    <!-- // ********** ALBUM IMFO ********** -->
+</div>
+	        </div>
+	    </div>
+	</body>
+</html>

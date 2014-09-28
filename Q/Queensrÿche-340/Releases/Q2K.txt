@@ -1,0 +1,908 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Queensrÿche - Q2K - Encyclopaedia Metallum: The Metal Archives</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+					<link rel="stylesheet" type="text/css" href="/min/index.php?g=css" />
+				
+					<script type="text/javascript" src="/min/index.php?g=js"></script>
+				<script type="text/javascript">
+			var URL_SITE	= 'http://www.metal-archives.com/';
+			var URL_IMAGES	= 'http://www.metal-archives.com/images/';
+			var URL_CSS		= 'http://www.metal-archives.com/css/';
+			$(document).ready(function() {
+				var maxHeightScroll = 600;
+				var maxWidthScroll = 1280;
+				if ($(window).height() <= maxHeightScroll || $(window).width() <= maxWidthScroll) {
+					$("#header, #left_col").css("position", "absolute");
+				}
+				$(document).on('click', '.profileMenu', toggleProfileMenu);
+				$('.image').click(zoomImage).blur(closeImage); // Image zoom
+												var anchor = window.location.hash;
+				if (anchor) { // try to load appropriate tab from anchor
+					if (!$(anchor) || !$(anchor).html()) { // no element with corresponding ID; look at tab title
+						log = '';
+						$('.tabs > ul > li').each(function(k, tab) {
+							var tabLink = $('a', tab).attr('title');
+							if (tabLink && tabLink != 'undefined' && (tabLink == anchor.substr(1) || tabLink == anchor.substr(1).replace('_', ' '))) {
+								$('.tabs').tabs( { active: k } );
+							}
+						});
+					}
+				}
+			});
+
+
+		</script>
+		<noscript>
+			<style type="text/css">
+				.no-js { display: block !important; }
+			</style>
+		</noscript>
+		
+		<!--[if lt IE 8]>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+			 <link rel="stylesheet" type="text/css" href="http://www.metal-archives.com/css/default/oldie.css" />
+		<![endif]-->		
+
+		<script type="text/javascript">
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-4046749-4']);
+			  _gaq.push(['_trackPageview']);
+
+			  (function() {
+			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+		</script>
+	</head>
+	<body >
+		<div id="wrapper">
+	        <div id="header">
+	            <a href="http://www.metal-archives.com/" id="MA_logo">Metal Archives</a>
+				<div class="clear loading"><img src="http://www.metal-archives.com/images/loading.gif" alt="loading" width="12" height="12" /> loading...</div>
+	            <div id="search_box">
+		            <form id="search_form" action="http://www.metal-archives.com/search" method="get">
+						<div>
+							<label>Search:</label><br/>
+							<input name="searchString" type="text" id="searchQueryBox" size="25" value="" tabindex="1" />
+							<select name="type" tabindex="2">
+								<option value="band_name">Band name</option>
+								<option value="band_genre">Music genre</option>
+								<option value="band_themes">Lyrical themes</option>
+								<option value="album_title">Album title</option>
+								<option value="song_title">Song title</option>
+								<option value="label_name">Label</option>
+								<option value="artist_alias">Artist</option>
+								<option value="user_name">User profile</option>
+								<option value="google">Google</option>
+							</select>
+							<br/>
+							<a href="http://www.metal-archives.com/search/advanced/?searchString=&type=" class="float_left" tabindex="4">Advanced search</a>
+							<button type="submit" class="btn_submit float_right" tabindex="3">Submit</button>
+						</div>
+		            </form>
+		        </div>
+	            
+	            <div id="top_menu_box">
+	                <ul class="menu_style_1">
+	                    <li><a href="http://www.metal-archives.com/content/help">Help</a></li>
+						<li><a href="http://www.metal-archives.com/content/rules">Rules</a></li>
+						<li><a href="http://www.metal-archives.com/board/" target="_top">Forum</a></li>
+	                </ul>
+	                <ul class="menu_style_2">
+						<li><a href="http://www.metal-archives.com/content/faq">FAQ</a></li>
+												<li><a href="http://www.metal-archives.com/content/support">Support Us</a></li>
+	                    <li><a href="http://www.metal-archives.com/content/tools">Add-ons</a></li>
+	              </ul>
+	            </div>        
+	        </div>
+	        <div id="left_col">
+	            <div id="member_box">
+	            		            				                <form name="login_form" id="login_form" action="http://www.metal-archives.com/authentication/login" method="post">
+							<div>
+								<label>Username</label><br/>
+								<input type="text" name="loginUsername" size="20" />
+								<label>Password</label><br/>
+								<input type="password" name="loginPassword" size="20" />
+								<input type="hidden" name="origin" value="/albums/Queensr%C3%BFche/Q2K/1719" />
+								<button type="submit" class="btn_login float_right">Login</button>
+							</div>
+		                </form>
+		                <a href="http://www.metal-archives.com/user/signup" class="float-left writeAction">Register</a>  
+		                <span class="float_right"><a href="http://www.metal-archives.com/user/forgot-password" class="float-left writeAction">Forgot login?</a>  </span>
+						<div class="clear"> </div>
+		            	            </div>
+	            <div id="left_menu_box">
+	            		                <ul class="menu_style_3 block_spacer_20">
+	                	<li>
+	                		Bands 
+	                		<ul>
+			                    <li><a href="http://www.metal-archives.com/browse/letter">alphabetical</a></li>
+			                    <li><a href="http://www.metal-archives.com/browse/country">country</a></li>
+			                    <li><a href="http://www.metal-archives.com/browse/genre">genre</a></li>
+	                    	</ul>
+	                    </li>
+	                    <li>
+	                    	Labels
+	                    	<ul>
+			                    <li><a href="http://www.metal-archives.com/label">alphabetical</a></li>
+			                    <li><a href="http://www.metal-archives.com/label/country">country</a></li>
+	                    	</ul>
+	                    </li>
+	                    <li><a href="http://www.metal-archives.com/review/browse">Reviews</a></li>
+	                </ul>
+	                <ul class="menu_style_3 block_spacer_20">
+	                    <li><a href="http://www.metal-archives.com/artist/rip">R.I.P.</a></li>
+	                    <li><a href="http://www.metal-archives.com/band/random">Random Band</a></li>
+	                    <li><a href="http://www.metal-archives.com/user/list">User rankings</a></li>
+	                	<li><a href="http://www.metal-archives.com/news">News archive</a></li>
+					</ul>
+					 <ul class="menu_style_3 ornement_30">
+	                    <li><a href="http://www.metal-archives.com/report/list">Reports</a></li>
+	                    <li><a href="http://www.metal-archives.com/todo">Contribute / To do</a></li>
+	                </ul>
+	            </div>
+	            <div id="left_text_box">
+	           		<p class="small_text center"> &copy; 2002-2014<br/>Encyclopaedia Metallum </p>
+					<p class="small_text center">Best viewed<br /> <a href="http://www.getfirefox.com" target="_blank">without</a> Internet Explorer, <br/>in 1280 x 960 resolution<br/> or higher.</p> 
+	            </div>       
+	        </div>
+	        <div id="content_wrapper">
+				<script type="text/javascript" src="http://www.metal-archives.com/js/jquery/jquery.form.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		$(".no-js").removeClass("no-js");
+		$('#album_tabs').tabs({ beforeLoad: cacheTab }).show();
+		$('#album_members').tabs();
+		$('.albumMenu').click(toggleAlbumMenu);
+		 $('#album_members').tabs( { active : 1 } );							toggleLyrics(0);
+			});
+	
+	function hideToolMenu(event) {
+		 $('.toolMenu-content').hide();
+	}
+    
+    
+</script>
+
+<div id="album_sidebar">
+
+	<a href="http://www.metal-archives.com/bands/Queensr%C3%BFche/340#band_tab_discography">Queensrÿche</a>
+	
+						> Q2K
+					
+			<!-- *** Album cover *** -->
+		<div class="album_img">
+			<a class="image" id="cover" title="Queensrÿche - Q2K" href="http://www.metal-archives.com/images/1/7/1/9/1719.jpg"><img src="http://www.metal-archives.com/images/1/7/1/9/1719.jpg" title="Click to zoom" alt="Queensrÿche - Q2K" border="0" /></a>
+		</div>
+			
+			<!-- *** Affiliation block *** -->
+					<div id="affiliation">
+			<span class="title">Buy from...</span>
+			<br />
+			<ul id="buyLinks" class="menu_style_5">
+													<li>
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=53&id=499145&rid=1719">No Remorse</a> 
+											</li>
+									<li>
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=8&id=74614&rid=1719">Amazon.com <img src="http://www.assoc-amazon.com/e/ir?t=encymetatheme-20&l=as2&o=1&a={ID}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a> 
+						 
+							more... <a href="#more" onclick="$('#sub8').toggle(); return false;">>></a><br />
+							<ul id="sub8" style="display: none; margin-top: 0px; margin-bottom: 0px;">
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=9&id=74614&rid=1719">Amazon UK <img src="http://www.assoc-amazon.co.uk/e/ir?t=encyclometa0e-21&l=as2&o=2&a={ID}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=10&id=74614&rid=1719">Amazon Canada <img src="http://www.assoc-amazon.ca/e/ir?t=encyclometall-20&l=as2&o=15&a={ID}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=11&id=74614&rid=1719">Amazon France <img src="http://www.assoc-amazon.fr/e/ir?t=encyclometall-21&l=as2&o=8&a={ID}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=12&id=74614&rid=1719">Amazon Germany <img src="http://www.assoc-amazon.de/e/ir?t=encyclometa0a-21&l=as2&o=3&a={ID}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a></li>
+															</ul>
+											</li>
+									<li>
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=29&rid=1719">Search on eBay</a> 
+						 
+							more... <a href="#more" onclick="$('#sub29').toggle(); return false;">>></a><br />
+							<ul id="sub29" style="display: none; margin-top: 0px; margin-bottom: 0px;">
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=39&rid=1719">Search on Half.com</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=23&rid=1719">eBay Canada</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=25&rid=1719">eBay UK</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=24&rid=1719">eBay France</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=37&rid=1719">eBay Spain</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=35&rid=1719">eBay Belgium</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=26&rid=1719">eBay Netherlands</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=27&rid=1719">eBay Italy</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=28&rid=1719">eBay Australia</a></li>
+															</ul>
+											</li>
+									<li>
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=7&rid=1719">Search on Gemm.com</a> 
+											</li>
+							</ul>
+		</div>
+	
+		
+		<!-- *** Discography / Chronology *** -->
+		
+			<table cellspacing="1" cellpadding="1" width="262" class="chronology">
+			<tr class="hidden">
+				<th class="spacer"></th>
+				<th colspan="2"></th>
+				<th class="spacer"></th>
+			</tr>
+							<tr>
+					<th colspan="4"><span>Queensrÿche</span> discography (main)</th>
+				</tr>
+				<tr class="prevNext">
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Hear_in_the_Now_Frontier/1718" title="Hear in the Now Frontier (Full-length)"><</a> </td>
+					<td class="prev">
+													<a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Hear_in_the_Now_Frontier/1718" title="Hear in the Now Frontier (Full-length)">Hear in the Now Frontier</a><br />(1997)
+											</td>
+					
+					<td class="next">
+													<a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Tribe/20233" title="Tribe (Full-length)">Tribe</a><br />(2003)
+											</td>
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Tribe/20233" title="Tribe (Full-length)">></a> </td>
+				</tr>
+										<tr>
+					<th colspan="4"><span>Queensrÿche</span> discography (all)</th>
+				</tr>
+				<tr class="prevNext">
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Axe_Killer_Collection/292756" title="Axe Killer Collection (Compilation)"><</a> </td>
+					<td class="prev">
+													<a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Axe_Killer_Collection/292756" title="Axe Killer Collection (Compilation)">Axe Killer Collection</a><br />(1999)
+											</td>
+					
+					<td class="next">
+													<a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Beside_You/162166" title="Beside You (Single)">Beside You</a><br />(2000)
+											</td>
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Beside_You/162166" title="Beside You (Single)">></a> </td>
+				</tr>
+					</table>
+	
+		
+	</div>
+
+<div id="album_content">
+	<div class="tool_strip right">
+		<ul>
+			          		<li><a title="Report a mistake or additional information for this page" href="javascript:popupReportDialog(4, 1719);" class="btn_report_error writeAction"> </a></li>
+      		          	<li>
+	          		          		<a href="http://www.metal-archives.com/bands/Queensr%C3%BFche/340" title="Back to Queensrÿche" class="btn_back"> </a>
+	      		          	</li>
+        </ul>
+    </div>
+    <!-- ********** ALBUM IMFO ********** -->
+    <div id="album_info">
+		<!-- Headers -->
+			<h1 class="album_name"><a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Q2K/1719">Q2K</a></h1>
+	<h2 class="band_name"><a href="http://www.metal-archives.com/bands/Queensr%C3%BFche/340">Queensrÿche</a></h2>
+
+                <!-- Error / OK messages -->
+        <div class="clear block_spacer_5"></div>
+        <div id="message"> </div>
+        <!-- Album details -->
+        <div class="clear block_spacer_20"></div>
+        	<dl class="float_left">
+	          <dt>Type:</dt>
+	          <dd>Full-length</dd>
+	          <dt>Release date:</dt>
+	          <dd>September 14th, 1999</dd>
+			  <dt>Catalog ID:</dt>
+	          <dd>83225-2</dd>
+			  				<dt>Version desc.:</dt>
+				<dd>US</dd>
+			  			  	        </dl>
+			<dl class="float_right">
+	          <dt>Label:</dt>
+	          <dd><a href="http://www.metal-archives.com/labels/Atlantic_Records/16#label_tabs_albums">Atlantic Records</a></dd>
+			  <dt>Format:</dt>
+	          <dd>CD</dd>
+			  	          <dt>Reviews:</dt>
+	          <dd>
+									9 <a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Q2K/1719/">reviews</a> (avg. 37%)
+					          </dd>
+	        </dl>
+      </div>        
+      <div id="album_tabs" class="clear tabs block_spacer_top_20 ui-tabs no-js">
+          <ul class="ui-tabs-nav">
+            <li><a href="#album_tabs_tracklist">Songs</a></li>
+            <li><a href="#album_tabs_lineup">Lineup</a></li>
+			<li><a href="http://www.metal-archives.com/release/ajax-versions/current/1719/parent/1719">Other versions</a></li>            <li><a href="#album_tabs_reviews">Reviews</a></li>            <li><a href="#album_tabs_notes">Additional notes</a></li>                      </ul>
+          <!-- ***** Songs *******-->
+          <div id="album_tabs_tracklist" class="ui-tabs-hide">
+            <div id="album_songs" class="tabs2lvl">
+              <!--<div class="tool_strip top right">
+                <ul>
+                  <li><a href="#" class="btn_add">Add</a></li>
+                </ul>
+              </div>-->
+            </div>
+            <div class="ui-tabs-panel-content block_spacer_top_20">
+				<script type="text/javascript">
+function toggleLyrics(songId) {
+    var lyricsRow = $('#song' + songId);
+    lyricsRow.toggle();
+    var lyrics = $('#lyrics_' + songId);
+	if (lyrics.html() == '(loading lyrics...)') {
+    	var realId = songId;
+		if(!$.isNumeric(songId.substring(songId.length -1, songId.length))) {
+			realId = songId.substring(0, songId.length -1);
+		}
+		lyrics.load(URL_SITE + "release/ajax-view-lyrics/id/" + realId);
+    }
+    // toggle link
+    var linkLabel = "lyrics";
+    $("#lyricsButton" + songId).text(lyricsRow.css("display") == "none" ? "Show " + linkLabel : "Hide " + linkLabel);
+    return false;
+}
+
+</script>
+
+<table class="display table_lyrics" cellpadding="0" cellspacing="0">
+	<tbody>
+		
+																				
+					
+										
+				
+		
+		
+													<tr class="even">
+				<td width="20"><a name="16490" class="anchor"> </a>1.</td>
+				<td class="wrapWords">
+										Falling Down
+				</td>
+				<td align="right">04:28</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton16490" href="#16490" onclick="toggleLyrics('16490'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song16490" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_16490">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="16491" class="anchor"> </a>2.</td>
+				<td class="wrapWords">
+										Sacred Ground
+				</td>
+				<td align="right">04:13</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton16491" href="#16491" onclick="toggleLyrics('16491'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song16491" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_16491">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="16492" class="anchor"> </a>3.</td>
+				<td class="wrapWords">
+										One Life
+				</td>
+				<td align="right">04:49</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton16492" href="#16492" onclick="toggleLyrics('16492'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song16492" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_16492">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="16493" class="anchor"> </a>4.</td>
+				<td class="wrapWords">
+										When the Rain Comes...
+				</td>
+				<td align="right">05:05</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton16493" href="#16493" onclick="toggleLyrics('16493'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song16493" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_16493">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="16494" class="anchor"> </a>5.</td>
+				<td class="wrapWords">
+										How Could I?
+				</td>
+				<td align="right">03:44</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton16494" href="#16494" onclick="toggleLyrics('16494'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song16494" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_16494">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="16495" class="anchor"> </a>6.</td>
+				<td class="wrapWords">
+										Beside You
+				</td>
+				<td align="right">05:14</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton16495" href="#16495" onclick="toggleLyrics('16495'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song16495" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_16495">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="16496" class="anchor"> </a>7.</td>
+				<td class="wrapWords">
+										Liquid Sky
+				</td>
+				<td align="right">04:54</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton16496" href="#16496" onclick="toggleLyrics('16496'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song16496" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_16496">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="16497" class="anchor"> </a>8.</td>
+				<td class="wrapWords">
+										Breakdown
+				</td>
+				<td align="right">04:11</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton16497" href="#16497" onclick="toggleLyrics('16497'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song16497" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_16497">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="16498" class="anchor"> </a>9.</td>
+				<td class="wrapWords">
+										Burning Man
+				</td>
+				<td align="right">03:42</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton16498" href="#16498" onclick="toggleLyrics('16498'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song16498" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_16498">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="16499" class="anchor"> </a>10.</td>
+				<td class="wrapWords">
+										Wot Kinda Man
+				</td>
+				<td align="right">03:15</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton16499" href="#16499" onclick="toggleLyrics('16499'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song16499" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_16499">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="16500" class="anchor"> </a>11.</td>
+				<td class="wrapWords">
+										The Right Side of My Mind
+				</td>
+				<td align="right">05:52</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton16500" href="#16500" onclick="toggleLyrics('16500'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song16500" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_16500">(loading lyrics...)</td>
+			</tr>
+		
+									<tr>
+				<td colspan="2">&nbsp;</td>
+				<td align="right"><strong>49:27</strong></td>
+				<td>&nbsp;</td>
+			</tr>
+				</tbody>
+</table>
+            </div>
+          </div>
+          <!-- //***** Songs *******-->
+          <!-- **** Lineup ******-->
+          
+        <div id="album_tabs_lineup">
+	    	<div id="album_members" class="tabs2lvl">
+	    		
+	    							<ul>
+		            	<li><a href="#album_all_members_lineup">Complete lineup</a></li>		            	<li><a href="#album_members_lineup">Band members</a></li>	            			            		<li><a href="#album_members_misc">Other staff</a></li>		            </ul>
+		            	            		            		<!-- All members -->
+	            		<div id="album_all_members_lineup">
+			                <div class="ui-tabs-panel-content">
+			                    								<table class="display lineupTable" cellpadding="0" cellspacing="0">
+																
+							
+															<tr class="lineupHeaders">
+							<td colspan="2" align="right">
+								Band members
+							</td>
+						</tr>
+										
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Geoff_Tate/7954">Geoff Tate</a> 
+					
+									</td>
+				<td>
+											Vocals									</td>
+			</tr>
+						
+								
+							
+														
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Kelly_Gray/29825">Kelly Gray</a> 
+					
+									</td>
+				<td>
+											Guitars									</td>
+			</tr>
+						
+								
+							
+														
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Michael_Wilton/29808">Michael Wilton</a> 
+					
+									</td>
+				<td>
+											Guitars									</td>
+			</tr>
+						
+								
+							
+														
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Eddie_Jackson/29810">Eddie Jackson</a> 
+					
+									</td>
+				<td>
+											Bass									</td>
+			</tr>
+						
+								
+							
+														
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Scott_Rockenfield/29813">Scott Rockenfield</a> 
+					
+									</td>
+				<td>
+											Drums									</td>
+			</tr>
+						
+								
+							
+															<tr class="lineupHeaders">
+							<td colspan="2" align="right">
+								Miscellaneous staff
+							</td>
+						</tr>
+										
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Kelly_Gray/29825">Kelly Gray</a> 
+					
+									</td>
+				<td>
+											Producer, 											Mixing									</td>
+			</tr>
+						
+								
+							
+														
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Jon_Plum/479147">Jon Plum</a> 
+					
+									</td>
+				<td>
+											Mixing									</td>
+			</tr>
+						
+								
+							
+														
+																						
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Eddy_Schreyer/14684">Eddy Schreyer</a> 
+					
+									</td>
+				<td>
+											Mastering									</td>
+			</tr>
+						
+			</table>
+	
+			                </div>
+			            </div>
+	            		            				            <!-- Album members-->
+			            <div id="album_members_lineup">
+			                <div class="ui-tabs-panel-content">
+			                    								<table class="display lineupTable" cellpadding="0" cellspacing="0">
+																
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Geoff_Tate/7954">Geoff Tate</a> 
+					
+									</td>
+				<td>
+											Vocals									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Kelly_Gray/29825">Kelly Gray</a> 
+					
+									</td>
+				<td>
+											Guitars									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Michael_Wilton/29808">Michael Wilton</a> 
+					
+									</td>
+				<td>
+											Guitars									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Eddie_Jackson/29810">Eddie Jackson</a> 
+					
+									</td>
+				<td>
+											Bass									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Scott_Rockenfield/29813">Scott Rockenfield</a> 
+					
+									</td>
+				<td>
+											Drums									</td>
+			</tr>
+						
+			</table>
+	
+			                </div>
+			            </div>
+		            							            			            <!-- Misc artists -->
+			            <div id="album_members_misc">
+			                <div class="ui-tabs-panel-content">
+			                    								<table class="display lineupTable" cellpadding="0" cellspacing="0">
+																
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Kelly_Gray/29825">Kelly Gray</a> 
+					
+									</td>
+				<td>
+											Producer, 											Mixing									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Jon_Plum/479147">Jon Plum</a> 
+					
+									</td>
+				<td>
+											Mixing									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Eddy_Schreyer/14684">Eddy Schreyer</a> 
+					
+									</td>
+				<td>
+											Mastering									</td>
+			</tr>
+						
+			</table>
+	
+			                </div>
+			            </div>
+		            	             
+	        </div>
+	    </div>
+          <!-- //**** lineup ******-->
+		  
+		<!-- **** Other versions ****-->
+		<!-- AJAX -->
+		<!-- //**** Other versions ****-->
+		  
+          <!-- **** Reviews ******-->
+                <div id="album_tabs_reviews" class="ui-tabs-hide">
+            <div id="album_reviews" class="tabs2lvl">
+              <div class="tool_strip top right writeAction">
+              		                <ul>
+	                  <li><a href="http://www.metal-archives.com/review/write/releaseId/1719" class="btn_add">Add</a></li>
+	                </ul>
+                              </div>
+            </div>
+            <div class="ui-tabs-panel-content block_spacer_top_36">
+                        	<table id="review_list" class="display" cellpadding="0" cellspacing="0">
+            		            			<tr class="odd">
+            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Q2K/1719/The_Ghoul/40130" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
+            				<td>Good for what it is</td>
+            				<td>68%</td>
+            				<td><a href="http://www.metal-archives.com/users/The_Ghoul" class="profileMenu">The_Ghoul</a></td>
+            				<td>February 21st, 2014</td>
+            			</tr>
+            		            			<tr class="even">
+            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Q2K/1719/Twisted_Psychology/194956" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
+            				<td>Scrape The Shit Off Your Shoes</td>
+            				<td>86%</td>
+            				<td><a href="http://www.metal-archives.com/users/Twisted_Psychology" class="profileMenu">Twisted_Psychology</a></td>
+            				<td>June 20th, 2013</td>
+            			</tr>
+            		            			<tr class="odd">
+            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Q2K/1719/autothrall/192699" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
+            				<td>QQ some more, sissies</td>
+            				<td>25%</td>
+            				<td><a href="http://www.metal-archives.com/users/autothrall" class="profileMenu">autothrall</a></td>
+            				<td>August 22nd, 2012</td>
+            			</tr>
+            		            			<tr class="even">
+            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Q2K/1719/natrix/4221" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
+            				<td>Like U2 and Matchbox 20?...</td>
+            				<td>10%</td>
+            				<td><a href="http://www.metal-archives.com/users/natrix" class="profileMenu">natrix</a></td>
+            				<td>July 18th, 2012</td>
+            			</tr>
+            		            			<tr class="odd">
+            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Q2K/1719/hells_unicorn/29518" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
+            				<td>Scorpion wins...Banality!!!</td>
+            				<td>13%</td>
+            				<td><a href="http://www.metal-archives.com/users/hells_unicorn" class="profileMenu">hells_unicorn</a></td>
+            				<td>April 7th, 2011</td>
+            			</tr>
+            		            			<tr class="even">
+            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Q2K/1719/The_CrY/211961" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
+            				<td>The End of a Fanbase</td>
+            				<td>60%</td>
+            				<td><a href="http://www.metal-archives.com/users/The_CrY" class="profileMenu">The_CrY</a></td>
+            				<td>November 17th, 2009</td>
+            			</tr>
+            		            			<tr class="odd">
+            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Q2K/1719/elfo19/141849" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
+            				<td>When Respectable Bands Go Bad</td>
+            				<td>10%</td>
+            				<td><a href="http://www.metal-archives.com/users/elfo19" class="profileMenu">elfo19</a></td>
+            				<td>April 30th, 2009</td>
+            			</tr>
+            		            			<tr class="even">
+            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Q2K/1719/Snxke/267" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
+            				<td>Weak...</td>
+            				<td>55%</td>
+            				<td><a href="http://www.metal-archives.com/users/Snxke" class="profileMenu">Snxke</a></td>
+            				<td>July 30th, 2004</td>
+            			</tr>
+            		            			<tr class="odd">
+            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Q2K/1719/jerkov/5370" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
+            				<td>Two Words: Shit Sandwich</td>
+            				<td>10%</td>
+            				<td><a href="http://www.metal-archives.com/users/jerkov" class="profileMenu">jerkov</a></td>
+            				<td>January 18th, 2004</td>
+            			</tr>
+            			            </table>
+                        </div>
+          </div>
+          <!-- //**** Reviews ******-->
+                          	<!-- ****** Additional notes *******-->
+	          <div id="album_tabs_notes" class="ui-tabs-hide">
+	            <div id="album_notes" class="tabs2lvl"></div>
+	            <div class="ui-tabs-panel-content  block_spacer_top_20">
+	              <p class="block_spacer_20"></p>
+				  					<p class="title_comment">Recording information:</p>
+					<p class="block_spacer_20">Recorded at London Bridge Studios, Seattle, Washington<br />
+Mastered at Oasis Mastering</p>
+				  				  					<p class="title_comment">Identifiers:</p>
+					<p>Barcode (Scanned): 075678322525</p>
+				  	            </div>
+	          </div>
+          	<!-- //****** Additional notes *******-->
+                  </div>
+        <!--**** Footer ***-->
+<div id="auditTrail">
+	<table>
+		<tr>
+			<td>Added by: (Unknown user)</td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/kalervon" class="profileMenu">kalervon</a></td>
+		</tr>
+		<tr>
+			<td>Added on: N/A</td>
+			<td align="right">Last modified on: 2014-08-15 23:40:36</td>
+		</tr>
+		<tr>
+			<td valign="top">
+				<a href="http://www.metal-archives.com/history/view/type/release/id/1719">View update history</a> 
+							</td>
+			<td align="right" valign="top">
+											</td>
+		</tr>
+			</table>
+</div>
+    <!-- // ********** ALBUM IMFO ********** -->
+</div>
+	        </div>
+	    </div>
+	</body>
+</html>
