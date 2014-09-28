@@ -80,6 +80,23 @@ def write_band_info(letter,band_name,link):
         band_page ='http://www.metal-archives.com/bands/%s/%s' % (band_name,band_id)
         releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
         similar_artists = 'http://www.metal-archives.com/band/ajax-recommendations/id/%s/showMoreSimilar/1' % band_id
+        band_description = 'http://www.metal-archives.com/band/read-more/id/%s' % band_id
+
+        file0 = os.path.join('./',"%s-%s-Description" %s (band_name,band_id))
+        descrption_file = open(file0,"w")
+        description_response = requests.get(band_description).content
+        soup = BeautifulSoup(description_response)
+        for description in soup:
+            description_file.write(description.get_text()+'\n')
+        description_file.close()
+
+
+        '''
+        #'Will be using this to start with the parsing of the band page:
+
+        for child in soup.find_all(id='band_content'):
+            print child.get_text()
+        '''
 
         file1 = os.path.join('./', "%s-%s.html" % (band_name,band_id))
         page_file = open(file1, "w")
