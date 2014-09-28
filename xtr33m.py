@@ -118,7 +118,7 @@ def write_band_info(letter,band_name,link):
                     similar_artist_file.write(child.get_text().encode('ascii','ignore')+'\n')
         similar_artist_file.close()
 
-        file3 = os.path.join('./', "%s-%s-r.encode('ascii','ignore')eleases.txt" % (band_name,band_id))
+        file3 = os.path.join('./', "%s-%s-releases.txt" % (band_name,band_id))
         releases_file = open(file3, "a")
         release_resp = requests.get(releases).content
         soup = BeautifulSoup(release_resp)
