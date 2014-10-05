@@ -61,7 +61,8 @@ def get_band_info():
             print band+'\n'+link+'\n'
 
 #This function takes the information from get_band_info() and dumps the txt from each band page.
-#The structure of the 'Extreme Archives' will be heavily influenced by the metal-archives
+#The structure of the 'Extreme Archives' will be heavily influenced by the metal-archives.
+#Need to modulairze different types of requests for future debugging
 def write_band_info(letter,band_name,link):
     band_id = link.split('/')[5]
     band_folder = band_name+'-'+band_id
@@ -82,6 +83,7 @@ def write_band_info(letter,band_name,link):
         similar_artists = 'http://www.metal-archives.com/band/ajax-recommendations/id/%s/showMoreSimilar/1' % band_id
         band_description = 'http://www.metal-archives.com/band/read-more/id/%s' % band_id
 
+        #Band Description
         file0 = os.path.join('./',"%s-%s-Description" % (band_name,band_id))
         description_file = open(file0,"w")
         description_response = requests.get(band_description).content
@@ -91,22 +93,24 @@ def write_band_info(letter,band_name,link):
             description_file.write(band_description.encode('ascii','ignore')+'\n')
         description_file.close()
 
+        #Band Content (lineup, country,origin, active status) NEEDS WORK
         file1 = os.path.join('./', "%s-%s-content.txt" % (band_name,band_id))
         page_file = open(file1, "a")
         page_file_response = requests.get(band_page).content
         soup = BeautifulSoup(page_file_response)
         for child in soup.find_all(id='band_content'):
-                band_name = child.find(class_='band_name').get_text()
-                print band_name
-                page_file.write(band_name.encode('ascii','ignore'))
-                band_stats = child.find(id='band_stats').get_text()
-                print band_stats
-                page_file.write(band_stats.encode('ascii','ignore')+'\n')
-                if child.find(id='band_tab_members_all') is not None:
-                    lineup = child.find(id='band_tab_members_all').get_text()
-                    page_file.write(lineup.encode('ascii','ignore')+'\n')
+            band_name = child.find(class_='band_name').get_text()
+            print band_name
+            page_file.write(band_name.encode('ascii','ignore'))
+            band_stats = child.find(id='band_stats').get_text()
+            print band_stats
+            page_file.write(band_stats.encode('ascii','ignore')+'\n')
+            if child.find(id='band_tab_members_all') is not None:
+                lineup = child.find(id='band_tab_members_all').get_text()
+                page_file.write(lineup.encode('ascii','ignore')+'\n')
         page_file.close()
 
+        #similar artists (Name, country of origin, genre)
         file2 = os.path.join('./', "%s-%s-similar-artists.txt" % (band_name,band_id))
         similar_artist_file = open(file2, "a")
         similar_artist_response = requests.get(similar_artists).content
@@ -118,6 +122,7 @@ def write_band_info(letter,band_name,link):
                     similar_artist_file.write(child.get_text().encode('ascii','ignore')+'\n')
         similar_artist_file.close()
 
+        #Getting release info (Type, year, title)
         file3 = os.path.join('./', "%s-%s-releases.txt" % (band_name,band_id))
         releases_file = open(file3, "a")
         release_resp = requests.get(releases).content
@@ -127,7 +132,8 @@ def write_band_info(letter,band_name,link):
             releases_file.write(release.get_text().encode('ascii','ignore')+'\n')
         releases_file.close()
 
-        #need to get albums, singles, demos, and other
+        #Dumping html for individual releases currently..need to extract data
+        #Get tracklisting, lineup info, times, release date etc.
         try:
             release_dir = 'Releases'
             os.makedirs(release_dir)
@@ -135,6 +141,7 @@ def write_band_info(letter,band_name,link):
             if not os.path.isdir(release_dir):
                 raise
 
+        #NEED TO PARSE THESE FILES
         os.chdir(release_dir)
         for release in soup.find_all('a',class_=['demo','album','single','other']):
             release_name = release.get_text().replace('/','\\')
