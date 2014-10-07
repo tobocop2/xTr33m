@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -278,14 +280,12 @@
 	          <dd>1986</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>006-20 1367 7</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>Netherlands (7'')</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
 	          <dd><a href="http://www.metal-archives.com/labels/EMI_America/3393#label_tabs_albums">EMI America</a></dd>
 			  <dt>Format:</dt>
-	          <dd>Vinyl</dd>
+	          <dd>7" vinyl</dd>
 			  	          <dt>Reviews:</dt>
 	          <dd>
 									None yet
@@ -491,7 +491,7 @@ function toggleLyrics(songId) {
 		</tr>
 		<tr>
 			<td>Added on: 2004-03-22 13:53:05</td>
-			<td align="right">Last modified on: 2014-06-17 08:03:36</td>
+			<td align="right">Last modified on: 2014-09-29 21:09:50</td>
 		</tr>
 		<tr>
 			<td valign="top">

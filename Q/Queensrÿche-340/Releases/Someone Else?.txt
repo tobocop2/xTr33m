@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -275,6 +277,8 @@
 	          <dd>1995</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>N/A</dd>
+			  				<dt>Version desc.:</dt>
+				<dd>Promo</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -291,7 +295,7 @@
           <ul class="ui-tabs-nav">
             <li><a href="#album_tabs_tracklist">Songs</a></li>
             <li><a href="#album_tabs_lineup">Lineup</a></li>
-			            <li><a href="#album_tabs_reviews">Reviews</a></li>            <li><a href="#album_tabs_notes">Additional notes</a></li>                      </ul>
+			            <li><a href="#album_tabs_reviews">Reviews</a></li>                                  </ul>
           <!-- ***** Songs *******-->
           <div id="album_tabs_tracklist" class="ui-tabs-hide">
             <div id="album_songs" class="tabs2lvl">
@@ -470,25 +474,17 @@ function toggleLyrics(songId) {
         			                        </div>
           </div>
           <!-- //**** Reviews ******-->
-                          	<!-- ****** Additional notes *******-->
-	          <div id="album_tabs_notes" class="ui-tabs-hide">
-	            <div id="album_notes" class="tabs2lvl"></div>
-	            <div class="ui-tabs-panel-content  block_spacer_top_20">
-	              <p class="block_spacer_20">Promo CD single</p>
-				  				  	            </div>
-	          </div>
-          	<!-- //****** Additional notes *******-->
-                  </div>
+                        </div>
         <!--**** Footer ***-->
 <div id="auditTrail">
 	<table>
 		<tr>
 			<td>Added by: <a href="http://www.metal-archives.com/users/TurboDrinker" class="profileMenu">TurboDrinker</a></td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/inaholereviews" class="profileMenu">inaholereviews</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
 		</tr>
 		<tr>
 			<td>Added on: 2007-07-20 16:34:35</td>
-			<td align="right">Last modified on: 2014-07-27 15:39:12</td>
+			<td align="right">Last modified on: 2014-09-29 22:29:09</td>
 		</tr>
 		<tr>
 			<td valign="top">

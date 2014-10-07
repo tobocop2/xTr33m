@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Quiebra - Diez años de Drama - Encyclopaedia Metallum: The Metal Archives</title>
+		<title>Quintessence - Le fléau de ton existence - Encyclopaedia Metallum: The Metal Archives</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 					<link rel="stylesheet" type="text/css" href="/min/index.php?g=css" />
 				
@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -106,7 +108,7 @@
 								<input type="text" name="loginUsername" size="20" />
 								<label>Password</label><br/>
 								<input type="password" name="loginPassword" size="20" />
-								<input type="hidden" name="origin" value="/albums/Quiebra/Diez_a%C3%B1os_de_Drama/225063" />
+								<input type="hidden" name="origin" value="/albums/Quintessence/Le_fl%C3%A9au_de_ton_existence/234842" />
 								<button type="submit" class="btn_login float_right">Login</button>
 							</div>
 		                </form>
@@ -170,13 +172,13 @@
 
 <div id="album_sidebar">
 
-	<a href="http://www.metal-archives.com/bands/Quiebra/3540272994#band_tab_discography">Quiebra</a>
+	<a href="http://www.metal-archives.com/bands/Quintessence/3540279877#band_tab_discography">Quintessence</a>
 	
-						> Diez años de Drama
+						> Le fléau de ton existence
 					
 			<!-- *** Album cover *** -->
 		<div class="album_img">
-			<a class="image" id="cover" title="Quiebra - Diez a&ntilde;os de Drama" href="http://www.metal-archives.com/images/2/2/5/0/225063.jpg"><img src="http://www.metal-archives.com/images/2/2/5/0/225063.jpg" title="Click to zoom" alt="Quiebra - Diez a&ntilde;os de Drama" border="0" /></a>
+			<a class="image" id="cover" title="Quintessence - Le fl&eacute;au de ton existence" href="http://www.metal-archives.com/images/2/3/4/8/234842.jpg"><img src="http://www.metal-archives.com/images/2/3/4/8/234842.jpg" title="Click to zoom" alt="Quintessence - Le fl&eacute;au de ton existence" border="0" /></a>
 		</div>
 			
 			<!-- *** Affiliation block *** -->
@@ -185,23 +187,23 @@
 			<br />
 			<ul id="buyLinks" class="menu_style_5">
 													<li>
-						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=29&rid=225063">Search on eBay</a> 
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=29&rid=234842">Search on eBay</a> 
 						 
 							more... <a href="#more" onclick="$('#sub29').toggle(); return false;">>></a><br />
 							<ul id="sub29" style="display: none; margin-top: 0px; margin-bottom: 0px;">
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=39&rid=225063">Search on Half.com</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=23&rid=225063">eBay Canada</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=25&rid=225063">eBay UK</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=24&rid=225063">eBay France</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=37&rid=225063">eBay Spain</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=35&rid=225063">eBay Belgium</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=26&rid=225063">eBay Netherlands</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=27&rid=225063">eBay Italy</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=28&rid=225063">eBay Australia</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=39&rid=234842">Search on Half.com</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=23&rid=234842">eBay Canada</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=25&rid=234842">eBay UK</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=24&rid=234842">eBay France</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=37&rid=234842">eBay Spain</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=35&rid=234842">eBay Belgium</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=26&rid=234842">eBay Netherlands</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=27&rid=234842">eBay Italy</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=28&rid=234842">eBay Australia</a></li>
 															</ul>
 											</li>
 									<li>
-						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=7&rid=225063">Search on Gemm.com</a> 
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=7&rid=234842">Search on Gemm.com</a> 
 											</li>
 							</ul>
 		</div>
@@ -216,32 +218,30 @@
 				<th class="spacer"></th>
 			</tr>
 							<tr>
-					<th colspan="4"><span>Quiebra</span> discography (misc)</th>
+					<th colspan="4"><span>Quintessence</span> discography (main)</th>
 				</tr>
 				<tr class="prevNext">
-					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quiebra/Venecia_Perdida/225062" title="Venecia Perdida (Single)"><</a> </td>
+					<td class="arrows"> </td>
 					<td class="prev">
-													<a href="http://www.metal-archives.com/albums/Quiebra/Venecia_Perdida/225062" title="Venecia Perdida (Single)">Venecia Perdida</a><br />(2006)
 											</td>
 					
 					<td class="next">
-													<a href="http://www.metal-archives.com/albums/Quiebra/Laberinto_Espiral/310321" title="Laberinto Espiral (EP)">Laberinto Espiral</a><br />(2010)
+													<a href="http://www.metal-archives.com/albums/Quintessence/Le_bourreau_de_Tiffauges/298235" title="Le bourreau de Tiffauges (Full-length)">Le bourreau de Tiffauges</a><br />(2011)
 											</td>
-					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quiebra/Laberinto_Espiral/310321" title="Laberinto Espiral (EP)">></a> </td>
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quintessence/Le_bourreau_de_Tiffauges/298235" title="Le bourreau de Tiffauges (Full-length)">></a> </td>
 				</tr>
 										<tr>
-					<th colspan="4"><span>Quiebra</span> discography (all)</th>
+					<th colspan="4"><span>Quintessence</span> discography (all)</th>
 				</tr>
 				<tr class="prevNext">
-					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quiebra/Venecia_Perdida/225062" title="Venecia Perdida (Single)"><</a> </td>
+					<td class="arrows"> </td>
 					<td class="prev">
-													<a href="http://www.metal-archives.com/albums/Quiebra/Venecia_Perdida/225062" title="Venecia Perdida (Single)">Venecia Perdida</a><br />(2006)
 											</td>
 					
 					<td class="next">
-													<a href="http://www.metal-archives.com/albums/Quiebra/Laberinto_Espiral/310321" title="Laberinto Espiral (EP)">Laberinto Espiral</a><br />(2010)
+													<a href="http://www.metal-archives.com/albums/Quintessence/Pictavian_Onslaught/269559" title="Pictavian Onslaught (Split)">Pictavian Onslaught</a><br />(2010)
 											</td>
-					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quiebra/Laberinto_Espiral/310321" title="Laberinto Espiral (EP)">></a> </td>
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quintessence/Pictavian_Onslaught/269559" title="Pictavian Onslaught (Split)">></a> </td>
 				</tr>
 					</table>
 	
@@ -251,17 +251,17 @@
 <div id="album_content">
 	<div class="tool_strip right">
 		<ul>
-			          		<li><a title="Report a mistake or additional information for this page" href="javascript:popupReportDialog(4, 225063);" class="btn_report_error writeAction"> </a></li>
+			          		<li><a title="Report a mistake or additional information for this page" href="javascript:popupReportDialog(4, 234842);" class="btn_report_error writeAction"> </a></li>
       		          	<li>
-	          		          		<a href="http://www.metal-archives.com/bands/Quiebra/3540272994" title="Back to Quiebra" class="btn_back"> </a>
+	          		          		<a href="http://www.metal-archives.com/bands/Quintessence/3540279877" title="Back to Quintessence" class="btn_back"> </a>
 	      		          	</li>
         </ul>
     </div>
     <!-- ********** ALBUM IMFO ********** -->
     <div id="album_info">
 		<!-- Headers -->
-			<h1 class="album_name"><a href="http://www.metal-archives.com/albums/Quiebra/Diez_a%C3%B1os_de_Drama/225063">Diez años de Drama</a></h1>
-	<h2 class="band_name"><a href="http://www.metal-archives.com/bands/Quiebra/3540272994">Quiebra</a></h2>
+			<h1 class="album_name"><a href="http://www.metal-archives.com/albums/Quintessence/Le_fl%C3%A9au_de_ton_existence/234842">Le fléau de ton existence</a></h1>
+	<h2 class="band_name"><a href="http://www.metal-archives.com/bands/Quintessence/3540279877">Quintessence</a></h2>
 
                 <!-- Error / OK messages -->
         <div class="clear block_spacer_5"></div>
@@ -270,15 +270,15 @@
         <div class="clear block_spacer_20"></div>
         	<dl class="float_left">
 	          <dt>Type:</dt>
-	          <dd>Compilation</dd>
+	          <dd>Full-length</dd>
 	          <dt>Release date:</dt>
-	          <dd>2007</dd>
+	          <dd>March 28th, 2009</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>N/A</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
-	          <dd>Independent</dd>
+	          <dd><a href="http://www.metal-archives.com/labels/Nija_Art/4447#label_tabs_albums">Nija Art</a></dd>
 			  <dt>Format:</dt>
 	          <dd>Unknown</dd>
 			  	          <dt>Reviews:</dt>
@@ -291,7 +291,7 @@
           <ul class="ui-tabs-nav">
             <li><a href="#album_tabs_tracklist">Songs</a></li>
             <li><a href="#album_tabs_lineup">Lineup</a></li>
-			            <li><a href="#album_tabs_reviews">Reviews</a></li>                                  </ul>
+			<li><a href="http://www.metal-archives.com/release/ajax-versions/current/234842/parent/234842">Other versions</a></li>            <li><a href="#album_tabs_reviews">Reviews</a></li>            <li><a href="#album_tabs_notes">Additional notes</a></li>                      </ul>
           <!-- ***** Songs *******-->
           <div id="album_tabs_tracklist" class="ui-tabs-hide">
             <div id="album_songs" class="tabs2lvl">
@@ -332,64 +332,142 @@ function toggleLyrics(songId) {
 		
 		
 													<tr class="even">
-				<td width="20"><a name="1590340" class="anchor"> </a>1.</td>
+				<td width="20"><a name="1657909" class="anchor"> </a>1.</td>
 				<td class="wrapWords">
-										Hijos de la tormenta
+										Veines païennes
 				</td>
-				<td align="right"></td>
+				<td align="right">05:32</td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton1657909" href="#1657909" onclick="toggleLyrics('1657909'); return false;">Show lyrics</a>
 									</td>
 			</tr>
-			<tr id="song1590340" class="displayNone" height="0">
+			<tr id="song1657909" class="displayNone" height="0">
 				<td>&nbsp;</td>
-				<td colspan="3" id="lyrics_1590340">(loading lyrics...)</td>
+				<td colspan="3" id="lyrics_1657909">(loading lyrics...)</td>
 			</tr>
 		
 											<tr class="odd">
-				<td width="20"><a name="1590341" class="anchor"> </a>2.</td>
+				<td width="20"><a name="1657910" class="anchor"> </a>2.</td>
 				<td class="wrapWords">
-										Venecia perdida
+										Misère et pestilence
 				</td>
-				<td align="right"></td>
+				<td align="right">05:23</td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton1657910" href="#1657910" onclick="toggleLyrics('1657910'); return false;">Show lyrics</a>
 									</td>
 			</tr>
-			<tr id="song1590341" class="displayNone" height="0">
+			<tr id="song1657910" class="displayNone" height="0">
 				<td>&nbsp;</td>
-				<td colspan="3" id="lyrics_1590341">(loading lyrics...)</td>
+				<td colspan="3" id="lyrics_1657910">(loading lyrics...)</td>
 			</tr>
 		
 											<tr class="even">
-				<td width="20"><a name="1590342" class="anchor"> </a>3.</td>
+				<td width="20"><a name="1657911" class="anchor"> </a>3.</td>
 				<td class="wrapWords">
-										Némesis
+										Hérétique frénésie
 				</td>
-				<td align="right"></td>
+				<td align="right">04:57</td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton1657911" href="#1657911" onclick="toggleLyrics('1657911'); return false;">Show lyrics</a>
 									</td>
 			</tr>
-			<tr id="song1590342" class="displayNone" height="0">
+			<tr id="song1657911" class="displayNone" height="0">
 				<td>&nbsp;</td>
-				<td colspan="3" id="lyrics_1590342">(loading lyrics...)</td>
+				<td colspan="3" id="lyrics_1657911">(loading lyrics...)</td>
 			</tr>
 		
 											<tr class="odd">
-				<td width="20"><a name="1590343" class="anchor"> </a>4.</td>
+				<td width="20"><a name="1657912" class="anchor"> </a>4.</td>
 				<td class="wrapWords">
-										La vida al absurdo
+										Le fléau de ton existence
 				</td>
-				<td align="right"></td>
+				<td align="right">05:16</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton1657912" href="#1657912" onclick="toggleLyrics('1657912'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song1657912" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_1657912">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="1657913" class="anchor"> </a>5.</td>
+				<td class="wrapWords">
+										Hymne à l'infamie
+				</td>
+				<td align="right">04:41</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton1657913" href="#1657913" onclick="toggleLyrics('1657913'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song1657913" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_1657913">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="1657914" class="anchor"> </a>6.</td>
+				<td class="wrapWords">
+										Colère d'outre-tombe
+				</td>
+				<td align="right">04:47</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton1657914" href="#1657914" onclick="toggleLyrics('1657914'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song1657914" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_1657914">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="1657915" class="anchor"> </a>7.</td>
+				<td class="wrapWords">
+										L'extinction de mon âme
+				</td>
+				<td align="right">05:49</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton1657915" href="#1657915" onclick="toggleLyrics('1657915'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song1657915" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_1657915">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="odd">
+				<td width="20"><a name="1657916" class="anchor"> </a>8.</td>
+				<td class="wrapWords">
+										Les pleurs de l'agonie
+				</td>
+				<td align="right">05:49</td>
+				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton1657916" href="#1657916" onclick="toggleLyrics('1657916'); return false;">Show lyrics</a>
+									</td>
+			</tr>
+			<tr id="song1657916" class="displayNone" height="0">
+				<td>&nbsp;</td>
+				<td colspan="3" id="lyrics_1657916">(loading lyrics...)</td>
+			</tr>
+		
+											<tr class="even">
+				<td width="20"><a name="1657917" class="anchor"> </a>9.</td>
+				<td class="wrapWords">
+										Errances
+				</td>
+				<td align="right">02:48</td>
 				<td nowrap="nowrap">&nbsp;
 									</td>
 			</tr>
-			<tr id="song1590343" class="displayNone" height="0">
+			<tr id="song1657917" class="displayNone" height="0">
 				<td>&nbsp;</td>
-				<td colspan="3" id="lyrics_1590343">(loading lyrics...)</td>
+				<td colspan="3" id="lyrics_1657917">(loading lyrics...)</td>
 			</tr>
 		
 									<tr>
 				<td colspan="2">&nbsp;</td>
-				<td align="right"><strong></strong></td>
+				<td align="right"><strong>45:02</strong></td>
 				<td>&nbsp;</td>
 			</tr>
 				</tbody>
@@ -403,15 +481,76 @@ function toggleLyrics(songId) {
 	    	<div id="album_members" class="tabs2lvl">
 	    		
 	    							<ul>
-		            			            		            			            		<li><a href="#album_members_misc">Misc. staff</a></li>		            </ul>
-		            	            		            								            			            <!-- Misc artists -->
-			            <div id="album_members_misc">
+		            			            	<li><a href="#album_members_lineup">Band members</a></li>	            			            				            </ul>
+		            	            		            				            <!-- Album members-->
+			            <div id="album_members_lineup">
 			                <div class="ui-tabs-panel-content">
-			                    	<em>(None)</em>
+			                    								<table class="display lineupTable" cellpadding="0" cellspacing="0">
+																
+			
+			<tr class="lineupRow">
 
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Xavier/736">Xavier</a> 
+					
+									</td>
+				<td>
+											Guitars (lead)									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Kriss/30983">Kriss</a> 
+					
+									</td>
+				<td>
+											Guitars (rhythm)									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Vincent_Roubi%C3%A8re/10088">Vincent Roubi&egrave;re</a> 
+					
+									</td>
+				<td>
+											Drums									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/Antoine/30990">Antoine</a> 
+					
+									</td>
+				<td>
+											Bass									</td>
+			</tr>
+						
+								
+			
+			<tr class="lineupRow">
+
+				<td width="300" valign="top">
+					<a href="http://www.metal-archives.com/artists/D%C3%A9mence/30992">D&eacute;mence</a> 
+					
+									</td>
+				<td>
+											Vocals									</td>
+			</tr>
+						
+			</table>
+	
 			                </div>
 			            </div>
-		            	             
+		            							            	             
 	        </div>
 	    </div>
           <!-- //**** lineup ******-->
@@ -425,31 +564,44 @@ function toggleLyrics(songId) {
             <div id="album_reviews" class="tabs2lvl">
               <div class="tool_strip top right writeAction">
               		                <ul>
-	                  <li><a href="http://www.metal-archives.com/review/write/releaseId/225063" class="btn_add">Add</a></li>
+	                  <li><a href="http://www.metal-archives.com/review/write/releaseId/234842" class="btn_add">Add</a></li>
 	                </ul>
                               </div>
             </div>
             <div class="ui-tabs-panel-content block_spacer_top_36">
-                        	There are no reviews for Diez años de Drama yet. 
-            		            			<span class="writeAction">You can <a href="http://www.metal-archives.com/review/write/releaseId/225063">write</a> one.</span>
+                        	There are no reviews for Le fléau de ton existence yet. 
+            		            			<span class="writeAction">You can <a href="http://www.metal-archives.com/review/write/releaseId/234842">write</a> one.</span>
         			                        </div>
           </div>
           <!-- //**** Reviews ******-->
-                        </div>
+                          	<!-- ****** Additional notes *******-->
+	          <div id="album_tabs_notes" class="ui-tabs-hide">
+	            <div id="album_notes" class="tabs2lvl"></div>
+	            <div class="ui-tabs-panel-content  block_spacer_top_20">
+	              <p class="block_spacer_20">Re-released by Hidden Marly Productions with 5 live bonus songs in 2010.<br />
+<br />
+<b>Bootleg :</b> Re-released in pro-tape by Tyrannus Recs. (Chile), limited to 300 copies and contains 2 bonus tracks and new artwork.<br />
+Bonus Tracks:<br />
+10. L’oriflamme des ténèbres [Live in Toulouse. May 30, 2009]<br />
+11. Crush, Kill, Destroy (Sarcófago Cover) [Live in Toulouse. May 30, 2009]</p>
+				  				  	            </div>
+	          </div>
+          	<!-- //****** Additional notes *******-->
+                  </div>
         <!--**** Footer ***-->
 <div id="auditTrail">
 	<table>
 		<tr>
-			<td>Added by: <a href="http://www.metal-archives.com/users/archael" class="profileMenu">archael</a></td>
-			<td align="right">Modified by: (Unknown user)</td>
+			<td>Added by: <a href="http://www.metal-archives.com/users/Tueur" class="profileMenu">Tueur</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Kristen%20Jensen" class="profileMenu">Kristen Jensen</a></td>
 		</tr>
 		<tr>
-			<td>Added on: 2009-01-28 06:57:11</td>
-			<td align="right">Last modified on: N/A</td>
+			<td>Added on: 2009-04-24 10:53:22</td>
+			<td align="right">Last modified on: 2014-10-03 05:01:41</td>
 		</tr>
 		<tr>
 			<td valign="top">
-				<a href="http://www.metal-archives.com/history/view/type/release/id/225063">View update history</a> 
+				<a href="http://www.metal-archives.com/history/view/type/release/id/234842">View update history</a> 
 							</td>
 			<td align="right" valign="top">
 											</td>

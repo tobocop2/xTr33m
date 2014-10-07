@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -276,7 +278,7 @@
 			  <dt>Catalog ID:</dt>
 	          <dd>CDMTS 109</dd>
 			  				<dt>Version desc.:</dt>
-				<dd>UK (Limited edition)</dd>
+				<dd>Limited edition</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -506,8 +508,7 @@ function toggleLyrics(songId) {
 	          <div id="album_tabs_notes" class="ui-tabs-hide">
 	            <div id="album_notes" class="tabs2lvl"></div>
 	            <div class="ui-tabs-panel-content  block_spacer_top_20">
-	              <p class="block_spacer_20"><b>Trivia:</b><br />
--Includes 5 colour band cards, a 3D Tri-rÿche logo and 3D glasses.</p>
+	              <p class="block_spacer_20">Includes 5 colour band cards, a 3D Tri-rÿche logo and 3D glasses.</p>
 				  				  					<p class="title_comment">Identifiers:</p>
 					<p>Barcode: 7 2438 81929 2 7<br />
 Label Code: LC0542<br />
@@ -526,7 +527,7 @@ Rights Society: BIEM/MCPS</p>
 		</tr>
 		<tr>
 			<td>Added on: 2004-03-03 14:29:15</td>
-			<td align="right">Last modified on: 2014-06-17 10:00:22</td>
+			<td align="right">Last modified on: 2014-09-29 21:57:58</td>
 		</tr>
 		<tr>
 			<td valign="top">

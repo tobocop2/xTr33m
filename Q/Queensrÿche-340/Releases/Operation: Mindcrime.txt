@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -289,14 +291,12 @@
 	          <dd>May 3rd, 1988</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>E1-48640</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>US</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
 	          <dd><a href="http://www.metal-archives.com/labels/EMI_Music/7#label_tabs_albums">EMI Music</a></dd>
 			  <dt>Format:</dt>
-	          <dd>Vinyl</dd>
+	          <dd>12" vinyl (33⅓ RPM)</dd>
 			  	          <dt>Reviews:</dt>
 	          <dd>
 									13 <a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Operation%3A_Mindcrime/1692/">reviews</a> (avg. 88%)
@@ -1330,7 +1330,7 @@ Mastered At – Masterdisk</p>
 		</tr>
 		<tr>
 			<td>Added on: N/A</td>
-			<td align="right">Last modified on: 2014-06-21 14:53:53</td>
+			<td align="right">Last modified on: 2014-09-29 21:20:54</td>
 		</tr>
 		<tr>
 			<td valign="top">

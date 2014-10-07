@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -275,8 +277,6 @@
 	          <dd>1988</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>CDMT 65</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>US</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -512,7 +512,7 @@ function toggleLyrics(songId) {
 		</tr>
 		<tr>
 			<td>Added on: 2004-03-03 13:55:03</td>
-			<td align="right">Last modified on: 2014-06-17 08:14:31</td>
+			<td align="right">Last modified on: 2014-09-29 21:18:58</td>
 		</tr>
 		<tr>
 			<td valign="top">

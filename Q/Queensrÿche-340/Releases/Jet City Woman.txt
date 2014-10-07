@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -278,8 +280,6 @@
 	          <dd>August 1991</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>2044692</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>Netherlands</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -667,7 +667,7 @@ Rights Society: BIEM/STEMRA</p>
 		</tr>
 		<tr>
 			<td>Added on: 2004-03-03 14:02:47</td>
-			<td align="right">Last modified on: 2014-06-17 10:42:53</td>
+			<td align="right">Last modified on: 2014-09-29 21:47:22</td>
 		</tr>
 		<tr>
 			<td valign="top">

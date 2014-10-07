@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -426,36 +428,39 @@ function toggleLyrics(songId) {
 				<td colspan="3" id="lyrics_1918795A">(loading lyrics...)</td>
 			</tr>
 		
-											<tr class="even">
-				<td width="20"><a name="1918796A" class="anchor"> </a>3.</td>
+																		<tr class="sideRow">
+												<td colspan="4">Side B</td>
+					</tr>
+													<tr class="even">
+				<td width="20"><a name="1918796B" class="anchor"> </a>3.</td>
 				<td class="wrapWords">
 																									Queensrÿche - 
 																Revolution Calling
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
-											<a id="lyricsButton1918796A" href="#1918796A" onclick="toggleLyrics('1918796A'); return false;">Show lyrics</a>
+											<a id="lyricsButton1918796B" href="#1918796B" onclick="toggleLyrics('1918796B'); return false;">Show lyrics</a>
 									</td>
 			</tr>
-			<tr id="song1918796A" class="displayNone" height="0">
+			<tr id="song1918796B" class="displayNone" height="0">
 				<td>&nbsp;</td>
-				<td colspan="3" id="lyrics_1918796A">(loading lyrics...)</td>
+				<td colspan="3" id="lyrics_1918796B">(loading lyrics...)</td>
 			</tr>
 		
 											<tr class="odd">
-				<td width="20"><a name="1918797A" class="anchor"> </a>4.</td>
+				<td width="20"><a name="1918797B" class="anchor"> </a>4.</td>
 				<td class="wrapWords">
 																									Voivod - 
 																Too Scared to Scream
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
-											<a id="lyricsButton1918797A" href="#1918797A" onclick="toggleLyrics('1918797A'); return false;">Show lyrics</a>
+											<a id="lyricsButton1918797B" href="#1918797B" onclick="toggleLyrics('1918797B'); return false;">Show lyrics</a>
 									</td>
 			</tr>
-			<tr id="song1918797A" class="displayNone" height="0">
+			<tr id="song1918797B" class="displayNone" height="0">
 				<td>&nbsp;</td>
-				<td colspan="3" id="lyrics_1918797A">(loading lyrics...)</td>
+				<td colspan="3" id="lyrics_1918797B">(loading lyrics...)</td>
 			</tr>
 		
 									<tr>
@@ -1038,9 +1043,7 @@ function toggleLyrics(songId) {
 	          <div id="album_tabs_notes" class="ui-tabs-hide">
 	            <div id="album_notes" class="tabs2lvl"></div>
 	            <div class="ui-tabs-panel-content  block_spacer_top_20">
-	              <p class="block_spacer_20">Catalog# MACH2. Formats: Vinyl, 7", EP, 33¨÷ RPM<br />
-<br />
-Given away free with Sounds magazine.</p>
+	              <p class="block_spacer_20">Given away free with Sounds magazine.</p>
 				  				  	            </div>
 	          </div>
           	<!-- //****** Additional notes *******-->
@@ -1050,11 +1053,11 @@ Given away free with Sounds magazine.</p>
 	<table>
 		<tr>
 			<td>Added by: <a href="http://www.metal-archives.com/users/Manalishi69" class="profileMenu">Manalishi69</a></td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/inaholereviews" class="profileMenu">inaholereviews</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
 		</tr>
 		<tr>
 			<td>Added on: 2010-05-05 19:23:00</td>
-			<td align="right">Last modified on: 2014-06-20 14:25:03</td>
+			<td align="right">Last modified on: 2014-09-29 21:20:21</td>
 		</tr>
 		<tr>
 			<td valign="top">

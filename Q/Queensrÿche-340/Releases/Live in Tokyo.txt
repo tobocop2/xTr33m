@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -285,8 +287,6 @@
 	          <dd>1985</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>MPV 991075 2</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>Netherlands</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -613,8 +613,7 @@ function toggleLyrics(songId) {
 	          <div id="album_tabs_notes" class="ui-tabs-hide">
 	            <div id="album_notes" class="tabs2lvl"></div>
 	            <div class="ui-tabs-panel-content  block_spacer_top_20">
-	              <p class="block_spacer_20"><b>Trivia:</b><br />
--PAL format.</p>
+	              <p class="block_spacer_20">-PAL format.</p>
 				  				  	            </div>
 	          </div>
           	<!-- //****** Additional notes *******-->
@@ -628,7 +627,7 @@ function toggleLyrics(songId) {
 		</tr>
 		<tr>
 			<td>Added on: N/A</td>
-			<td align="right">Last modified on: 2014-06-17 09:32:28</td>
+			<td align="right">Last modified on: 2014-09-29 21:09:06</td>
 		</tr>
 		<tr>
 			<td valign="top">

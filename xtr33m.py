@@ -60,6 +60,44 @@ def get_band_info():
         for link in band_map[band]:
             print band+'\n'+link+'\n'
 
+
+def write_band_content(band_name,band_id):
+    band_page ='http://www.metal-archives.com/bands/%s/%s' % (band_name,band_id)
+
+    file1 = os.path.join('./', "%s-%s-content.txt" % (band_name,band_id))
+    page_file = open(file1, "a")
+    page_file_response = requests.get(band_page).content
+    soup = BeautifulSoup(page_file_response)
+
+    band_name = soup.select('.band_name')[0].text
+    page_file.write('Band Name: '+band_name.encode('ascii','ignore')+'\n')
+    country = soup.select('#band_stats dd:nth-of-type(1) a')[0].text
+    page_file.write('Country: '+country.encode('ascii','ignore')+'\n')
+    location = soup.select('#band_stats dd:nth-of-type(2)')[0].text
+    page_file.write('Location: '+country.encode('ascii','ignore')+'\n')
+    status = soup.select('#band_stats dd:nth-of-type(3)')[0].text
+    page_file.write('Status: '+status.encode('ascii','ignore')+'\n')
+    formation = soup.select('#band_stats dd:nth-of-type(4)')[0].text
+    page_file.write('Formation: '+formation.encode('ascii','ignore')+'\n')
+    genre = soup.select('#band_stats dd:nth-of-type(5)')[0].text
+    page_file.write('Genre: '+genre.encode('ascii','ignore')+'\n')
+    lyrical_themes = soup.select('#band_stats dd:nth-of-type(6)')[0].text
+    page_file.write('Lyrical Themes: '+lyrical_themes.encode('ascii','ignore')+'\n')
+    current_label = soup.select('#band_stats dd:nth-of-type(7)')[0].text
+    page_file.write('Current Label: '+current_label.encode('ascii','ignore')+'\n')
+    years_active = soup.select('#band_stats dd:nth-of-type(8)')[0].text.split()
+    page_file.write('Years Active: \n')
+    for active_info in years_active:
+        page_file.write(active_info.encode('ascii','ignore')+'\n')
+    if soup.find(id='band_tab_members_all') is not None:
+        #All of the role info is a sibling to the band member itself
+        lineup = soup.select('#band_members .lineupRow td a')
+        roles = soup.select('.lineupRow td ~ td')
+        for member,role, in zip(lineup,roles):
+            band_member = member.text+' - '+role.text.strip()
+            page_file.write(band_member.encode('ascii','ignore')+'\n')
+    page_file.close()
+
 #This function takes the information from get_band_info() and dumps the txt from each band page.
 #The structure of the 'Extreme Archives' will be heavily influenced by the metal-archives.
 #Need to modulairze different types of requests for future debugging
@@ -78,7 +116,6 @@ def write_band_info(letter,band_name,link):
             os.makedirs(band_folder)
         os.chdir(band_folder)
 
-        band_page ='http://www.metal-archives.com/bands/%s/%s' % (band_name,band_id)
         releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
         similar_artists = 'http://www.metal-archives.com/band/ajax-recommendations/id/%s/showMoreSimilar/1' % band_id
         band_description = 'http://www.metal-archives.com/band/read-more/id/%s' % band_id
@@ -88,27 +125,12 @@ def write_band_info(letter,band_name,link):
         description_file = open(file0,"w")
         description_response = requests.get(band_description).content
         soup = BeautifulSoup(description_response)
-        for description in soup:
-            band_description = description.get_text()
+        for description in soup.find_all(text=True):
+            band_description = description.strip()
             description_file.write(band_description.encode('ascii','ignore')+'\n')
         description_file.close()
 
-        #Band Content (lineup, country,origin, active status) NEEDS WORK
-        file1 = os.path.join('./', "%s-%s-content.txt" % (band_name,band_id))
-        page_file = open(file1, "a")
-        page_file_response = requests.get(band_page).content
-        soup = BeautifulSoup(page_file_response)
-        for child in soup.find_all(id='band_content'):
-            band_name = child.find(class_='band_name').get_text()
-            print band_name
-            page_file.write(band_name.encode('ascii','ignore'))
-            band_stats = child.find(id='band_stats').get_text()
-            print band_stats
-            page_file.write(band_stats.encode('ascii','ignore')+'\n')
-            if child.find(id='band_tab_members_all') is not None:
-                lineup = child.find(id='band_tab_members_all').get_text()
-                page_file.write(lineup.encode('ascii','ignore')+'\n')
-        page_file.close()
+        write_band_content(band_name,band_id)
 
         #similar artists (Name, country of origin, genre)
         file2 = os.path.join('./', "%s-%s-similar-artists.txt" % (band_name,band_id))

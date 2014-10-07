@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -289,8 +291,6 @@
 	          <dd>July 22nd, 2003</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>06076-84578-2</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>US</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -875,7 +875,7 @@ Barcode (EAN): 0060768457829</p>
 		</tr>
 		<tr>
 			<td>Added on: N/A</td>
-			<td align="right">Last modified on: 2014-06-17 07:56:55</td>
+			<td align="right">Last modified on: 2014-09-29 22:34:41</td>
 		</tr>
 		<tr>
 			<td valign="top">

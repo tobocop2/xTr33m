@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -106,7 +108,7 @@
 								<input type="text" name="loginUsername" size="20" />
 								<label>Password</label><br/>
 								<input type="password" name="loginPassword" size="20" />
-								<input type="hidden" name="origin" value="/albums/Queensr%C3%BFche/Dedicated_to_Chaos/306112" />
+								<input type="hidden" name="origin" value="/albums/Queensr%C3%BFche/Dedicated_to_Chaos/425170" />
 								<button type="submit" class="btn_login float_right">Login</button>
 							</div>
 		                </form>
@@ -185,34 +187,34 @@
 			<br />
 			<ul id="buyLinks" class="menu_style_5">
 													<li>
-						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=8&id=411379&rid=306112">Amazon.com <img src="http://www.assoc-amazon.com/e/ir?t=encymetatheme-20&l=as2&o=1&a={ID}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a> 
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=8&id=513174&rid=425170">Amazon.com <img src="http://www.assoc-amazon.com/e/ir?t=encymetatheme-20&l=as2&o=1&a={ID}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a> 
 						 
 							more... <a href="#more" onclick="$('#sub8').toggle(); return false;">>></a><br />
 							<ul id="sub8" style="display: none; margin-top: 0px; margin-bottom: 0px;">
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=9&id=411379&rid=306112">Amazon UK <img src="http://www.assoc-amazon.co.uk/e/ir?t=encyclometa0e-21&l=as2&o=2&a={ID}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=10&id=411379&rid=306112">Amazon Canada <img src="http://www.assoc-amazon.ca/e/ir?t=encyclometall-20&l=as2&o=15&a={ID}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=11&id=411379&rid=306112">Amazon France <img src="http://www.assoc-amazon.fr/e/ir?t=encyclometall-21&l=as2&o=8&a={ID}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=12&id=411379&rid=306112">Amazon Germany <img src="http://www.assoc-amazon.de/e/ir?t=encyclometa0a-21&l=as2&o=3&a={ID}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=9&id=513174&rid=425170">Amazon UK <img src="http://www.assoc-amazon.co.uk/e/ir?t=encyclometa0e-21&l=as2&o=2&a={ID}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=10&id=513174&rid=425170">Amazon Canada <img src="http://www.assoc-amazon.ca/e/ir?t=encyclometall-20&l=as2&o=15&a={ID}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=11&id=513174&rid=425170">Amazon France <img src="http://www.assoc-amazon.fr/e/ir?t=encyclometall-21&l=as2&o=8&a={ID}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=12&id=513174&rid=425170">Amazon Germany <img src="http://www.assoc-amazon.de/e/ir?t=encyclometa0a-21&l=as2&o=3&a={ID}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></a></li>
 															</ul>
 											</li>
 									<li>
-						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=29&rid=306112">Search on eBay</a> 
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=29&rid=425170">Search on eBay</a> 
 						 
 							more... <a href="#more" onclick="$('#sub29').toggle(); return false;">>></a><br />
 							<ul id="sub29" style="display: none; margin-top: 0px; margin-bottom: 0px;">
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=39&rid=306112">Search on Half.com</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=23&rid=306112">eBay Canada</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=25&rid=306112">eBay UK</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=24&rid=306112">eBay France</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=37&rid=306112">eBay Spain</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=35&rid=306112">eBay Belgium</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=26&rid=306112">eBay Netherlands</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=27&rid=306112">eBay Italy</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=28&rid=306112">eBay Australia</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=39&rid=425170">Search on Half.com</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=23&rid=425170">eBay Canada</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=25&rid=425170">eBay UK</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=24&rid=425170">eBay France</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=37&rid=425170">eBay Spain</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=35&rid=425170">eBay Belgium</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=26&rid=425170">eBay Netherlands</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=27&rid=425170">eBay Italy</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=28&rid=425170">eBay Australia</a></li>
 															</ul>
 											</li>
 									<li>
-						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=7&rid=306112">Search on Gemm.com</a> 
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=7&rid=425170">Search on Gemm.com</a> 
 											</li>
 							</ul>
 		</div>
@@ -262,7 +264,7 @@
 <div id="album_content">
 	<div class="tool_strip right">
 		<ul>
-			          		<li><a title="Report a mistake or additional information for this page" href="javascript:popupReportDialog(4, 306112);" class="btn_report_error writeAction"> </a></li>
+			          		<li><a title="Report a mistake or additional information for this page" href="javascript:popupReportDialog(4, 425170);" class="btn_report_error writeAction"> </a></li>
       		          	<li>
 	          		          		<a href="http://www.metal-archives.com/bands/Queensr%C3%BFche/340" title="Back to Queensrÿche" class="btn_back"> </a>
 	      		          	</li>
@@ -271,7 +273,7 @@
     <!-- ********** ALBUM IMFO ********** -->
     <div id="album_info">
 		<!-- Headers -->
-			<h1 class="album_name"><a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Dedicated_to_Chaos/306112">Dedicated to Chaos</a></h1>
+			<h1 class="album_name"><a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Dedicated_to_Chaos/425170">Dedicated to Chaos</a></h1>
 	<h2 class="band_name"><a href="http://www.metal-archives.com/bands/Queensr%C3%BFche/340">Queensrÿche</a></h2>
 
                 <!-- Error / OK messages -->
@@ -283,11 +285,9 @@
 	          <dt>Type:</dt>
 	          <dd>Full-length</dd>
 	          <dt>Release date:</dt>
-	          <dd>June 28th, 2011</dd>
+	          <dd>June 24th, 2011</dd>
 			  <dt>Catalog ID:</dt>
-	          <dd>1686-177342</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>US</dd>
+	          <dd>RR7734-2</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -296,7 +296,7 @@
 	          <dd>CD</dd>
 			  	          <dt>Reviews:</dt>
 	          <dd>
-									8 <a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/306112/">reviews</a> (avg. 34%)
+									8 <a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/425170/">reviews</a> (avg. 34%)
 					          </dd>
 	        </dl>
       </div>        
@@ -304,7 +304,7 @@
           <ul class="ui-tabs-nav">
             <li><a href="#album_tabs_tracklist">Songs</a></li>
             <li><a href="#album_tabs_lineup">Lineup</a></li>
-			<li><a href="http://www.metal-archives.com/release/ajax-versions/current/306112/parent/306112">Other versions</a></li>            <li><a href="#album_tabs_reviews">Reviews</a></li>            <li><a href="#album_tabs_notes">Additional notes</a></li>                      </ul>
+			<li><a href="http://www.metal-archives.com/release/ajax-versions/current/425170/parent/425170">Other versions</a></li>            <li><a href="#album_tabs_reviews">Reviews</a></li>            <li><a href="#album_tabs_notes">Additional notes</a></li>                      </ul>
           <!-- ***** Songs *******-->
           <div id="album_tabs_tracklist" class="ui-tabs-hide">
             <div id="album_songs" class="tabs2lvl">
@@ -926,63 +926,63 @@ function toggleLyrics(songId) {
             <div id="album_reviews" class="tabs2lvl">
               <div class="tool_strip top right writeAction">
               		                <ul>
-	                  <li><a href="http://www.metal-archives.com/review/write/releaseId/306112" class="btn_add">Add</a></li>
+	                  <li><a href="http://www.metal-archives.com/review/write/releaseId/425170" class="btn_add">Add</a></li>
 	                </ul>
                               </div>
             </div>
             <div class="ui-tabs-panel-content block_spacer_top_36">
                         	<table id="review_list" class="display" cellpadding="0" cellspacing="0">
             		            			<tr class="even">
-            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/306112/Twisted_Psychology/194956" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
+            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/425170/Twisted_Psychology/194956" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
             				<td>Listening To Bad Music On...</td>
             				<td>65%</td>
             				<td><a href="http://www.metal-archives.com/users/Twisted_Psychology" class="profileMenu">Twisted_Psychology</a></td>
             				<td>June 28th, 2013</td>
             			</tr>
             		            			<tr class="odd">
-            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/306112/autothrall/192699" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
+            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/425170/autothrall/192699" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
             				<td>Dedicated to chamber pots</td>
             				<td>35%</td>
             				<td><a href="http://www.metal-archives.com/users/autothrall" class="profileMenu">autothrall</a></td>
             				<td>August 20th, 2012</td>
             			</tr>
             		            			<tr class="even">
-            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/306112/RacoCooper/149051" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
+            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/425170/RacoCooper/149051" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
             				<td>Ya blew it!</td>
             				<td>0%</td>
             				<td><a href="http://www.metal-archives.com/users/RacoCooper" class="profileMenu">RacoCooper</a></td>
             				<td>July 5th, 2012</td>
             			</tr>
             		            			<tr class="odd">
-            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/306112/FateMetal/147126" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
+            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/425170/FateMetal/147126" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
             				<td>Apathy-X</td>
             				<td>0%</td>
             				<td><a href="http://www.metal-archives.com/users/FateMetal" class="profileMenu">FateMetal</a></td>
             				<td>February 8th, 2012</td>
             			</tr>
             		            			<tr class="even">
-            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/306112/The_CrY/211961" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
+            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/425170/The_CrY/211961" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
             				<td>Very 'Now' Indeed</td>
             				<td>90%</td>
             				<td><a href="http://www.metal-archives.com/users/The_CrY" class="profileMenu">The_CrY</a></td>
             				<td>September 19th, 2011</td>
             			</tr>
             		            			<tr class="odd">
-            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/306112/NecroFile/140880" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
+            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/425170/NecroFile/140880" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
             				<td>Bad album, don't buy it,...</td>
             				<td>10%</td>
             				<td><a href="http://www.metal-archives.com/users/NecroFile" class="profileMenu">NecroFile</a></td>
             				<td>August 22nd, 2011</td>
             			</tr>
             		            			<tr class="even">
-            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/306112/Metal_Detector/239515" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
+            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/425170/Metal_Detector/239515" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
             				<td>Just die already</td>
             				<td>8%</td>
             				<td><a href="http://www.metal-archives.com/users/Metal_Detector" class="profileMenu">Metal_Detector</a></td>
             				<td>July 10th, 2011</td>
             			</tr>
             		            			<tr class="odd">
-            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/306112/kluseba/238242" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
+            				<td nowrap="nowrap"><a href="http://www.metal-archives.com/reviews/Queensr%C3%BFche/Dedicated_to_Chaos/425170/kluseba/238242" title="Read" class="iconContainer ui-state-default ui-corner-all"><span class="ui-icon ui-icon-search">Read</span></a></td>
             				<td>A grower of the weirdest kind</td>
             				<td>60%</td>
             				<td><a href="http://www.metal-archives.com/users/kluseba" class="profileMenu">kluseba</a></td>
@@ -1004,7 +1004,10 @@ function toggleLyrics(songId) {
 Album Mixed at El Dorado Studio.<br />
 Mastered at Oasis Mastering, Burbank.</p>
 				  				  					<p class="title_comment">Identifiers:</p>
-					<p>Barcode: 016861773427</p>
+					<p>Barcode: 0 16861 77342 7<br />
+Rights Society: GEMA / BIEM<br />
+Label Code: LC 09231<br />
+Matrix / Runout: 168617734-2 V01 BDS</p>
 				  	            </div>
 	          </div>
           	<!-- //****** Additional notes *******-->
@@ -1013,17 +1016,17 @@ Mastered at Oasis Mastering, Burbank.</p>
 <div id="auditTrail">
 	<table>
 		<tr>
-			<td>Added by: <a href="http://www.metal-archives.com/users/memorius" class="profileMenu">memorius</a></td>
+			<td>Added by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
 			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
 		</tr>
 		<tr>
-			<td>Added on: 2011-05-05 14:42:10</td>
-			<td align="right">Last modified on: 2014-06-17 07:01:11</td>
+			<td>Added on: 2014-06-17 06:50:30</td>
+			<td align="right">Last modified on: 2014-09-29 22:50:40</td>
 		</tr>
 		<tr>
 			<td valign="top">
-				<a href="http://www.metal-archives.com/history/view/type/release/id/306112">View update history</a> 
-				 | <a href="http://www.metal-archives.com/report/by-object/type/release/id/306112/mode/page">View report history</a> 			</td>
+				<a href="http://www.metal-archives.com/history/view/type/release/id/425170">View update history</a> 
+							</td>
 			<td align="right" valign="top">
 											</td>
 		</tr>

@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -286,8 +288,6 @@
 	          <dd>September 4th, 1990</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>CDP-7-92806-2</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>US</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -1126,7 +1126,7 @@ Barcode: 077779280629</p>
 		</tr>
 		<tr>
 			<td>Added on: N/A</td>
-			<td align="right">Last modified on: 2014-06-19 07:10:08</td>
+			<td align="right">Last modified on: 2014-09-29 21:37:53</td>
 		</tr>
 		<tr>
 			<td valign="top">

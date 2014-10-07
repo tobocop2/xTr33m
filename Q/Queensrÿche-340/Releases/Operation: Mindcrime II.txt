@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -286,8 +288,6 @@
 	          <dd>April 4th, 2006</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>R2 73306</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>US</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -1238,11 +1238,11 @@ Mastering at Area 51 Mastering</p>
 	<table>
 		<tr>
 			<td>Added by: <a href="http://www.metal-archives.com/users/The_Misfits" class="profileMenu">The_Misfits</a></td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/kalervon" class="profileMenu">kalervon</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
 		</tr>
 		<tr>
 			<td>Added on: 2006-01-10 17:32:12</td>
-			<td align="right">Last modified on: 2014-08-15 23:49:32</td>
+			<td align="right">Last modified on: 2014-09-29 22:38:57</td>
 		</tr>
 		<tr>
 			<td valign="top">

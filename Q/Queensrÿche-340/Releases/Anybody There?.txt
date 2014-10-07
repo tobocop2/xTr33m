@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -271,12 +273,14 @@
 	          <dd>2005</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>N/A</dd>
+			  				<dt>Version desc.:</dt>
+				<dd>Japan</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
 	          <dd><a href="http://www.metal-archives.com/labels/Toshiba_EMI/382#label_tabs_albums">Toshiba EMI</a></dd>
 			  <dt>Format:</dt>
-	          <dd>Unknown</dd>
+	          <dd>CD</dd>
 			  	          <dt>Reviews:</dt>
 	          <dd>
 									None yet
@@ -287,7 +291,7 @@
           <ul class="ui-tabs-nav">
             <li><a href="#album_tabs_tracklist">Songs</a></li>
             <li><a href="#album_tabs_lineup">Lineup</a></li>
-			            <li><a href="#album_tabs_reviews">Reviews</a></li>            <li><a href="#album_tabs_notes">Additional notes</a></li>                      </ul>
+			            <li><a href="#album_tabs_reviews">Reviews</a></li>                                  </ul>
           <!-- ***** Songs *******-->
           <div id="album_tabs_tracklist" class="ui-tabs-hide">
             <div id="album_songs" class="tabs2lvl">
@@ -321,7 +325,7 @@ function toggleLyrics(songId) {
 <table class="display table_lyrics" cellpadding="0" cellspacing="0">
 	<tbody>
 		
-							
+																				
 					
 										
 				
@@ -420,25 +424,17 @@ function toggleLyrics(songId) {
         			                        </div>
           </div>
           <!-- //**** Reviews ******-->
-                          	<!-- ****** Additional notes *******-->
-	          <div id="album_tabs_notes" class="ui-tabs-hide">
-	            <div id="album_notes" class="tabs2lvl"></div>
-	            <div class="ui-tabs-panel-content  block_spacer_top_20">
-	              <p class="block_spacer_20">Only released in Japan.</p>
-				  				  	            </div>
-	          </div>
-          	<!-- //****** Additional notes *******-->
-                  </div>
+                        </div>
         <!--**** Footer ***-->
 <div id="auditTrail">
 	<table>
 		<tr>
 			<td>Added by: <a href="http://www.metal-archives.com/users/JAVYMETAL" class="profileMenu">JAVYMETAL</a></td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Evenfiel" class="profileMenu">Evenfiel</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
 		</tr>
 		<tr>
 			<td>Added on: 2005-11-26 17:10:49</td>
-			<td align="right">Last modified on: 2012-04-17 17:43:04</td>
+			<td align="right">Last modified on: 2014-09-29 22:35:30</td>
 		</tr>
 		<tr>
 			<td valign="top">

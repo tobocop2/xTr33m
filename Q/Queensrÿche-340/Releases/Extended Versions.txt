@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -291,7 +293,7 @@
 	          <dt>Label:</dt>
 	          <dd><a href="http://www.metal-archives.com/labels/Sony_BMG/193#label_tabs_albums">Sony BMG</a></dd>
 			  <dt>Format:</dt>
-	          <dd>Unknown</dd>
+	          <dd>CD</dd>
 			  	          <dt>Reviews:</dt>
 	          <dd>
 									None yet
@@ -336,7 +338,7 @@ function toggleLyrics(songId) {
 <table class="display table_lyrics" cellpadding="0" cellspacing="0">
 	<tbody>
 		
-							
+																				
 					
 										
 				
@@ -534,7 +536,9 @@ function toggleLyrics(songId) {
 	          <div id="album_tabs_notes" class="ui-tabs-hide">
 	            <div id="album_notes" class="tabs2lvl"></div>
 	            <div class="ui-tabs-panel-content  block_spacer_top_20">
-	              <p class="block_spacer_20">Recorded at The Moore Theatre, Seattle, WA (07/27/2001, and 07/28/2001).</p>
+	              <p class="block_spacer_20"></p>
+				  					<p class="title_comment">Recording information:</p>
+					<p class="block_spacer_20">Recorded at The Moore Theatre, Seattle, WA (07/27/2001, and 07/28/2001).</p>
 				  				  	            </div>
 	          </div>
           	<!-- //****** Additional notes *******-->
@@ -544,11 +548,11 @@ function toggleLyrics(songId) {
 	<table>
 		<tr>
 			<td>Added by: <a href="http://www.metal-archives.com/users/aloof" class="profileMenu">aloof</a></td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/aloof" class="profileMenu">aloof</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
 		</tr>
 		<tr>
 			<td>Added on: 2012-01-23 06:31:59</td>
-			<td align="right">Last modified on: 2012-01-23 06:31:59</td>
+			<td align="right">Last modified on: 2014-09-29 22:42:47</td>
 		</tr>
 		<tr>
 			<td valign="top">

@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -334,7 +336,7 @@
 			  <dt>Catalog ID:</dt>
 	          <dd>284540-2</dd>
 			  				<dt>Version desc.:</dt>
-				<dd>US (DualDisc)</dd>
+				<dd>DualDisc</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -740,7 +742,7 @@ Bonus downloads via <i>DVDLauncher.com:</i><br />
 		</tr>
 		<tr>
 			<td>Added on: 2008-08-20 23:37:49</td>
-			<td align="right">Last modified on: 2014-06-17 10:37:02</td>
+			<td align="right">Last modified on: 2014-09-29 22:42:11</td>
 		</tr>
 		<tr>
 			<td valign="top">

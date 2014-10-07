@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -230,9 +232,9 @@
 					<th colspan="4"><span>Queensrÿche</span> discography (main)</th>
 				</tr>
 				<tr class="prevNext">
-					<td class="arrows"><a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Dedicated_to_Chaos/306112" title="Dedicated to Chaos (Full-length)"><</a> </td>
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Dedicated_to_Chaos/425170" title="Dedicated to Chaos (Full-length)"><</a> </td>
 					<td class="prev">
-													<a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Dedicated_to_Chaos/306112" title="Dedicated to Chaos (Full-length)">Dedicated to Chaos</a><br />(2011)
+													<a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Dedicated_to_Chaos/425170" title="Dedicated to Chaos (Full-length)">Dedicated to Chaos</a><br />(2011)
 											</td>
 					
 					<td class="next">
@@ -285,7 +287,7 @@
 			  <dt>Catalog ID:</dt>
 	          <dd>9044-2</dd>
 			  				<dt>Version desc.:</dt>
-				<dd>US</dd>
+				<dd>Slipcase</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -1144,9 +1146,7 @@ function toggleLyrics(songId) {
 	            <div class="ui-tabs-panel-content  block_spacer_top_20">
 	              <p class="block_spacer_20">(P) and (C) 2013 Melodisc Ltd.<br />
 <br />
-<b>Trivia:</b><br />
--Comes in a slipcase.<br />
--Includes a patch.<br />
+Includes a patch.<br />
 <br />
 <b>Music videos:</b><br />
 -<a href="http://www.youtube.com/watch?v=fcGYjLLXIG8&feature=kp">Fallout</a><br />
@@ -1187,11 +1187,11 @@ CD date time: 05/14/2013 06:08:55 AM #102853</p>
 	<table>
 		<tr>
 			<td>Added by: <a href="http://www.metal-archives.com/users/Uhlek" class="profileMenu">Uhlek</a></td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/kalervon" class="profileMenu">kalervon</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
 		</tr>
 		<tr>
 			<td>Added on: 2013-04-29 12:30:00</td>
-			<td align="right">Last modified on: 2014-08-16 08:45:11</td>
+			<td align="right">Last modified on: 2014-09-29 22:51:41</td>
 		</tr>
 		<tr>
 			<td valign="top">

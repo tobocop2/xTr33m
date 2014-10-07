@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -275,8 +277,6 @@
 	          <dd>1993</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>38T 77077</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>US</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -361,6 +361,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right">03:56</td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton2936720B" href="#2936720B" onclick="toggleLyrics('2936720B'); return false;">Show lyrics</a>
 									</td>
 			</tr>
 			<tr id="song2936720B" class="displayNone" height="0">
@@ -481,8 +482,7 @@ function toggleLyrics(songId) {
 	          <div id="album_tabs_notes" class="ui-tabs-hide">
 	            <div id="album_notes" class="tabs2lvl"></div>
 	            <div class="ui-tabs-panel-content  block_spacer_top_20">
-	              <p class="block_spacer_20"><b>Trivia:</b><br />
--"Real World" appeared on the soundtrack to <i>Last Action Hero (1993)</i>.</p>
+	              <p class="block_spacer_20">"Real World" appeared on the soundtrack to <i>Last Action Hero (1993)</i>.</p>
 				  				  	            </div>
 	          </div>
           	<!-- //****** Additional notes *******-->
@@ -492,11 +492,11 @@ function toggleLyrics(songId) {
 	<table>
 		<tr>
 			<td>Added by: <a href="http://www.metal-archives.com/users/TurboDrinker" class="profileMenu">TurboDrinker</a></td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/NoKnownName" class="profileMenu">NoKnownName</a></td>
 		</tr>
 		<tr>
 			<td>Added on: 2007-07-20 16:07:01</td>
-			<td align="right">Last modified on: 2014-06-17 09:21:51</td>
+			<td align="right">Last modified on: 2014-10-02 19:30:47</td>
 		</tr>
 		<tr>
 			<td valign="top">

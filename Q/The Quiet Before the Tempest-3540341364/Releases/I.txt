@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -260,8 +262,6 @@
 	          <dd>July 30th, 2012</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>N/A</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>Jewel Case</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -545,11 +545,11 @@ function toggleLyrics(songId) {
 	<table>
 		<tr>
 			<td>Added by: <a href="http://www.metal-archives.com/users/_Nephastal_" class="profileMenu">_Nephastal_</a></td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/14222" class="profileMenu">14222</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
 		</tr>
 		<tr>
 			<td>Added on: 2012-08-05 11:37:29</td>
-			<td align="right">Last modified on: 2014-09-04 16:48:10</td>
+			<td align="right">Last modified on: 2014-10-06 20:04:52</td>
 		</tr>
 		<tr>
 			<td valign="top">

@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -275,14 +277,12 @@
 	          <dd>1989</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>SPRO 04341</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>US (12'')</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
 	          <dd><a href="http://www.metal-archives.com/labels/EMI_Music/7#label_tabs_albums">EMI Music</a></dd>
 			  <dt>Format:</dt>
-	          <dd>Vinyl (33⅓ RPM)</dd>
+	          <dd>12" vinyl (33⅓ RPM)</dd>
 			  	          <dt>Reviews:</dt>
 	          <dd>
 									None yet
@@ -488,7 +488,7 @@ function toggleLyrics(songId) {
 		</tr>
 		<tr>
 			<td>Added on: 2006-03-30 22:44:51</td>
-			<td align="right">Last modified on: 2014-06-17 08:24:16</td>
+			<td align="right">Last modified on: 2014-09-29 21:31:15</td>
 		</tr>
 		<tr>
 			<td valign="top">

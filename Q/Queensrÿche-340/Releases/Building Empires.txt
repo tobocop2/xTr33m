@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -740,7 +742,7 @@ function toggleLyrics(songId) {
 	          <div id="album_tabs_notes" class="ui-tabs-hide">
 	            <div id="album_notes" class="tabs2lvl"></div>
 	            <div class="ui-tabs-panel-content  block_spacer_top_20">
-	              <p class="block_spacer_20">Also released on DVD in 2002.</p>
+	              <p class="block_spacer_20"></p>
 				  					<p class="title_comment">Recording information:</p>
 					<p class="block_spacer_20">Track #2 recorded Live in Tokyo, Japan, August 5 1984<br />
 Tracks #18 & 19 recorded in 1992 for MTV Unplugged</p>
@@ -753,11 +755,11 @@ Tracks #18 & 19 recorded in 1992 for MTV Unplugged</p>
 	<table>
 		<tr>
 			<td>Added by: (Unknown user)</td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/kalervon" class="profileMenu">kalervon</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
 		</tr>
 		<tr>
 			<td>Added on: N/A</td>
-			<td align="right">Last modified on: 2014-08-30 20:16:37</td>
+			<td align="right">Last modified on: 2014-09-29 21:55:46</td>
 		</tr>
 		<tr>
 			<td valign="top">

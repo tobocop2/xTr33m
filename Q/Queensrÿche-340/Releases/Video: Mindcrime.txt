@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -291,7 +293,7 @@
 	          <dt>Label:</dt>
 	          <dd><a href="http://www.metal-archives.com/labels/EMI_Music/7#label_tabs_albums">EMI Music</a></dd>
 			  <dt>Format:</dt>
-	          <dd>VHS</dd>
+	          <dd>DVD</dd>
 			  	          <dt>Reviews:</dt>
 	          <dd>
 									None yet
@@ -364,6 +366,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<em>instrumental</em>
 									</td>
 			</tr>
 			<tr id="song514475" class="displayNone" height="0">
@@ -453,6 +456,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<em>instrumental</em>
 									</td>
 			</tr>
 			<tr id="song514481" class="displayNone" height="0">
@@ -602,11 +606,11 @@ Also released on DVD in a boxed set in 2006. This box also contains the remaster
 	<table>
 		<tr>
 			<td>Added by: <a href="http://www.metal-archives.com/users/Willi_Turner" class="profileMenu">Willi_Turner</a></td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Doomsday" class="profileMenu">Doomsday</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/NoKnownName" class="profileMenu">NoKnownName</a></td>
 		</tr>
 		<tr>
 			<td>Added on: 2005-02-08 06:34:45</td>
-			<td align="right">Last modified on: 2012-12-13 08:55:05</td>
+			<td align="right">Last modified on: 2014-10-01 19:17:00</td>
 		</tr>
 		<tr>
 			<td valign="top">

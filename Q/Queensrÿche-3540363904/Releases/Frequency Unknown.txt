@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -483,7 +485,7 @@ function toggleLyrics(songId) {
 											<tr class="even">
 				<td width="20"><a name="2605218" class="anchor"> </a>11.</td>
 				<td class="wrapWords bonus">
-										Silent Lucidity
+										Silent Lucidity (Queensrÿche cover)
 				</td>
 				<td align="right">04:32</td>
 				<td nowrap="nowrap">&nbsp;
@@ -498,7 +500,7 @@ function toggleLyrics(songId) {
 											<tr class="odd">
 				<td width="20"><a name="2605219" class="anchor"> </a>12.</td>
 				<td class="wrapWords bonus">
-										Empire
+										Empire (Queensrÿche cover)
 				</td>
 				<td align="right">05:24</td>
 				<td nowrap="nowrap">&nbsp;
@@ -513,7 +515,7 @@ function toggleLyrics(songId) {
 											<tr class="even">
 				<td width="20"><a name="2605220" class="anchor"> </a>13.</td>
 				<td class="wrapWords bonus">
-										Jet City Woman
+										Jet City Woman (Queensrÿche cover)
 				</td>
 				<td align="right">05:33</td>
 				<td nowrap="nowrap">&nbsp;
@@ -528,7 +530,7 @@ function toggleLyrics(songId) {
 											<tr class="odd">
 				<td width="20"><a name="2605221" class="anchor"> </a>14.</td>
 				<td class="wrapWords bonus">
-										I Don't Believe in Love
+										I Don't Believe in Love (Queensrÿche cover)
 				</td>
 				<td align="right">05:41</td>
 				<td nowrap="nowrap">&nbsp;
@@ -1592,11 +1594,11 @@ Mould SID Code: IFPI A605</p>
 	<table>
 		<tr>
 			<td>Added by: <a href="http://www.metal-archives.com/users/Zodijackyl" class="profileMenu">Zodijackyl</a></td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/NoKnownName" class="profileMenu">NoKnownName</a></td>
 		</tr>
 		<tr>
 			<td>Added on: 2013-04-29 22:09:07</td>
-			<td align="right">Last modified on: 2014-06-17 06:44:18</td>
+			<td align="right">Last modified on: 2014-10-01 18:54:53</td>
 		</tr>
 		<tr>
 			<td valign="top">

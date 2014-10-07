@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -373,8 +375,8 @@ function toggleLyrics(songId) {
 		
 											<tr class="odd">
 				<td width="20"><a name="1013351" class="anchor"> </a>4.</td>
-				<td class="wrapWords">
-										Dragonslayer (Bonus Track)
+				<td class="wrapWords bonus">
+										Dragonslayer
 				</td>
 				<td align="right">04:53</td>
 				<td nowrap="nowrap">&nbsp;
@@ -439,11 +441,11 @@ function toggleLyrics(songId) {
 	<table>
 		<tr>
 			<td>Added by: <a href="http://www.metal-archives.com/users/Napero" class="profileMenu">Napero</a></td>
-			<td align="right">Modified by: (Unknown user)</td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
 		</tr>
 		<tr>
 			<td>Added on: 2007-01-10 06:02:50</td>
-			<td align="right">Last modified on: N/A</td>
+			<td align="right">Last modified on: 2014-09-30 03:29:10</td>
 		</tr>
 		<tr>
 			<td valign="top">

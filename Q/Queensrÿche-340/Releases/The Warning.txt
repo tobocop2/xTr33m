@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -288,8 +290,6 @@
 	          <dd>September 7th, 1984</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>ST-17134</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>US</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -864,7 +864,7 @@ Mixed at Record One.</p>
 		</tr>
 		<tr>
 			<td>Added on: N/A</td>
-			<td align="right">Last modified on: 2014-06-20 12:35:04</td>
+			<td align="right">Last modified on: 2014-09-29 21:04:37</td>
 		</tr>
 		<tr>
 			<td valign="top">

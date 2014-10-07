@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -291,7 +293,7 @@
 	          <dt>Label:</dt>
 	          <dd><a href="http://www.metal-archives.com/labels/Radtone_Music/22981#label_tabs_albums">Radtone Music</a></dd>
 			  <dt>Format:</dt>
-	          <dd>Unknown</dd>
+	          <dd>CD</dd>
 			  	          <dt>Reviews:</dt>
 	          <dd>
 									None yet
@@ -336,7 +338,7 @@ function toggleLyrics(songId) {
 <table class="display table_lyrics" cellpadding="0" cellspacing="0">
 	<tbody>
 		
-							
+																				
 					
 										
 				
@@ -794,11 +796,11 @@ function toggleLyrics(songId) {
 	<table>
 		<tr>
 			<td>Added by: <a href="http://www.metal-archives.com/users/Charlo" class="profileMenu">Charlo</a></td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/windOfHerMisfortune" class="profileMenu">windOfHerMisfortune</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/LastSavior" class="profileMenu">LastSavior</a></td>
 		</tr>
 		<tr>
 			<td>Added on: 2014-02-21 12:44:11</td>
-			<td align="right">Last modified on: 2014-07-05 12:34:29</td>
+			<td align="right">Last modified on: 2014-10-05 09:21:50</td>
 		</tr>
 		<tr>
 			<td valign="top">

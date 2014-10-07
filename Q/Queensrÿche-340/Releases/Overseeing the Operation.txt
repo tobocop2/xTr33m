@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -286,14 +288,12 @@
 	          <dd>1989</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>10 QR 1</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>UK (10'')</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
 	          <dd><a href="http://www.metal-archives.com/labels/EMI_Manhattan/13312#label_tabs_albums">EMI Manhattan</a></dd>
 			  <dt>Format:</dt>
-	          <dd>Vinyl</dd>
+	          <dd>10" vinyl</dd>
 			  	          <dt>Reviews:</dt>
 	          <dd>
 									None yet
@@ -492,8 +492,7 @@ function toggleLyrics(songId) {
 	          <div id="album_tabs_notes" class="ui-tabs-hide">
 	            <div id="album_notes" class="tabs2lvl"></div>
 	            <div class="ui-tabs-panel-content  block_spacer_top_20">
-	              <p class="block_spacer_20"><b>Trivia:</b><br />
--Contains excerpts from <a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Operation%3A_Mindcrime/1692">Operation: Mindcrime</a>.</p>
+	              <p class="block_spacer_20">Contains excerpts from <a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Operation%3A_Mindcrime/1692">Operation: Mindcrime</a>.</p>
 				  				  					<p class="title_comment">Identifiers:</p>
 					<p>Barcode: 5 099920 303204<br />
 Matrix / Runout (Runout Etched A-Side): 10 QR-1 A-1 LYN 21721<br />
@@ -511,7 +510,7 @@ Matrix / Runout (Runout Etched B-Side): 10 QR-1 B-1 LYN 21722</p>
 		</tr>
 		<tr>
 			<td>Added on: N/A</td>
-			<td align="right">Last modified on: 2014-06-17 10:39:23</td>
+			<td align="right">Last modified on: 2014-09-29 21:31:58</td>
 		</tr>
 		<tr>
 			<td valign="top">

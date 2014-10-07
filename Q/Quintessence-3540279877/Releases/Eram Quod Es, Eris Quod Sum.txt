@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Annthennath / Quintessence - Eram quod es, eris quod sum - Encyclopaedia Metallum: The Metal Archives</title>
+		<title>Annthennath / Quintessence - Eram Quod Es, Eris Quod Sum - Encyclopaedia Metallum: The Metal Archives</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 					<link rel="stylesheet" type="text/css" href="/min/index.php?g=css" />
 				
@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -106,7 +108,7 @@
 								<input type="text" name="loginUsername" size="20" />
 								<label>Password</label><br/>
 								<input type="password" name="loginPassword" size="20" />
-								<input type="hidden" name="origin" value="/albums/Quintessence/Eram_quod_es%2C_eris_quod_sum/440402" />
+								<input type="hidden" name="origin" value="/albums/Quintessence/Eram_Quod_Es%2C_Eris_Quod_Sum/440402" />
 								<button type="submit" class="btn_login float_right">Login</button>
 							</div>
 		                </form>
@@ -198,11 +200,11 @@
 
 	<a href="http://www.metal-archives.com/bands/Annthennath/29052#band_tab_discography">Annthennath</a> / <a href="http://www.metal-archives.com/bands/Quintessence/3540279877#band_tab_discography">Quintessence</a>
 	
-						> Eram quod es, eris quod sum
+						> Eram Quod Es, Eris Quod Sum
 					
 			<!-- *** Album cover *** -->
 		<div class="album_img">
-			<a class="image" id="cover" title="Annthennath / Quintessence - Eram quod es, eris quod sum" href="http://www.metal-archives.com/images/4/4/0/4/440402.jpg?2002"><img src="http://www.metal-archives.com/images/4/4/0/4/440402.jpg?2002" title="Click to zoom" alt="Annthennath / Quintessence - Eram quod es, eris quod sum" border="0" /></a>
+			<a class="image" id="cover" title="Annthennath / Quintessence - Eram Quod Es, Eris Quod Sum" href="http://www.metal-archives.com/images/4/4/0/4/440402.jpg?2002"><img src="http://www.metal-archives.com/images/4/4/0/4/440402.jpg?2002" title="Click to zoom" alt="Annthennath / Quintessence - Eram Quod Es, Eris Quod Sum" border="0" /></a>
 		</div>
 			
 			<!-- *** Affiliation block *** -->
@@ -317,7 +319,7 @@
     <!-- ********** ALBUM IMFO ********** -->
     <div id="album_info">
 		<!-- Headers -->
-			<h1 class="album_name"><a href="http://www.metal-archives.com/albums/Annthennath_-_Quintessence/Eram_quod_es%2C_eris_quod_sum/440402">Eram quod es, eris quod sum</a></h1>
+			<h1 class="album_name"><a href="http://www.metal-archives.com/albums/Annthennath_-_Quintessence/Eram_Quod_Es%2C_Eris_Quod_Sum/440402">Eram Quod Es, Eris Quod Sum</a></h1>
 	<h2 class="band_name"><a href="http://www.metal-archives.com/bands/Annthennath/29052">Annthennath</a> / <a href="http://www.metal-archives.com/bands/Quintessence/3540279877">Quintessence</a></h2>
 
                 <!-- Error / OK messages -->
@@ -450,7 +452,7 @@ function toggleLyrics(songId) {
 				<td width="20"><a name="3027935B" class="anchor"> </a>4.</td>
 				<td class="wrapWords">
 																									Quintessence - 
-																L'Ultime Débauche
+																L'ultime débauche
 				</td>
 				<td align="right">08:35</td>
 				<td nowrap="nowrap">&nbsp;
@@ -466,7 +468,7 @@ function toggleLyrics(songId) {
 				<td width="20"><a name="3027936B" class="anchor"> </a>5.</td>
 				<td class="wrapWords">
 																									Quintessence - 
-																Rendez-Vous avec la Mort
+																Rendez-vous avec la mort
 				</td>
 				<td align="right">08:53</td>
 				<td nowrap="nowrap">&nbsp;
@@ -482,7 +484,7 @@ function toggleLyrics(songId) {
 				<td width="20"><a name="3027937B" class="anchor"> </a>6.</td>
 				<td class="wrapWords">
 																									Quintessence - 
-																Le Repos éternel
+																Le repos éternel
 				</td>
 				<td align="right">06:56</td>
 				<td nowrap="nowrap">&nbsp;
@@ -618,7 +620,7 @@ function toggleLyrics(songId) {
                               </div>
             </div>
             <div class="ui-tabs-panel-content block_spacer_top_36">
-                        	There are no reviews for Eram quod es, eris quod sum yet. 
+                        	There are no reviews for Eram Quod Es, Eris Quod Sum yet. 
             		            			<span class="writeAction">You can <a href="http://www.metal-archives.com/review/write/releaseId/440402">write</a> one.</span>
         			                        </div>
           </div>
@@ -637,11 +639,11 @@ function toggleLyrics(songId) {
 	<table>
 		<tr>
 			<td>Added by: <a href="http://www.metal-archives.com/users/Shaxul" class="profileMenu">Shaxul</a></td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Shaxul" class="profileMenu">Shaxul</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Kristen%20Jensen" class="profileMenu">Kristen Jensen</a></td>
 		</tr>
 		<tr>
 			<td>Added on: 2014-07-30 12:20:01</td>
-			<td align="right">Last modified on: 2014-07-30 12:25:59</td>
+			<td align="right">Last modified on: 2014-10-03 05:02:59</td>
 		</tr>
 		<tr>
 			<td valign="top">

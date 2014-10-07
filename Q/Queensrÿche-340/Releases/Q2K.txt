@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -289,8 +291,6 @@
 	          <dd>September 14th, 1999</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>83225-2</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>US</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -885,11 +885,11 @@ Mastered at Oasis Mastering</p>
 	<table>
 		<tr>
 			<td>Added by: (Unknown user)</td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/kalervon" class="profileMenu">kalervon</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
 		</tr>
 		<tr>
 			<td>Added on: N/A</td>
-			<td align="right">Last modified on: 2014-08-15 23:40:36</td>
+			<td align="right">Last modified on: 2014-09-29 22:31:52</td>
 		</tr>
 		<tr>
 			<td valign="top">

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Quimera - Tratado de Alquimia y Destrucción - Tomo II - Encyclopaedia Metallum: The Metal Archives</title>
+		<title>Quiebra - Diez años de Drama - Encyclopaedia Metallum: The Metal Archives</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 					<link rel="stylesheet" type="text/css" href="/min/index.php?g=css" />
 				
@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -106,7 +108,7 @@
 								<input type="text" name="loginUsername" size="20" />
 								<label>Password</label><br/>
 								<input type="password" name="loginPassword" size="20" />
-								<input type="hidden" name="origin" value="/albums/Quimera/Tratado_de_Alquimia_y_Destrucci%C3%B3n_-_Tomo_II/165503" />
+								<input type="hidden" name="origin" value="/albums/Quiebra/Diez_a%C3%B1os_de_Drama/225063" />
 								<button type="submit" class="btn_login float_right">Login</button>
 							</div>
 		                </form>
@@ -170,13 +172,13 @@
 
 <div id="album_sidebar">
 
-	<a href="http://www.metal-archives.com/bands/Quimera/90661#band_tab_discography">Quimera</a>
+	<a href="http://www.metal-archives.com/bands/Quiebra/3540272994#band_tab_discography">Quiebra</a>
 	
-						> Tratado de Alquimia y Destrucción - Tomo II
+						> Diez años de Drama
 					
 			<!-- *** Album cover *** -->
 		<div class="album_img">
-			<a class="image" id="cover" title="Quimera - Tratado de Alquimia y Destrucci&oacute;n - Tomo II" href="http://www.metal-archives.com/images/1/6/5/5/165503.jpg"><img src="http://www.metal-archives.com/images/1/6/5/5/165503.jpg" title="Click to zoom" alt="Quimera - Tratado de Alquimia y Destrucci&oacute;n - Tomo II" border="0" /></a>
+			<a class="image" id="cover" title="Quiebra - Diez a&ntilde;os de Drama" href="http://www.metal-archives.com/images/2/2/5/0/225063.jpg"><img src="http://www.metal-archives.com/images/2/2/5/0/225063.jpg" title="Click to zoom" alt="Quiebra - Diez a&ntilde;os de Drama" border="0" /></a>
 		</div>
 			
 			<!-- *** Affiliation block *** -->
@@ -185,23 +187,23 @@
 			<br />
 			<ul id="buyLinks" class="menu_style_5">
 													<li>
-						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=29&rid=165503">Search on eBay</a> 
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=29&rid=225063">Search on eBay</a> 
 						 
 							more... <a href="#more" onclick="$('#sub29').toggle(); return false;">>></a><br />
 							<ul id="sub29" style="display: none; margin-top: 0px; margin-bottom: 0px;">
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=39&rid=165503">Search on Half.com</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=23&rid=165503">eBay Canada</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=25&rid=165503">eBay UK</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=24&rid=165503">eBay France</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=37&rid=165503">eBay Spain</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=35&rid=165503">eBay Belgium</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=26&rid=165503">eBay Netherlands</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=27&rid=165503">eBay Italy</a></li>
-																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=28&rid=165503">eBay Australia</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=39&rid=225063">Search on Half.com</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=23&rid=225063">eBay Canada</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=25&rid=225063">eBay UK</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=24&rid=225063">eBay France</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=37&rid=225063">eBay Spain</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=35&rid=225063">eBay Belgium</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=26&rid=225063">eBay Netherlands</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=27&rid=225063">eBay Italy</a></li>
+																	<li><a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=28&rid=225063">eBay Australia</a></li>
 															</ul>
 											</li>
 									<li>
-						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=7&rid=165503">Search on Gemm.com</a> 
+						<a target="_blank" href="http://www.metal-archives.com/affiliate/?pid=7&rid=225063">Search on Gemm.com</a> 
 											</li>
 							</ul>
 		</div>
@@ -216,31 +218,32 @@
 				<th class="spacer"></th>
 			</tr>
 							<tr>
-					<th colspan="4"><span>Quimera</span> discography (demos)</th>
+					<th colspan="4"><span>Quiebra</span> discography (misc)</th>
 				</tr>
 				<tr class="prevNext">
-					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quimera/Tratado_de_Alquimia_y_Destruccion-Tomo_I/150478" title="Tratado de Alquimia y Destruccion-Tomo I (Demo)"><</a> </td>
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quiebra/Venecia_Perdida/225062" title="Venecia Perdida (Single)"><</a> </td>
 					<td class="prev">
-													<a href="http://www.metal-archives.com/albums/Quimera/Tratado_de_Alquimia_y_Destruccion-Tomo_I/150478" title="Tratado de Alquimia y Destruccion-Tomo I (Demo)">Tratado de Alquimia y Destruccion-Tomo I</a><br />(2006)
+													<a href="http://www.metal-archives.com/albums/Quiebra/Venecia_Perdida/225062" title="Venecia Perdida (Single)">Venecia Perdida</a><br />(2006)
 											</td>
 					
 					<td class="next">
+													<a href="http://www.metal-archives.com/albums/Quiebra/Laberinto_Espiral/310321" title="Laberinto Espiral (EP)">Laberinto Espiral</a><br />(2010)
 											</td>
-					<td class="arrows"> </td>
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quiebra/Laberinto_Espiral/310321" title="Laberinto Espiral (EP)">></a> </td>
 				</tr>
 										<tr>
-					<th colspan="4"><span>Quimera</span> discography (all)</th>
+					<th colspan="4"><span>Quiebra</span> discography (all)</th>
 				</tr>
 				<tr class="prevNext">
-					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quimera/Tratado_de_Alquimia_y_Destruccion-Tomo_I/150478" title="Tratado de Alquimia y Destruccion-Tomo I (Demo)"><</a> </td>
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quiebra/Venecia_Perdida/225062" title="Venecia Perdida (Single)"><</a> </td>
 					<td class="prev">
-													<a href="http://www.metal-archives.com/albums/Quimera/Tratado_de_Alquimia_y_Destruccion-Tomo_I/150478" title="Tratado de Alquimia y Destruccion-Tomo I (Demo)">Tratado de Alquimia y Destruccion-Tomo I</a><br />(2006)
+													<a href="http://www.metal-archives.com/albums/Quiebra/Venecia_Perdida/225062" title="Venecia Perdida (Single)">Venecia Perdida</a><br />(2006)
 											</td>
 					
 					<td class="next">
-													<a href="http://www.metal-archives.com/albums/Quimera/Quimera_-_Chainsaw_Killer/187906" title="Quimera / Chainsaw Killer (Split)">Quimera / Chainsaw Killer</a><br />(2008)
+													<a href="http://www.metal-archives.com/albums/Quiebra/Laberinto_Espiral/310321" title="Laberinto Espiral (EP)">Laberinto Espiral</a><br />(2010)
 											</td>
-					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quimera/Quimera_-_Chainsaw_Killer/187906" title="Quimera / Chainsaw Killer (Split)">></a> </td>
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quiebra/Laberinto_Espiral/310321" title="Laberinto Espiral (EP)">></a> </td>
 				</tr>
 					</table>
 	
@@ -250,17 +253,17 @@
 <div id="album_content">
 	<div class="tool_strip right">
 		<ul>
-			          		<li><a title="Report a mistake or additional information for this page" href="javascript:popupReportDialog(4, 165503);" class="btn_report_error writeAction"> </a></li>
+			          		<li><a title="Report a mistake or additional information for this page" href="javascript:popupReportDialog(4, 225063);" class="btn_report_error writeAction"> </a></li>
       		          	<li>
-	          		          		<a href="http://www.metal-archives.com/bands/Quimera/90661" title="Back to Quimera" class="btn_back"> </a>
+	          		          		<a href="http://www.metal-archives.com/bands/Quiebra/3540272994" title="Back to Quiebra" class="btn_back"> </a>
 	      		          	</li>
         </ul>
     </div>
     <!-- ********** ALBUM IMFO ********** -->
     <div id="album_info">
 		<!-- Headers -->
-			<h1 class="album_name"><a href="http://www.metal-archives.com/albums/Quimera/Tratado_de_Alquimia_y_Destrucci%C3%B3n_-_Tomo_II/165503">Tratado de Alquimia y Destrucción - Tomo II</a></h1>
-	<h2 class="band_name"><a href="http://www.metal-archives.com/bands/Quimera/90661">Quimera</a></h2>
+			<h1 class="album_name"><a href="http://www.metal-archives.com/albums/Quiebra/Diez_a%C3%B1os_de_Drama/225063">Diez años de Drama</a></h1>
+	<h2 class="band_name"><a href="http://www.metal-archives.com/bands/Quiebra/3540272994">Quiebra</a></h2>
 
                 <!-- Error / OK messages -->
         <div class="clear block_spacer_5"></div>
@@ -269,17 +272,17 @@
         <div class="clear block_spacer_20"></div>
         	<dl class="float_left">
 	          <dt>Type:</dt>
-	          <dd>Demo</dd>
+	          <dd>Compilation</dd>
 	          <dt>Release date:</dt>
-	          <dd>August 19th, 2007</dd>
+	          <dd>2007</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>N/A</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
-	          <dd><a href="http://www.metal-archives.com/labels/Hermetik/7876#label_tabs_albums">Hermetik</a></dd>
+	          <dd>Independent</dd>
 			  <dt>Format:</dt>
-	          <dd>CD</dd>
+	          <dd>Unknown</dd>
 			  	          <dt>Reviews:</dt>
 	          <dd>
 									None yet
@@ -290,7 +293,7 @@
           <ul class="ui-tabs-nav">
             <li><a href="#album_tabs_tracklist">Songs</a></li>
             <li><a href="#album_tabs_lineup">Lineup</a></li>
-			            <li><a href="#album_tabs_reviews">Reviews</a></li>            <li><a href="#album_tabs_notes">Additional notes</a></li>                      </ul>
+			            <li><a href="#album_tabs_reviews">Reviews</a></li>                                  </ul>
           <!-- ***** Songs *******-->
           <div id="album_tabs_tracklist" class="ui-tabs-hide">
             <div id="album_songs" class="tabs2lvl">
@@ -324,88 +327,71 @@ function toggleLyrics(songId) {
 <table class="display table_lyrics" cellpadding="0" cellspacing="0">
 	<tbody>
 		
-																				
+							
 					
 										
 				
 		
 		
 													<tr class="even">
-				<td width="20"><a name="1177393" class="anchor"> </a>1.</td>
+				<td width="20"><a name="1590340" class="anchor"> </a>1.</td>
 				<td class="wrapWords">
-										Epílogo (de un Prólogo)
+										Hijos de la tormenta
 				</td>
-				<td align="right">01:32</td>
+				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
 									</td>
 			</tr>
-			<tr id="song1177393" class="displayNone" height="0">
+			<tr id="song1590340" class="displayNone" height="0">
 				<td>&nbsp;</td>
-				<td colspan="3" id="lyrics_1177393">(loading lyrics...)</td>
+				<td colspan="3" id="lyrics_1590340">(loading lyrics...)</td>
 			</tr>
 		
 											<tr class="odd">
-				<td width="20"><a name="1177394" class="anchor"> </a>2.</td>
+				<td width="20"><a name="1590341" class="anchor"> </a>2.</td>
 				<td class="wrapWords">
-										Quimera
+										Venecia perdida
 				</td>
-				<td align="right">03:01</td>
+				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
-											<a id="lyricsButton1177394" href="#1177394" onclick="toggleLyrics('1177394'); return false;">Show lyrics</a>
 									</td>
 			</tr>
-			<tr id="song1177394" class="displayNone" height="0">
+			<tr id="song1590341" class="displayNone" height="0">
 				<td>&nbsp;</td>
-				<td colspan="3" id="lyrics_1177394">(loading lyrics...)</td>
+				<td colspan="3" id="lyrics_1590341">(loading lyrics...)</td>
 			</tr>
 		
 											<tr class="even">
-				<td width="20"><a name="1177395" class="anchor"> </a>3.</td>
+				<td width="20"><a name="1590342" class="anchor"> </a>3.</td>
 				<td class="wrapWords">
-										Homúnculos
+										Némesis
 				</td>
-				<td align="right">03:01</td>
+				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
-											<a id="lyricsButton1177395" href="#1177395" onclick="toggleLyrics('1177395'); return false;">Show lyrics</a>
 									</td>
 			</tr>
-			<tr id="song1177395" class="displayNone" height="0">
+			<tr id="song1590342" class="displayNone" height="0">
 				<td>&nbsp;</td>
-				<td colspan="3" id="lyrics_1177395">(loading lyrics...)</td>
+				<td colspan="3" id="lyrics_1590342">(loading lyrics...)</td>
 			</tr>
 		
 											<tr class="odd">
-				<td width="20"><a name="1177396" class="anchor"> </a>4.</td>
+				<td width="20"><a name="1590343" class="anchor"> </a>4.</td>
 				<td class="wrapWords">
-										Pneuma Apeyron
+										La vida al absurdo
 				</td>
-				<td align="right">02:28</td>
+				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
 									</td>
 			</tr>
-			<tr id="song1177396" class="displayNone" height="0">
+			<tr id="song1590343" class="displayNone" height="0">
 				<td>&nbsp;</td>
-				<td colspan="3" id="lyrics_1177396">(loading lyrics...)</td>
-			</tr>
-		
-											<tr class="even">
-				<td width="20"><a name="1177397" class="anchor"> </a>5.</td>
-				<td class="wrapWords">
-										Sangre y Muerte
-				</td>
-				<td align="right">02:26</td>
-				<td nowrap="nowrap">&nbsp;
-											<a id="lyricsButton1177397" href="#1177397" onclick="toggleLyrics('1177397'); return false;">Show lyrics</a>
-									</td>
-			</tr>
-			<tr id="song1177397" class="displayNone" height="0">
-				<td>&nbsp;</td>
-				<td colspan="3" id="lyrics_1177397">(loading lyrics...)</td>
+				<td colspan="3" id="lyrics_1590343">(loading lyrics...)</td>
 			</tr>
 		
 									<tr>
 				<td colspan="2">&nbsp;</td>
-				<td align="right"><strong>12:28</strong></td>
+				<td align="right"><strong></strong></td>
 				<td>&nbsp;</td>
 			</tr>
 				</tbody>
@@ -419,40 +405,15 @@ function toggleLyrics(songId) {
 	    	<div id="album_members" class="tabs2lvl">
 	    		
 	    							<ul>
-		            			            	<li><a href="#album_members_lineup">Band members</a></li>	            			            				            </ul>
-		            	            		            				            <!-- Album members-->
-			            <div id="album_members_lineup">
+		            			            		            			            		<li><a href="#album_members_misc">Misc. staff</a></li>		            </ul>
+		            	            		            								            			            <!-- Misc artists -->
+			            <div id="album_members_misc">
 			                <div class="ui-tabs-panel-content">
-			                    								<table class="display lineupTable" cellpadding="0" cellspacing="0">
-																
-			
-			<tr class="lineupRow">
+			                    	<em>(None)</em>
 
-				<td width="300" valign="top">
-					<a href="http://www.metal-archives.com/artists/Azif/220960">Azif</a> 
-					
-									</td>
-				<td>
-											Vocals									</td>
-			</tr>
-						
-								
-			
-			<tr class="lineupRow">
-
-				<td width="300" valign="top">
-					<a href="http://www.metal-archives.com/artists/Fernando/220962">Fernando</a> 
-					
-									</td>
-				<td>
-											Guitars									</td>
-			</tr>
-						
-			</table>
-	
 			                </div>
 			            </div>
-		            							            	             
+		            	             
 	        </div>
 	    </div>
           <!-- //**** lineup ******-->
@@ -466,40 +427,32 @@ function toggleLyrics(songId) {
             <div id="album_reviews" class="tabs2lvl">
               <div class="tool_strip top right writeAction">
               		                <ul>
-	                  <li><a href="http://www.metal-archives.com/review/write/releaseId/165503" class="btn_add">Add</a></li>
+	                  <li><a href="http://www.metal-archives.com/review/write/releaseId/225063" class="btn_add">Add</a></li>
 	                </ul>
                               </div>
             </div>
             <div class="ui-tabs-panel-content block_spacer_top_36">
-                        	There are no reviews for Tratado de Alquimia y Destrucción - Tomo II yet. 
-            		            			<span class="writeAction">You can <a href="http://www.metal-archives.com/review/write/releaseId/165503">write</a> one.</span>
+                        	There are no reviews for Diez años de Drama yet. 
+            		            			<span class="writeAction">You can <a href="http://www.metal-archives.com/review/write/releaseId/225063">write</a> one.</span>
         			                        </div>
           </div>
           <!-- //**** Reviews ******-->
-                          	<!-- ****** Additional notes *******-->
-	          <div id="album_tabs_notes" class="ui-tabs-hide">
-	            <div id="album_notes" class="tabs2lvl"></div>
-	            <div class="ui-tabs-panel-content  block_spacer_top_20">
-	              <p class="block_spacer_20">Tape release limited to 500 handnumbered copies by <a href="http://www.metal-archives.com/labels/Under_Records/1043">Under Records</a></p>
-				  				  	            </div>
-	          </div>
-          	<!-- //****** Additional notes *******-->
-                  </div>
+                        </div>
         <!--**** Footer ***-->
 <div id="auditTrail">
 	<table>
 		<tr>
-			<td>Added by: <a href="http://www.metal-archives.com/users/Azif" class="profileMenu">Azif</a></td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Revzail" class="profileMenu">Revzail</a></td>
+			<td>Added by: <a href="http://www.metal-archives.com/users/archael" class="profileMenu">archael</a></td>
+			<td align="right">Modified by: (Unknown user)</td>
 		</tr>
 		<tr>
-			<td>Added on: 2007-08-12 20:13:43</td>
-			<td align="right">Last modified on: 2014-07-01 19:24:59</td>
+			<td>Added on: 2009-01-28 06:57:11</td>
+			<td align="right">Last modified on: N/A</td>
 		</tr>
 		<tr>
 			<td valign="top">
-				<a href="http://www.metal-archives.com/history/view/type/release/id/165503">View update history</a> 
-				 | <a href="http://www.metal-archives.com/report/by-object/type/release/id/165503/mode/page">View report history</a> 			</td>
+				<a href="http://www.metal-archives.com/history/view/type/release/id/225063">View update history</a> 
+							</td>
 			<td align="right" valign="top">
 											</td>
 		</tr>

@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -289,8 +291,6 @@
 	          <dd>October 18th, 1994</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>7243-8-30711-2-8</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>US</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -989,11 +989,11 @@ Matrix / Runout: 30711-2 MO L4727D Y 1-1-2 EMI JAX</p>
 	<table>
 		<tr>
 			<td>Added by: (Unknown user)</td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/kalervon" class="profileMenu">kalervon</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
 		</tr>
 		<tr>
 			<td>Added on: N/A</td>
-			<td align="right">Last modified on: 2014-08-15 22:54:18</td>
+			<td align="right">Last modified on: 2014-09-29 22:23:13</td>
 		</tr>
 		<tr>
 			<td valign="top">

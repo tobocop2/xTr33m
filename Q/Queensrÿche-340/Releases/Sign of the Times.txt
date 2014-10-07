@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -275,8 +277,6 @@
 	          <dd>1997</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>7243 8 83792 2 9</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>Netherlands</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -525,7 +525,7 @@ Other (Distribution Code): F: PM 515</p>
 		</tr>
 		<tr>
 			<td>Added on: 2004-03-03 14:38:32</td>
-			<td align="right">Last modified on: 2014-06-17 09:24:18</td>
+			<td align="right">Last modified on: 2014-09-29 22:30:32</td>
 		</tr>
 		<tr>
 			<td valign="top">

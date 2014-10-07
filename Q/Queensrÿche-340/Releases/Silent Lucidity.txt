@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -278,14 +280,12 @@
 	          <dd>1990</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>060-20 4249 6</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>Germany (12'')</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
 	          <dd><a href="http://www.metal-archives.com/labels/EMI_Music/7#label_tabs_albums">EMI Music</a></dd>
 			  <dt>Format:</dt>
-	          <dd>Vinyl</dd>
+	          <dd>12" vinyl</dd>
 			  	          <dt>Reviews:</dt>
 	          <dd>
 									None yet
@@ -644,7 +644,7 @@ function toggleLyrics(songId) {
 		</tr>
 		<tr>
 			<td>Added on: N/A</td>
-			<td align="right">Last modified on: 2014-06-17 08:30:03</td>
+			<td align="right">Last modified on: 2014-09-29 21:34:10</td>
 		</tr>
 		<tr>
 			<td valign="top">

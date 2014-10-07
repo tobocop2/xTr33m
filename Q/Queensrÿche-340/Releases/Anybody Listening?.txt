@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -275,8 +277,6 @@
 	          <dd>1992</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>E2-50388</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>US</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -494,7 +494,7 @@ function toggleLyrics(songId) {
 		</tr>
 		<tr>
 			<td>Added on: N/A</td>
-			<td align="right">Last modified on: 2014-06-17 09:16:19</td>
+			<td align="right">Last modified on: 2014-09-29 21:52:59</td>
 		</tr>
 		<tr>
 			<td valign="top">

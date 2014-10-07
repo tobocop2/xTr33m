@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -219,9 +221,9 @@
 					<th colspan="4"><span>Quintessence</span> discography (main)</th>
 				</tr>
 				<tr class="prevNext">
-					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quintessence/Le_Fl%C3%A9au_de_ton_Existence/234842" title="Le Fl&eacute;au de ton Existence (Full-length)"><</a> </td>
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quintessence/Le_fl%C3%A9au_de_ton_existence/234842" title="Le fl&eacute;au de ton existence (Full-length)"><</a> </td>
 					<td class="prev">
-													<a href="http://www.metal-archives.com/albums/Quintessence/Le_Fl%C3%A9au_de_ton_Existence/234842" title="Le Fl&eacute;au de ton Existence (Full-length)">Le Fléau de ton Existence</a><br />(2009)
+													<a href="http://www.metal-archives.com/albums/Quintessence/Le_fl%C3%A9au_de_ton_existence/234842" title="Le fl&eacute;au de ton existence (Full-length)">Le fléau de ton existence</a><br />(2009)
 											</td>
 					
 					<td class="next">
@@ -238,9 +240,9 @@
 											</td>
 					
 					<td class="next">
-													<a href="http://www.metal-archives.com/albums/Quintessence/Eram_quod_es%2C_eris_quod_sum/440402" title="Eram quod es, eris quod sum (Split)">Eram quod es, eris quod sum</a><br />(2014)
+													<a href="http://www.metal-archives.com/albums/Quintessence/Eram_Quod_Es%2C_Eris_Quod_Sum/440402" title="Eram Quod Es, Eris Quod Sum (Split)">Eram Quod Es, Eris Quod Sum</a><br />(2014)
 											</td>
-					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quintessence/Eram_quod_es%2C_eris_quod_sum/440402" title="Eram quod es, eris quod sum (Split)">></a> </td>
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Quintessence/Eram_Quod_Es%2C_Eris_Quod_Sum/440402" title="Eram Quod Es, Eris Quod Sum (Split)">></a> </td>
 				</tr>
 					</table>
 	

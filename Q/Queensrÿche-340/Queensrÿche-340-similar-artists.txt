@@ -21,7 +21,7 @@ United States
 Progressive Power Metal
 Sanctuary
 United States
-Power Metal
+Power Metal (early), Groove/Progressive Metal (now)
 Queensrche
 United States
 Heavy/Groove Metal
@@ -55,6 +55,9 @@ Power/Speed Metal
 ShadowKeep
 United Kingdom
 Progressive Power Metal
+Leatherwolf
+United States
+Heavy/Power Metal
 Jacobs Dream
 United States
 Power Metal
@@ -64,24 +67,18 @@ Heavy/Power Metal
 Warlord
 United States
 Heavy/Power Metal
-Leatherwolf
-United States
-Heavy/Power Metal
 Siam
 United Kingdom
 Heavy Metal
 Scarlet Rayne
 United States
 Progressive Power Metal
-Agent Steel
-United States
-Power/Speed/Thrash Metal
 Shadow Gallery
 United States
 Progressive Metal
-Geoff Tate
+Agent Steel
 United States
-Experimental/Soft Rock (early), Hard Rock (later)
+Power/Speed/Thrash Metal
 Drive
 United States
 Power/Progressive Metal
@@ -100,6 +97,9 @@ Power Metal
 Bruce Dickinson
 United Kingdom
 Rock (early), Heavy Metal (later)
+Geoff Tate
+United States
+Experimental/Soft Rock (early), Hard Rock (later)
 House of Spirits
 Germany
 Progressive Metal
@@ -112,9 +112,6 @@ Progressive Power Metal
 Khali
 Italy
 Melodic Progressive Metal
-Metal Church
-United States
-Heavy/Power/Thrash Metal
 Alpha Tiger
 Germany
 Power Metal
@@ -124,12 +121,12 @@ Heavy Metal
 Dio
 United States
 Heavy Metal
-DragonForce
-United Kingdom
-Power Metal
 Royal Hunt
 Denmark
 Melodic Progressive Metal
+Veni Domine
+Sweden
+Progressive/Doom Metal
 Vicious Rumors
 United States
 Heavy/Power Metal, Groove Metal
@@ -139,9 +136,15 @@ Progressive/Power Metal
 Crossroads Edge
 Germany
 Progressive Metal
+Metal Church
+United States
+Heavy/Power/Thrash Metal
 Morgana Lefay
 Sweden
 Power/Thrash/Groove Metal
+DragonForce
+United Kingdom
+Power Metal
 Born of Fire
 United States
 Power Metal
@@ -154,9 +157,6 @@ Power/Progressive Metal
 Glacier
 United States
 Heavy/Power Metal
-Veni Domine
-Sweden
-Progressive/Doom Metal
 Balance of Power
 United Kingdom
 AOR (early), Power/Progressive Metal (later)

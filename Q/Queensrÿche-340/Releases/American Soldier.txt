@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -239,9 +241,9 @@
 											</td>
 					
 					<td class="next">
-													<a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Dedicated_to_Chaos/306112" title="Dedicated to Chaos (Full-length)">Dedicated to Chaos</a><br />(2011)
+													<a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Dedicated_to_Chaos/425170" title="Dedicated to Chaos (Full-length)">Dedicated to Chaos</a><br />(2011)
 											</td>
-					<td class="arrows"><a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Dedicated_to_Chaos/306112" title="Dedicated to Chaos (Full-length)">></a> </td>
+					<td class="arrows"><a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Dedicated_to_Chaos/425170" title="Dedicated to Chaos (Full-length)">></a> </td>
 				</tr>
 										<tr>
 					<th colspan="4"><span>Queensrÿche</span> discography (all)</th>
@@ -289,8 +291,6 @@
 	          <dd>March 31st, 2009</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>R2 517967</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>US</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -1178,11 +1178,11 @@ Mastered at Oasis Mastering</p>
 	<table>
 		<tr>
 			<td>Added by: <a href="http://www.metal-archives.com/users/beliah666" class="profileMenu">beliah666</a></td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/kalervon" class="profileMenu">kalervon</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
 		</tr>
 		<tr>
 			<td>Added on: 2009-01-27 04:35:43</td>
-			<td align="right">Last modified on: 2014-08-15 23:53:44</td>
+			<td align="right">Last modified on: 2014-09-29 22:47:23</td>
 		</tr>
 		<tr>
 			<td valign="top">

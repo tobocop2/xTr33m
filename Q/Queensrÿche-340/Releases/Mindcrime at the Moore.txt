@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -286,8 +288,6 @@
 	          <dd>July 3rd, 2007</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>R2 74838</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>US</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -372,6 +372,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right">01:39</td>
 				<td nowrap="nowrap">&nbsp;
+											<em>instrumental</em>
 									</td>
 			</tr>
 			<tr id="song1137593" class="displayNone" height="0">
@@ -536,6 +537,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right">01:30</td>
 				<td nowrap="nowrap">&nbsp;
+											<em>instrumental</em>
 									</td>
 			</tr>
 			<tr id="song1137604" class="displayNone" height="0">
@@ -595,6 +597,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right">01:58</td>
 				<td nowrap="nowrap">&nbsp;
+											<em>instrumental</em>
 									</td>
 			</tr>
 			<tr id="song1137607" class="displayNone" height="0">
@@ -1343,8 +1346,7 @@ function toggleLyrics(songId) {
 	          <div id="album_tabs_notes" class="ui-tabs-hide">
 	            <div id="album_notes" class="tabs2lvl"></div>
 	            <div class="ui-tabs-panel-content  block_spacer_top_20">
-	              <p class="block_spacer_20"><b>Trivia:</b><br />
--Consists of <a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Operation%3A_Mindcrime/1692">Operation: Mindcrime</a> and <a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Operation%3A_Mindcrime_II/105300">Operation: Mindcrime II</a> recorded live in their entirety.</p>
+	              <p class="block_spacer_20">Consists of <a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Operation%3A_Mindcrime/1692">Operation: Mindcrime</a> and <a href="http://www.metal-archives.com/albums/Queensr%C3%BFche/Operation%3A_Mindcrime_II/105300">Operation: Mindcrime II</a> recorded live in their entirety.</p>
 				  					<p class="title_comment">Recording information:</p>
 					<p class="block_spacer_20">Recorded October 13-15, 2006 at The Moore Theatre in Seattle, WA.</p>
 				  				  					<p class="title_comment">Identifiers:</p>
@@ -1358,11 +1360,11 @@ function toggleLyrics(songId) {
 	<table>
 		<tr>
 			<td>Added by: <a href="http://www.metal-archives.com/users/prezuiwf" class="profileMenu">prezuiwf</a></td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/NoKnownName" class="profileMenu">NoKnownName</a></td>
 		</tr>
 		<tr>
 			<td>Added on: 2007-07-06 14:09:30</td>
-			<td align="right">Last modified on: 2014-06-17 07:08:04</td>
+			<td align="right">Last modified on: 2014-10-02 20:15:42</td>
 		</tr>
 		<tr>
 			<td valign="top">

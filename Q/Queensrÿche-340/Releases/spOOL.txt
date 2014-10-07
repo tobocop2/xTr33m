@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -275,8 +277,6 @@
 	          <dd>1997</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>CDSP 149</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>Netherlands</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -467,7 +467,7 @@ function toggleLyrics(songId) {
 		</tr>
 		<tr>
 			<td>Added on: 2008-07-22 06:10:02</td>
-			<td align="right">Last modified on: 2014-06-17 09:25:03</td>
+			<td align="right">Last modified on: 2014-09-29 22:30:45</td>
 		</tr>
 		<tr>
 			<td valign="top">

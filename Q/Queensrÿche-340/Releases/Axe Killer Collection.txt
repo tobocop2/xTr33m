@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -340,6 +342,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton2051511" href="#2051511" onclick="toggleLyrics('2051511'); return false;">Show lyrics</a>
 									</td>
 			</tr>
 			<tr id="song2051511" class="displayNone" height="0">
@@ -354,6 +357,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<em>instrumental</em>
 									</td>
 			</tr>
 			<tr id="song2051512" class="displayNone" height="0">
@@ -368,6 +372,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton2051513" href="#2051513" onclick="toggleLyrics('2051513'); return false;">Show lyrics</a>
 									</td>
 			</tr>
 			<tr id="song2051513" class="displayNone" height="0">
@@ -382,6 +387,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton2051514" href="#2051514" onclick="toggleLyrics('2051514'); return false;">Show lyrics</a>
 									</td>
 			</tr>
 			<tr id="song2051514" class="displayNone" height="0">
@@ -396,6 +402,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton2051515" href="#2051515" onclick="toggleLyrics('2051515'); return false;">Show lyrics</a>
 									</td>
 			</tr>
 			<tr id="song2051515" class="displayNone" height="0">
@@ -410,6 +417,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton2051516" href="#2051516" onclick="toggleLyrics('2051516'); return false;">Show lyrics</a>
 									</td>
 			</tr>
 			<tr id="song2051516" class="displayNone" height="0">
@@ -424,6 +432,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton2051517" href="#2051517" onclick="toggleLyrics('2051517'); return false;">Show lyrics</a>
 									</td>
 			</tr>
 			<tr id="song2051517" class="displayNone" height="0">
@@ -438,6 +447,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton2051518" href="#2051518" onclick="toggleLyrics('2051518'); return false;">Show lyrics</a>
 									</td>
 			</tr>
 			<tr id="song2051518" class="displayNone" height="0">
@@ -452,6 +462,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton2051519" href="#2051519" onclick="toggleLyrics('2051519'); return false;">Show lyrics</a>
 									</td>
 			</tr>
 			<tr id="song2051519" class="displayNone" height="0">
@@ -466,6 +477,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton2051520" href="#2051520" onclick="toggleLyrics('2051520'); return false;">Show lyrics</a>
 									</td>
 			</tr>
 			<tr id="song2051520" class="displayNone" height="0">
@@ -480,6 +492,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton2051521" href="#2051521" onclick="toggleLyrics('2051521'); return false;">Show lyrics</a>
 									</td>
 			</tr>
 			<tr id="song2051521" class="displayNone" height="0">
@@ -494,6 +507,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton2051522" href="#2051522" onclick="toggleLyrics('2051522'); return false;">Show lyrics</a>
 									</td>
 			</tr>
 			<tr id="song2051522" class="displayNone" height="0">
@@ -508,6 +522,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<em>instrumental</em>
 									</td>
 			</tr>
 			<tr id="song2051523" class="displayNone" height="0">
@@ -522,6 +537,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton2051524" href="#2051524" onclick="toggleLyrics('2051524'); return false;">Show lyrics</a>
 									</td>
 			</tr>
 			<tr id="song2051524" class="displayNone" height="0">
@@ -536,6 +552,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton2051525" href="#2051525" onclick="toggleLyrics('2051525'); return false;">Show lyrics</a>
 									</td>
 			</tr>
 			<tr id="song2051525" class="displayNone" height="0">
@@ -550,6 +567,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton2051526" href="#2051526" onclick="toggleLyrics('2051526'); return false;">Show lyrics</a>
 									</td>
 			</tr>
 			<tr id="song2051526" class="displayNone" height="0">
@@ -564,6 +582,7 @@ function toggleLyrics(songId) {
 				</td>
 				<td align="right"></td>
 				<td nowrap="nowrap">&nbsp;
+											<a id="lyricsButton2051527" href="#2051527" onclick="toggleLyrics('2051527'); return false;">Show lyrics</a>
 									</td>
 			</tr>
 			<tr id="song2051527" class="displayNone" height="0">
@@ -634,11 +653,11 @@ function toggleLyrics(songId) {
 	<table>
 		<tr>
 			<td>Added by: <a href="http://www.metal-archives.com/users/Markulino" class="profileMenu">Markulino</a></td>
-			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/Diamhea" class="profileMenu">Diamhea</a></td>
+			<td align="right">Modified by: <a href="http://www.metal-archives.com/users/NoKnownName" class="profileMenu">NoKnownName</a></td>
 		</tr>
 		<tr>
 			<td>Added on: 2010-12-23 10:03:53</td>
-			<td align="right">Last modified on: 2014-06-24 13:01:34</td>
+			<td align="right">Last modified on: 2014-10-02 19:54:39</td>
 		</tr>
 		<tr>
 			<td valign="top">

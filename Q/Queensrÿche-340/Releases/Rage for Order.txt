@@ -30,6 +30,8 @@
 						});
 					}
 				}
+				
+				$(".tooltip").tooltip();
 			});
 
 
@@ -289,8 +291,6 @@
 	          <dd>December 12th, 1986</dd>
 			  <dt>Catalog ID:</dt>
 	          <dd>CDP 7 46330 2</dd>
-			  				<dt>Version desc.:</dt>
-				<dd>US</dd>
 			  			  	        </dl>
 			<dl class="float_right">
 	          <dt>Label:</dt>
@@ -989,7 +989,7 @@ Other: DIDX 844</p>
 		</tr>
 		<tr>
 			<td>Added on: N/A</td>
-			<td align="right">Last modified on: 2014-06-19 03:33:13</td>
+			<td align="right">Last modified on: 2014-09-29 21:12:53</td>
 		</tr>
 		<tr>
 			<td valign="top">
