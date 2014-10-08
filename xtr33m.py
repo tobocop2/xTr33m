@@ -54,7 +54,7 @@ def get_band_info():
                 else:
                     band_map[band_name].append(link)
 
-                write_band_info(letter,band_name,link)
+                write_all_data(letter,band_name,link)
 
     for band in band_map:
         for link in band_map[band]:
@@ -111,6 +111,21 @@ def write_band_description(band_name,band_id):
             description_file.write(band_description.encode('ascii','ignore')+'\n')
         description_file.close()
 
+def write_similar_artists(band_name,band_id):
+    similar_artists = 'http://www.metal-archives.com/band/ajax-recommendations/id/%s/showMoreSimilar/1' % band_id
+
+    #similar artists (Name, country of origin, genre)
+    file2 = os.path.join('./', "%s-%s-similar-artists.txt" % (band_name,band_id))
+    similar_artist_file = open(file2, "a")
+    similar_artist_response = requests.get(similar_artists).content
+    soup = BeautifulSoup(similar_artist_response)
+    for artist  in soup.find_all('tbody'):
+        for child in artist.find_all('td'):
+            if not child.has_attr('colspan') and not child.find_all('span'):
+                print 'Similar artists %s: ' % child.get_text()
+                similar_artist_file.write(child.get_text().encode('ascii','ignore')+'\n')
+    similar_artist_file.close()
+
 def write_release_info(band_name,band_id):
     #Getting release info (Type, year, title)
     releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
@@ -131,10 +146,31 @@ def write_release_info(band_name,band_id):
         release_info.remove(release_year)
     releases_file.close()
 
+    #NEED TO PARSE THESE FILES
+    #Dumping html for individual releases currently..need to extract data
+    #Get tracklisting, lineup info, times, release date etc.
+    try:
+        release_dir = 'Releases'
+        os.makedirs(release_dir)
+    except OSError:
+        if not os.path.isdir(release_dir):
+            raise
+    os.chdir(release_dir)
+    for release in soup.find_all('a',class_=['demo','album','single','other']):
+        release_name = release.get_text().replace('/','\\')
+        print "Getting %s: %s\n" % (band_name,release_name)
+        release_url = release.get('href')
+        individual_release = os.path.join('./', release_name+'.txt')
+        individual_file = open(individual_release, "w")
+        release_to_file = requests.get(release_url).content
+        individual_file.write(release_to_file)
+        individual_file.close()
+
+
 #This function takes the information from get_band_info() and dumps the txt from each band page.
 #The structure of the 'Extreme Archives' will be heavily influenced by the metal-archives.
 #Need to modulairze different types of requests for future debugging
-def write_band_info(letter,band_name,link):
+def write_all_data(letter,band_name,link):
     band_id = link.split('/')[5]
     band_folder = band_name+'-'+band_id
 
@@ -149,46 +185,12 @@ def write_band_info(letter,band_name,link):
             os.makedirs(band_folder)
         os.chdir(band_folder)
 
-        similar_artists = 'http://www.metal-archives.com/band/ajax-recommendations/id/%s/showMoreSimilar/1' % band_id
-
         write_band_content(band_name,band_id)
         write_band_description(band_name,band_id)
+        write_similar_artists(band_name,band_id)
         write_release_info(band_name,band_id)
 
-        #similar artists (Name, country of origin, genre)
-        file2 = os.path.join('./', "%s-%s-similar-artists.txt" % (band_name,band_id))
-        similar_artist_file = open(file2, "a")
-        similar_artist_response = requests.get(similar_artists).content
-        soup = BeautifulSoup(similar_artist_response)
-        for artist  in soup.find_all('tbody'):
-            for child in artist.find_all('td'):
-                if not child.has_attr('colspan') and not child.find_all('span'):
-                    print 'Similar artists %s: ' % child.get_text()
-                    similar_artist_file.write(child.get_text().encode('ascii','ignore')+'\n')
-        similar_artist_file.close()
-
-        #Dumping html for individual releases currently..need to extract data
-        #Get tracklisting, lineup info, times, release date etc.
-        try:
-            release_dir = 'Releases'
-            os.makedirs(release_dir)
-        except OSError:
-            if not os.path.isdir(release_dir):
-                raise
-
-        #NEED TO PARSE THESE FILES
-        os.chdir(release_dir)
-        for release in soup.find_all('a',class_=['demo','album','single','other']):
-            release_name = release.get_text().replace('/','\\')
-            print "Getting %s: %s\n" % (band_name,release_name)
-            release_url = release.get('href')
-            individual_release = os.path.join('./', release_name+'.txt')
-            individual_file = open(individual_release, "w")
-            release_to_file = requests.get(release_url).content
-            individual_file.write(release_to_file)
-            individual_file.close()
         os.chdir('../../../')
-
     except OSError:
         if not os.path.isdir(band_folder):
             raise
