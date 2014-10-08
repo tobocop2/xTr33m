@@ -93,10 +93,43 @@ def write_band_content(band_name,band_id):
         #All of the role info is a sibling to the band member itself
         lineup = soup.select('#band_members .lineupRow td a')
         roles = soup.select('.lineupRow td ~ td')
+        page_file.write('LINEUP:\n')
         for member,role, in zip(lineup,roles):
             band_member = member.text+' - '+role.text.strip()
             page_file.write(band_member.encode('ascii','ignore')+'\n')
     page_file.close()
+
+def write_band_description(band_name,band_id):
+        band_description = 'http://www.metal-archives.com/band/read-more/id/%s' % band_id
+        #Band Description
+        file0 = os.path.join('./',"%s-%s-Description" % (band_name,band_id))
+        description_file = open(file0,"w")
+        description_response = requests.get(band_description).content
+        soup = BeautifulSoup(description_response)
+        for description in soup.find_all(text=True):
+            band_description = description.strip()
+            description_file.write(band_description.encode('ascii','ignore')+'\n')
+        description_file.close()
+
+def write_release_info(band_name,band_id):
+    #Getting release info (Type, year, title)
+    releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
+
+    file3 = os.path.join('./', "%s-%s-releases.txt" % (band_name,band_id))
+    releases_file = open(file3, "a")
+    release_resp = requests.get(releases).content
+    soup = BeautifulSoup(release_resp)
+    release_info = [release_value.text for release_value in soup.find_all(class_=['single','demo','album','demo'])]
+    #need to do this differently
+    for album in release_info:
+        release_name = release_info[0]
+        release_type = release_info[1]
+        release_year = release_info[2]
+        releases_file.write('Name: %s - Type: %s - Year: %s\n' % (release_name.encode('ascii','ignore'),release_type,release_year))
+        release_info.remove(release_name)
+        release_info.remove(release_type)
+        release_info.remove(release_year)
+    releases_file.close()
 
 #This function takes the information from get_band_info() and dumps the txt from each band page.
 #The structure of the 'Extreme Archives' will be heavily influenced by the metal-archives.
@@ -116,21 +149,11 @@ def write_band_info(letter,band_name,link):
             os.makedirs(band_folder)
         os.chdir(band_folder)
 
-        releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
         similar_artists = 'http://www.metal-archives.com/band/ajax-recommendations/id/%s/showMoreSimilar/1' % band_id
-        band_description = 'http://www.metal-archives.com/band/read-more/id/%s' % band_id
-
-        #Band Description
-        file0 = os.path.join('./',"%s-%s-Description" % (band_name,band_id))
-        description_file = open(file0,"w")
-        description_response = requests.get(band_description).content
-        soup = BeautifulSoup(description_response)
-        for description in soup.find_all(text=True):
-            band_description = description.strip()
-            description_file.write(band_description.encode('ascii','ignore')+'\n')
-        description_file.close()
 
         write_band_content(band_name,band_id)
+        write_band_description(band_name,band_id)
+        write_release_info(band_name,band_id)
 
         #similar artists (Name, country of origin, genre)
         file2 = os.path.join('./', "%s-%s-similar-artists.txt" % (band_name,band_id))
@@ -143,16 +166,6 @@ def write_band_info(letter,band_name,link):
                     print 'Similar artists %s: ' % child.get_text()
                     similar_artist_file.write(child.get_text().encode('ascii','ignore')+'\n')
         similar_artist_file.close()
-
-        #Getting release info (Type, year, title)
-        file3 = os.path.join('./', "%s-%s-releases.txt" % (band_name,band_id))
-        releases_file = open(file3, "a")
-        release_resp = requests.get(releases).content
-        soup = BeautifulSoup(release_resp)
-        for release in soup.find_all(class_=['single','demo','album','demo']):
-            print release.get_text()
-            releases_file.write(release.get_text().encode('ascii','ignore')+'\n')
-        releases_file.close()
 
         #Dumping html for individual releases currently..need to extract data
         #Get tracklisting, lineup info, times, release date etc.
