@@ -128,6 +128,7 @@ def write_similar_artists(band_name,band_id):
 
 def write_release_info(band_name,band_id):
     #Getting release info (Type, year, title)
+    #lyrics page: http://www.metal-archives.com/release/ajax-view-lyrics/id/4930
     releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
 
     file3 = os.path.join('./', "%s-%s-releases.txt" % (band_name,band_id))
@@ -158,13 +159,33 @@ def write_release_info(band_name,band_id):
     os.chdir(release_dir)
     for release in soup.find_all('a',class_=['demo','album','single','other']):
         release_name = release.get_text().replace('/','\\')
+        try:
+            release_name_dir = release_name
+            os.makedirs(release_name_dir)
+        except OSError:
+            if not os.path.isdir(release_name_dir):
+                raise
+        os.chdir(release_name_dir)
         print "Getting %s: %s\n" % (band_name,release_name)
         release_url = release.get('href')
         individual_release = os.path.join('./', release_name+'.txt')
-        individual_file = open(individual_release, "w")
-        release_to_file = requests.get(release_url).content
+        individual_file = open(individual_release, "a")
+        release_response = requests.get(release_url).content
+        soup = BeautifulSoup(release_response)
+        #Getting lyrics and track info
+        for child in soup.find_all('tbody'):
+            for tracks in child.find_all(class_=['odd','even'])
+                #write info and lyrics then change back
+                #tracks
+                track_times = []
+                for track in tracks.select('.wrapWords'):
+                    track_name = track.text.strip()
+                    track_length = track.next_sibling.next_sibling.text
+
+
         individual_file.write(release_to_file)
         individual_file.close()
+        os.chdir('../')
 
 
 #This function takes the information from get_band_info() and dumps the txt from each band page.
