@@ -130,6 +130,7 @@ def write_release_info(band_name,band_id):
     #Getting release info (Type, year, title)
     #lyrics page: http://www.metal-archives.com/release/ajax-view-lyrics/id/4930
     releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
+    lyrics_base_url = 'http://www.metal-archives.com/release/ajax-view-lyrics/id/'
 
     file3 = os.path.join('./', "%s-%s-releases.txt" % (band_name,band_id))
     releases_file = open(file3, "a")
@@ -176,11 +177,26 @@ def write_release_info(band_name,band_id):
         for child in soup.find_all('tbody'):
             for tracks in child.find_all(class_=['odd','even'])
                 #write info and lyrics then change back
-                #tracks
-                track_times = []
                 for track in tracks.select('.wrapWords'):
                     track_name = track.text.strip()
                     track_length = track.next_sibling.next_sibling.text
+                    try:
+                        lyrics_dir = 'lyrics'
+                        os.makedirs(lyrics_dir)
+                    except OSError:
+                        if not os.path.isdir(release_name_dir):
+                            raise
+                    os.chdir(lyrics_dir)
+                    #lyrics: for a in track.find_all(href=True):
+                    lyrics_tag = x.next_sibling.next_sibling.next_sibling.next_sibling.find_all(href=True)
+                        if len(lyrics_tag) > 0:
+                            lyrics_url_value = lyrics_tag[0].get('href')
+                            lyrics_id = ''.join([char for char in lyrics_url_value if char.isdigit()])
+                            lyrics_url = lyrics_base_url+lyrics_id
+
+
+
+                    os.chdir('../')
 
 
         individual_file.write(release_to_file)
