@@ -127,8 +127,6 @@ def write_similar_artists(band_name,band_id):
     similar_artist_file.close()
 
 def write_release_info(band_name,band_id):
-    #Getting release info (Type, year, title)
-    #lyrics page: http://www.metal-archives.com/release/ajax-view-lyrics/id/4930
     releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
     lyrics_base_url = 'http://www.metal-archives.com/release/ajax-view-lyrics/id/'
 
@@ -171,16 +169,16 @@ def write_release_info(band_name,band_id):
         individual_release_file = open(individual_release_path, "a")
         release_response = requests.get(release_url).content
         soup = BeautifulSoup(release_response)
+        track_count = 0;
         #Getting lyrics and track info
         for child in soup.find_all('tbody'):
             for tracks in child.find_all(class_=['odd','even']):
                 #write info and lyrics then change back
                 for track in tracks.select('.wrapWords'):
-                    track_count = 1;
-                    track_name = track.text.strip()
+                    track_count += 1;
+                    track_name = track.text.strip().encode('ascii','ignore').replace('/','-')
                     track_length = track.next_sibling.next_sibling.text
                     individual_release_file.write('%s - %s - %s\n' % (str(track_count),track_name.encode('ascii','ignore'),track_length))
-                    track_count += 1
                     try:
                         lyrics_dir = 'lyrics'
                         os.makedirs(lyrics_dir)
@@ -192,7 +190,7 @@ def write_release_info(band_name,band_id):
                     lyrics_tag = track.next_sibling.next_sibling.next_sibling.next_sibling.find_all(href=True)
                     if len(lyrics_tag) > 0:
                         lyrics_path = os.path.join('./', track_name+'.txt')
-                        lyrics_file = open(lyrics_path, "a")
+                        lyrics_file = open(lyrics_path, "w")
                         lyrics_url_value = lyrics_tag[0].get('href')
                         lyrics_id = ''.join([char for char in lyrics_url_value if char.isdigit()])
                         lyrics_url = lyrics_base_url+lyrics_id
@@ -203,7 +201,6 @@ def write_release_info(band_name,band_id):
                         lyrics_file.close()
                     os.chdir('../')
         os.chdir('../')
-
 
 #This function takes the information from get_band_info() and dumps the txt from each band page.
 #The structure of the 'Extreme Archives' will be heavily influenced by the metal-archives.
