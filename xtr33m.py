@@ -148,9 +148,6 @@ def write_release_info(band_name,band_id):
         release_info.remove(release_year)
     releases_file.close()
 
-    #NEED TO PARSE THESE FILES
-    #Dumping html for individual releases currently..need to extract data
-    #Get tracklisting, lineup info, times, release date etc.
     try:
         release_dir = 'Releases'
         os.makedirs(release_dir)
@@ -158,6 +155,7 @@ def write_release_info(band_name,band_id):
         if not os.path.isdir(release_dir):
             raise
     os.chdir(release_dir)
+
     for release in soup.find_all('a',class_=['demo','album','single','other']):
         release_name = release.get_text().replace('/','\\')
         try:
@@ -169,38 +167,41 @@ def write_release_info(band_name,band_id):
         os.chdir(release_name_dir)
         print "Getting %s: %s\n" % (band_name,release_name)
         release_url = release.get('href')
-        individual_release = os.path.join('./', release_name+'.txt')
-        individual_file = open(individual_release, "a")
+        individual_release_path = os.path.join('./', release_name+'.txt')
+        individual_release_file = open(individual_release_path, "a")
         release_response = requests.get(release_url).content
         soup = BeautifulSoup(release_response)
         #Getting lyrics and track info
         for child in soup.find_all('tbody'):
-            for tracks in child.find_all(class_=['odd','even'])
+            for tracks in child.find_all(class_=['odd','even']):
                 #write info and lyrics then change back
                 for track in tracks.select('.wrapWords'):
+                    track_count = 1;
                     track_name = track.text.strip()
                     track_length = track.next_sibling.next_sibling.text
+                    individual_release_file.write('%s - %s - %s\n' % (str(track_count),track_name.encode('ascii','ignore'),track_length))
+                    track_count += 1
                     try:
                         lyrics_dir = 'lyrics'
                         os.makedirs(lyrics_dir)
                     except OSError:
-                        if not os.path.isdir(release_name_dir):
+                        if not os.path.isdir(lyrics_dir):
                             raise
                     os.chdir(lyrics_dir)
                     #lyrics: for a in track.find_all(href=True):
-                    lyrics_tag = x.next_sibling.next_sibling.next_sibling.next_sibling.find_all(href=True)
-                        if len(lyrics_tag) > 0:
-                            lyrics_url_value = lyrics_tag[0].get('href')
-                            lyrics_id = ''.join([char for char in lyrics_url_value if char.isdigit()])
-                            lyrics_url = lyrics_base_url+lyrics_id
-
-
-
+                    lyrics_tag = track.next_sibling.next_sibling.next_sibling.next_sibling.find_all(href=True)
+                    if len(lyrics_tag) > 0:
+                        lyrics_path = os.path.join('./', track_name+'.txt')
+                        lyrics_file = open(lyrics_path, "a")
+                        lyrics_url_value = lyrics_tag[0].get('href')
+                        lyrics_id = ''.join([char for char in lyrics_url_value if char.isdigit()])
+                        lyrics_url = lyrics_base_url+lyrics_id
+                        lyrics_resp = requests.get(lyrics_url).content
+                        lyrics_soup = BeautifulSoup(lyrics_resp)
+                        for lyrics in lyrics_soup.find_all(text=True):
+                            lyrics_file.write(lyrics.strip().encode('ascii','ignore'))
+                        lyrics_file.close()
                     os.chdir('../')
-
-
-        individual_file.write(release_to_file)
-        individual_file.close()
         os.chdir('../')
 
 
