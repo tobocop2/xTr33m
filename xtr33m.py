@@ -64,46 +64,46 @@ def get_band_info():
 def write_band_content(band_name,band_id):
     band_page ='http://www.metal-archives.com/bands/%s/%s' % (band_name,band_id)
 
-    file1 = os.path.join('./', "%s-%s-content.txt" % (band_name,band_id))
-    page_file = open(file1, "a")
-    page_file_response = requests.get(band_page).content
-    soup = BeautifulSoup(page_file_response)
+    main_page_path = os.path.join('./', "%s-%s-content.txt" % (band_name,band_id))
+    main_page_file = open(main_page_path, "a")
+    main_page_file_response = requests.get(band_page).content
+    soup = BeautifulSoup(main_page_file_response)
 
     band_name = soup.select('.band_name')[0].text
-    page_file.write('Band Name: '+band_name.encode('ascii','ignore')+'\n')
+    main_page_file.write('Band Name: '+band_name.encode('ascii','ignore')+'\n')
     country = soup.select('#band_stats dd:nth-of-type(1) a')[0].text
-    page_file.write('Country: '+country.encode('ascii','ignore')+'\n')
+    main_page_file.write('Country: '+country.encode('ascii','ignore')+'\n')
     location = soup.select('#band_stats dd:nth-of-type(2)')[0].text
-    page_file.write('Location: '+country.encode('ascii','ignore')+'\n')
+    main_page_file.write('Location: '+country.encode('ascii','ignore')+'\n')
     status = soup.select('#band_stats dd:nth-of-type(3)')[0].text
-    page_file.write('Status: '+status.encode('ascii','ignore')+'\n')
+    main_page_file.write('Status: '+status.encode('ascii','ignore')+'\n')
     formation = soup.select('#band_stats dd:nth-of-type(4)')[0].text
-    page_file.write('Formation: '+formation.encode('ascii','ignore')+'\n')
+    main_page_file.write('Formation: '+formation.encode('ascii','ignore')+'\n')
     genre = soup.select('#band_stats dd:nth-of-type(5)')[0].text
-    page_file.write('Genre: '+genre.encode('ascii','ignore')+'\n')
+    main_page_file.write('Genre: '+genre.encode('ascii','ignore')+'\n')
     lyrical_themes = soup.select('#band_stats dd:nth-of-type(6)')[0].text
-    page_file.write('Lyrical Themes: '+lyrical_themes.encode('ascii','ignore')+'\n')
+    main_page_file.write('Lyrical Themes: '+lyrical_themes.encode('ascii','ignore')+'\n')
     current_label = soup.select('#band_stats dd:nth-of-type(7)')[0].text
-    page_file.write('Current Label: '+current_label.encode('ascii','ignore')+'\n')
+    main_page_file.write('Current Label: '+current_label.encode('ascii','ignore')+'\n')
     years_active = soup.select('#band_stats dd:nth-of-type(8)')[0].text.split()
-    page_file.write('Years Active: \n')
+    main_page_file.write('Years Active: \n')
     for active_info in years_active:
-        page_file.write(active_info.encode('ascii','ignore')+'\n')
+        main_page_file.write(active_info.encode('ascii','ignore')+'\n')
     if soup.find(id='band_tab_members_all') is not None:
         #All of the role info is a sibling to the band member itself
         lineup = soup.select('#band_members .lineupRow td a')
         roles = soup.select('.lineupRow td ~ td')
-        page_file.write('LINEUP:\n')
+        main_page_file.write('LINEUP:\n')
         for member,role, in zip(lineup,roles):
             band_member = member.text+' - '+role.text.strip()
-            page_file.write(band_member.encode('ascii','ignore')+'\n')
-    page_file.close()
+            main_page_file.write(band_member.encode('ascii','ignore')+'\n')
+    main_page_file.close()
 
 def write_band_description(band_name,band_id):
         band_description = 'http://www.metal-archives.com/band/read-more/id/%s' % band_id
         #Band Description
-        file0 = os.path.join('./',"%s-%s-Description" % (band_name,band_id))
-        description_file = open(file0,"w")
+        band_description_path = os.path.join('./',"%s-%s-Description" % (band_name,band_id))
+        description_file = open(band_description_path,"w")
         description_response = requests.get(band_description).content
         soup = BeautifulSoup(description_response)
         for description in soup.find_all(text=True):
@@ -114,54 +114,42 @@ def write_band_description(band_name,band_id):
 def write_similar_artists(band_name,band_id):
     similar_artists = 'http://www.metal-archives.com/band/ajax-recommendations/id/%s/showMoreSimilar/1' % band_id
 
-    #similar artists (Name, country of origin, genre)
-    file2 = os.path.join('./', "%s-%s-similar-artists.txt" % (band_name,band_id))
-    similar_artist_file = open(file2, "a")
+    similar_artist_path = os.path.join('./', "%s-%s-similar-artists.txt" % (band_name,band_id))
+    similar_artist_file = open(similar_artist_path, "a")
     similar_artist_response = requests.get(similar_artists).content
     soup = BeautifulSoup(similar_artist_response)
-    for artist  in soup.find_all('tbody'):
-        for child in artist.find_all('td'):
-            if not child.has_attr('colspan') and not child.find_all('span'):
-                print 'Similar artists %s: ' % child.get_text()
-                similar_artist_file.write(child.get_text().encode('ascii','ignore')+'\n')
+    similar_artist_list = [child.text for child in soup.find_all('td') if not child.has_attr('colspan') and not child.find_all('span')]
+    #may want to do this differently
+    bands = similar_artist_list[0:len(similar_artist_list):3]
+    countries = similar_artist_list[1:len(similar_artist_list):3]
+    genres = similar_artist_list[2:len(similar_artist_list):3]
+    for band,country,genre in zip(bands,countries,genres):
+        similar_artist_file.write('%s - %s - %s\n' % (band.encode('ascii','ignore'),country,genre))
     similar_artist_file.close()
 
-def write_release_info(band_name,band_id):
-    releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
-    lyrics_base_url = 'http://www.metal-archives.com/release/ajax-view-lyrics/id/'
+def write_related_links(band_name,band_id):
+    related_link_url = 'http://www.metal-archives.com/link/ajax-list/type/band/id/%s' % band_id
+    #WIP
 
-    file3 = os.path.join('./', "%s-%s-releases.txt" % (band_name,band_id))
-    releases_file = open(file3, "a")
-    release_resp = requests.get(releases).content
-    soup = BeautifulSoup(release_resp)
-    release_info = [release_value.text for release_value in soup.find_all(class_=['single','demo','album','demo'])]
-    #need to do this differently
-    for album in release_info:
-        release_name = release_info[0]
-        release_type = release_info[1]
-        release_year = release_info[2]
-        releases_file.write('Name: %s - Type: %s - Year: %s\n' % (release_name.encode('ascii','ignore'),release_type,release_year))
-        release_info.remove(release_name)
-        release_info.remove(release_type)
-        release_info.remove(release_year)
-    releases_file.close()
-
+def write_release_info(band_name,soup):
     try:
         release_dir = 'Releases'
         os.makedirs(release_dir)
     except OSError:
         if not os.path.isdir(release_dir):
             raise
-    os.chdir(release_dir)
 
+    os.chdir(release_dir)
     for release in soup.find_all('a',class_=['demo','album','single','other']):
         release_name = release.get_text().replace('/','\\')
+
         try:
             release_name_dir = release_name
             os.makedirs(release_name_dir)
         except OSError:
             if not os.path.isdir(release_name_dir):
                 raise
+
         os.chdir(release_name_dir)
         print "Getting %s: %s\n" % (band_name,release_name)
         release_url = release.get('href')
@@ -173,34 +161,54 @@ def write_release_info(band_name,band_id):
         #Getting lyrics and track info
         for child in soup.find_all('tbody'):
             for tracks in child.find_all(class_=['odd','even']):
-                #write info and lyrics then change back
                 for track in tracks.select('.wrapWords'):
                     track_count += 1;
                     track_name = track.text.strip().encode('ascii','ignore').replace('/','-')
                     track_length = track.next_sibling.next_sibling.text
                     individual_release_file.write('%s - %s - %s\n' % (str(track_count),track_name.encode('ascii','ignore'),track_length))
-                    try:
-                        lyrics_dir = 'lyrics'
-                        os.makedirs(lyrics_dir)
-                    except OSError:
-                        if not os.path.isdir(lyrics_dir):
-                            raise
-                    os.chdir(lyrics_dir)
-                    #lyrics: for a in track.find_all(href=True):
                     lyrics_tag = track.next_sibling.next_sibling.next_sibling.next_sibling.find_all(href=True)
-                    if len(lyrics_tag) > 0:
-                        lyrics_path = os.path.join('./', track_name+'.txt')
-                        lyrics_file = open(lyrics_path, "w")
-                        lyrics_url_value = lyrics_tag[0].get('href')
-                        lyrics_id = ''.join([char for char in lyrics_url_value if char.isdigit()])
-                        lyrics_url = lyrics_base_url+lyrics_id
-                        lyrics_resp = requests.get(lyrics_url).content
-                        lyrics_soup = BeautifulSoup(lyrics_resp)
-                        for lyrics in lyrics_soup.find_all(text=True):
-                            lyrics_file.write(lyrics.strip().encode('ascii','ignore'))
-                        lyrics_file.close()
-                    os.chdir('../')
+                    write_lyrics(track_name,lyrics_tag)
         os.chdir('../')
+
+def write_lyrics(track_name,lyrics_tag):
+    lyrics_base_url = 'http://www.metal-archives.com/release/ajax-view-lyrics/id/'
+
+    try:
+        lyrics_dir = 'lyrics'
+        os.makedirs(lyrics_dir)
+    except OSError:
+        if not os.path.isdir(lyrics_dir):
+            raise
+
+    os.chdir(lyrics_dir)
+    if len(lyrics_tag) > 0:
+        lyrics_path = os.path.join('./', track_name+'.txt')
+        lyrics_file = open(lyrics_path, "w")
+        lyrics_url_value = lyrics_tag[0].get('href')
+        lyrics_id = ''.join([char for char in lyrics_url_value if char.isdigit()])
+        lyrics_url = lyrics_base_url+lyrics_id
+        lyrics_resp = requests.get(lyrics_url).content
+        soup = BeautifulSoup(lyrics_resp)
+        lyrics_file.write(soup.text.encode('ascii','ignore'))
+        lyrics_file.close()
+    os.chdir('../')
+
+def write_all_releases(band_name,band_id):
+    releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
+
+    release_file_path = os.path.join('./', "%s-%s-releases.txt" % (band_name,band_id))
+    releases_file = open(release_file_path, "a")
+    release_resp = requests.get(releases).content
+    soup = BeautifulSoup(release_resp)
+    release_info = [release_value.text for release_value in soup.find_all(class_=['single','demo','album','demo'])]
+    #may want to do this differently
+    release_names = release_info[0:len(release_info):3]
+    release_types = release_info[1:len(release_info):3]
+    release_years = release_info[2:len(release_info):3]
+    for release_name,release_type,release_year in zip(release_names,release_types,release_years):
+        releases_file.write('Name: %s - Type: %s - Year: %s\n' % (release_name.encode('ascii','ignore'),release_type,release_year))
+    releases_file.close()
+    write_release_info(band_name,soup)
 
 #This function takes the information from get_band_info() and dumps the txt from each band page.
 #The structure of the 'Extreme Archives' will be heavily influenced by the metal-archives.
@@ -223,7 +231,7 @@ def write_all_data(letter,band_name,link):
         write_band_content(band_name,band_id)
         write_band_description(band_name,band_id)
         write_similar_artists(band_name,band_id)
-        write_release_info(band_name,band_id)
+        write_all_releases(band_name,band_id)
 
         os.chdir('../../../')
     except OSError:
