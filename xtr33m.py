@@ -129,7 +129,24 @@ def write_similar_artists(band_name,band_id):
 
 def write_related_links(band_name,band_id):
     related_link_url = 'http://www.metal-archives.com/link/ajax-list/type/band/id/%s' % band_id
-    #WIP
+    #official band links
+    related_links_path = os.path.join('./', "%s-%s-related links.txt" % (band_name,band_id))
+    related_links_file = open(related_links_path, "a")
+    related_links_file.write('OFFICIAL BAND LINKS\n')
+    for child in soup.select('#band_links_Official a'):
+        related_links_file.write('%s - %s',(child.text,child['href']))
+    related_links_file.write('OFFICIAL MERCH\n')
+    for child in soup.select('#band_links_Official_merchandise a'):
+        related_links_file.write('%s - %s',(child.text,child['href']))
+    related_links_file.write('UNOFFICIAL MERCH\n')
+    for child in soup.select('#band_links_Unofficial a'):
+        related_links_file.write('%s - %s',(child.text,child['href']))
+    related_links_file.write('BAND LABELS\n')
+    for child in soup.select('#band_links_Labels a'):
+        related_links_file.write('%s - %s',(child.text,child['href']))
+    related_links_file.write('BAND TABS\n')
+    for child in soup.select('#band_links_Tablatures a'):
+        related_links_file.write('%s - %s',(child.text,child['href']))
 
 def write_release_info(band_name,soup):
     try:
@@ -230,6 +247,7 @@ def write_all_data(letter,band_name,link):
 
         write_band_content(band_name,band_id)
         write_band_description(band_name,band_id)
+        write_related_links(band_name,band_id)
         write_similar_artists(band_name,band_id)
         write_all_releases(band_name,band_id)
 
