@@ -170,7 +170,6 @@ def write_related_links(band_name,band_id):
         related_links_file.write('%s - %s\n' % (child.text.encode('ascii','ignore'),child['href'].encode('ascii','ignore')))
 
 def write_release_info(band_name,band_id):
-
     all_releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
     release_resp = requests.get(all_releases).content
     soup = BeautifulSoup(release_resp)
@@ -185,32 +184,46 @@ def write_release_info(band_name,band_id):
     os.chdir(release_dir)
     for release in soup.find_all('a',class_=['demo','album','single','other']):
         release_name = release.get_text().replace('/','\\')
+        release_url = release.get('href')
+        release_id = release_url.split('/')[6]
+        full_release_name = '%s - %s' % (release_name,release_id)
 
         try:
-            release_name_dir = release_name
+            release_name_dir = full_release_name
             os.makedirs(release_name_dir)
         except OSError:
             if not os.path.isdir(release_name_dir):
                 raise
-
         os.chdir(release_name_dir)
+
         print "Getting %s: %s\n" % (band_name,release_name)
-        release_url = release.get('href')
-        individual_release_path = os.path.join('./', release_name+'.txt')
+        individual_release_path = os.path.join('./', full_release_name+'.txt')
         individual_release_file = open(individual_release_path, "a")
         release_response = requests.get(release_url).content
         soup = BeautifulSoup(release_response)
-        track_count = 0;
+        track_count = 0
         #Getting lyrics and track info
         for child in soup.find_all('tbody'):
             for tracks in child.find_all(class_=['odd','even']):
                 for track in tracks.select('.wrapWords'):
-                    track_count += 1;
+                    track_count += 1
                     track_name = track.text.strip().encode('ascii','ignore').replace('/','-')
                     track_length = track.next_sibling.next_sibling.text
                     individual_release_file.write('%s - %s - %s\n' % (str(track_count),track_name.encode('ascii','ignore'),track_length))
                     lyrics_tag = track.next_sibling.next_sibling.next_sibling.next_sibling.find_all(href=True)
                     write_lyrics(track_name,lyrics_tag)
+
+        individual_release_file.write('\nALBUM LINEUP\n')
+        band_members = soup.select('#album_members_lineup .lineupRow td a')
+        member_roles = soup.select('.lineupRow td ~ td')
+        for member,role, in zip(band_members,member_roles):
+            band_member = member.text+' - '+role.text.strip()
+            individual_release_file.write(band_member.encode('ascii','ignore')+'\n')
+
+        individual_release_file.write('\nALBUM NOTES\n')
+        for notes in soup.select('#album_tabs_notes'):
+            individual_release_file.write(notes.text.strip().encode('ascii','ignore')+'\n')
+
         os.chdir('../')
 
 def write_lyrics(track_name,lyrics_tag):
@@ -254,17 +267,17 @@ def write_all_releases(band_name,band_id):
     release_types = release_info[1:len(release_info):3]
     release_years = release_info[2:len(release_info):3]
 
-    releases_file.write('ALL RELEASES')
+    releases_file.write('ALL RELEASES\n')
     for release_name,release_type,release_year in zip(release_names,release_types,release_years):
         releases_file.write('Name: %s - Type: %s - Year: %s\n' % (release_name.encode('ascii','ignore'),release_type,release_year))
 
-    releases_file.write('LIVE RELEASES')
+    releases_file.write('LIVE RELEASES\n')
     write_release_files(releases_file,live_releases)
-    releases_file.write('DEMO RELEASES')
+    releases_file.write('DEMO RELEASES\n')
     write_release_files(releases_file,demo_releases)
-    releases_file.write('MISC RELEASES')
+    releases_file.write('MISC RELEASES\n')
     write_release_files(releases_file,misc_releases)
-    releases_file.write('MAIN RELEASES')
+    releases_file.write('MAIN RELEASES\n')
     write_release_files(releases_file,main_releases)
 
     releases_file.close()
