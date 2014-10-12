@@ -86,14 +86,34 @@ def write_band_content(band_name,band_id):
     current_label = soup.select('#band_stats dd:nth-of-type(7)')[0].text
     main_page_file.write('Current Label: '+current_label.encode('ascii','ignore')+'\n')
     years_active = soup.select('#band_stats dd:nth-of-type(8)')[0].text.split()
+
     main_page_file.write('Years Active: \n')
     for active_info in years_active:
         main_page_file.write(active_info.encode('ascii','ignore')+'\n')
+
     if soup.find(id='band_tab_members_all') is not None:
         #All of the role info is a sibling to the band member itself
-        lineup = soup.select('#band_members .lineupRow td a')
+        main_page_file.write('COMPLETE LINEUP:\n')
+        lineup = soup.select('#band_tab_members_all .lineupRow td a')
         roles = soup.select('.lineupRow td ~ td')
-        main_page_file.write('LINEUP:\n')
+        for member,role, in zip(lineup,roles):
+            band_member = member.text+' - '+role.text.strip()
+            main_page_file.write(band_member.encode('ascii','ignore')+'\n')
+        main_page_file.write('CURRENT LINEUP:\n')
+        lineup = soup.select('#band_tab_members_current .lineupRow td a')
+        roles = soup.select('.lineupRow td ~ td')
+        for member,role, in zip(lineup,roles):
+            band_member = member.text+' - '+role.text.strip()
+            main_page_file.write(band_member.encode('ascii','ignore')+'\n')
+        main_page_file.write('PAST LINEUP:\n')
+        lineup = soup.select('#band_tab_members_past .lineupRow td a')
+        roles = soup.select('.lineupRow td ~ td')
+        for member,role, in zip(lineup,roles):
+            band_member = member.text+' - '+role.text.strip()
+            main_page_file.write(band_member.encode('ascii','ignore')+'\n')
+        main_page_file.write('LIVE LINEUP:\n')
+        lineup = soup.select('#band_tab_members_live .lineupRow td a')
+        roles = soup.select('.lineupRow td ~ td')
         for member,role, in zip(lineup,roles):
             band_member = member.text+' - '+role.text.strip()
             main_page_file.write(band_member.encode('ascii','ignore')+'\n')
@@ -129,24 +149,25 @@ def write_similar_artists(band_name,band_id):
 
 def write_related_links(band_name,band_id):
     related_link_url = 'http://www.metal-archives.com/link/ajax-list/type/band/id/%s' % band_id
-    #official band links
+    related_link_resp = requests.get(related_link_url).content
     related_links_path = os.path.join('./', "%s-%s-related links.txt" % (band_name,band_id))
     related_links_file = open(related_links_path, "a")
+    soup = BeautifulSoup(related_link_resp)
     related_links_file.write('OFFICIAL BAND LINKS\n')
     for child in soup.select('#band_links_Official a'):
-        related_links_file.write('%s - %s',(child.text,child['href']))
+        related_links_file.write('%s - %s\n' % (child.text,child['href']))
     related_links_file.write('OFFICIAL MERCH\n')
     for child in soup.select('#band_links_Official_merchandise a'):
-        related_links_file.write('%s - %s',(child.text,child['href']))
+        related_links_file.write('%s - %s\n' % (child.text,child['href']))
     related_links_file.write('UNOFFICIAL MERCH\n')
     for child in soup.select('#band_links_Unofficial a'):
-        related_links_file.write('%s - %s',(child.text,child['href']))
+        related_links_file.write('%s - %s\n' % (child.text,child['href']))
     related_links_file.write('BAND LABELS\n')
     for child in soup.select('#band_links_Labels a'):
-        related_links_file.write('%s - %s',(child.text,child['href']))
+        related_links_file.write('%s - %s\n' % (child.text,child['href']))
     related_links_file.write('BAND TABS\n')
     for child in soup.select('#band_links_Tablatures a'):
-        related_links_file.write('%s - %s',(child.text,child['href']))
+        related_links_file.write('%s - %s\n' % (child.text,child['href']))
 
 def write_release_info(band_name,soup):
     try:
