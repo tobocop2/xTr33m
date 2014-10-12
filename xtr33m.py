@@ -169,7 +169,12 @@ def write_related_links(band_name,band_id):
     for child in soup.select('#band_links_Tablatures a'):
         related_links_file.write('%s - %s\n' % (child.text,child['href']))
 
-def write_release_info(band_name,soup):
+def write_release_info(band_name):
+
+    all_releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
+    release_resp = requests.get(all_releases).content
+    soup = BeautifulSoup(release_resp)
+
     try:
         release_dir = 'Releases'
         os.makedirs(release_dir)
@@ -232,11 +237,26 @@ def write_lyrics(track_name,lyrics_tag):
     os.chdir('../')
 
 def write_all_releases(band_name,band_id):
-    releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
+    all_releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
+    live_releases = 'http://www.metal-archives.com/band/discography/id/%s/tab/lives' % band_id
+    demo_releases = 'http://www.metal-archives.com/band/discography/id/%s/tab/demos' % band_id
+    misc_releases = 'http://www.metal-archives.com/band/discography/id/%s/tab/misc' % band_id
+    main_releases = 'http://www.metal-archives.com/band/discography/id/%s/tab/main' % band_id
 
     release_file_path = os.path.join('./', "%s-%s-releases.txt" % (band_name,band_id))
     releases_file = open(release_file_path, "a")
-    release_resp = requests.get(releases).content
+
+    write_release_files(releases_file,all_releases)
+    write_release_files(releases_file,live_releases)
+    write_release_files(releases_file,demo_releases)
+    write_release_files(releases_file,misc_releases)
+    write_release_files(releases_file,main_releases)
+
+    releases_file.close()
+    write_release_info(band_name)
+
+def write_release_files(releases_fie,releases_url):
+    release_resp = requests.get(releases_url).content
     soup = BeautifulSoup(release_resp)
     release_info = [release_value.text for release_value in soup.find_all(class_=['single','demo','album','demo'])]
     #may want to do this differently
@@ -245,8 +265,6 @@ def write_all_releases(band_name,band_id):
     release_years = release_info[2:len(release_info):3]
     for release_name,release_type,release_year in zip(release_names,release_types,release_years):
         releases_file.write('Name: %s - Type: %s - Year: %s\n' % (release_name.encode('ascii','ignore'),release_type,release_year))
-    releases_file.close()
-    write_release_info(band_name,soup)
 
 #This function takes the information from get_band_info() and dumps the txt from each band page.
 #The structure of the 'Extreme Archives' will be heavily influenced by the metal-archives.
