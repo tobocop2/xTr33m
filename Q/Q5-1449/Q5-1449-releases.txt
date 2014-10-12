@@ -1,5 +1,0 @@
-Name: Demo - Type: Demo - Year: 1983
-Name: Steel the Light - Type: Full-length - Year: 1984
-Name: Demo 1984 - Type: Demo - Year: 1984
-Name: When the Mirror Cracks - Type: Full-length - Year: 1985
-Name: Steel the Light - Type: Single - Year: 1985

@@ -155,21 +155,21 @@ def write_related_links(band_name,band_id):
     soup = BeautifulSoup(related_link_resp)
     related_links_file.write('OFFICIAL BAND LINKS\n')
     for child in soup.select('#band_links_Official a'):
-        related_links_file.write('%s - %s\n' % (child.text,child['href']))
+        related_links_file.write('%s - %s\n' % (child.text.encode('ascii','ignore'),child['href'].encode('ascii','ignore')))
     related_links_file.write('OFFICIAL MERCH\n')
     for child in soup.select('#band_links_Official_merchandise a'):
-        related_links_file.write('%s - %s\n' % (child.text,child['href']))
+        related_links_file.write('%s - %s\n' % (child.text.encode('ascii','ignore'),child['href'].encode('ascii','ignore')))
     related_links_file.write('UNOFFICIAL MERCH\n')
     for child in soup.select('#band_links_Unofficial a'):
-        related_links_file.write('%s - %s\n' % (child.text,child['href']))
+        related_links_file.write('%s - %s\n' % (child.text.encode('ascii','ignore'),child['href'].encode('ascii','ignore')))
     related_links_file.write('BAND LABELS\n')
     for child in soup.select('#band_links_Labels a'):
-        related_links_file.write('%s - %s\n' % (child.text,child['href']))
+        related_links_file.write('%s - %s\n' % (child.text.encode('ascii','ignore'),child['href'].encode('ascii','ignore')))
     related_links_file.write('BAND TABS\n')
     for child in soup.select('#band_links_Tablatures a'):
-        related_links_file.write('%s - %s\n' % (child.text,child['href']))
+        related_links_file.write('%s - %s\n' % (child.text.encode('ascii','ignore'),child['href'].encode('ascii','ignore')))
 
-def write_release_info(band_name):
+def write_release_info(band_name,band_id):
 
     all_releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
     release_resp = requests.get(all_releases).content
@@ -243,22 +243,38 @@ def write_all_releases(band_name,band_id):
     misc_releases = 'http://www.metal-archives.com/band/discography/id/%s/tab/misc' % band_id
     main_releases = 'http://www.metal-archives.com/band/discography/id/%s/tab/main' % band_id
 
+    release_resp = requests.get(all_releases).content
     release_file_path = os.path.join('./', "%s-%s-releases.txt" % (band_name,band_id))
     releases_file = open(release_file_path, "a")
 
-    write_release_files(releases_file,all_releases)
+    soup = BeautifulSoup(release_resp)
+    #may want to do this differently
+    release_info = [release_value.text for release_value in soup.find_all(class_=['single','demo','album','demo'])]
+    release_names = release_info[0:len(release_info):3]
+    release_types = release_info[1:len(release_info):3]
+    release_years = release_info[2:len(release_info):3]
+
+    releases_file.write('ALL RELEASES')
+    for release_name,release_type,release_year in zip(release_names,release_types,release_years):
+        releases_file.write('Name: %s - Type: %s - Year: %s\n' % (release_name.encode('ascii','ignore'),release_type,release_year))
+
+    releases_file.write('LIVE RELEASES')
     write_release_files(releases_file,live_releases)
+    releases_file.write('DEMO RELEASES')
     write_release_files(releases_file,demo_releases)
+    releases_file.write('MISC RELEASES')
     write_release_files(releases_file,misc_releases)
+    releases_file.write('MAIN RELEASES')
     write_release_files(releases_file,main_releases)
 
     releases_file.close()
-    write_release_info(band_name)
+    write_release_info(band_name,band_id)
 
-def write_release_files(releases_fie,releases_url):
+def write_release_files(releases_file,releases_url):
     release_resp = requests.get(releases_url).content
     soup = BeautifulSoup(release_resp)
-    release_info = [release_value.text for release_value in soup.find_all(class_=['single','demo','album','demo'])]
+    #below commented code only works for all_releases
+    release_info = [child.text.strip() for child in soup.select('tbody td') if '%' not in child.text and len(child.text.strip()) != 0]
     #may want to do this differently
     release_names = release_info[0:len(release_info):3]
     release_types = release_info[1:len(release_info):3]
