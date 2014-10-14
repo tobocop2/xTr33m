@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 def build_band_list():
     result = {}
     #letters = ['NBR','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-    letters = ['Q']
+    letters = ['X']
     index = 0
     count = 0
 
@@ -169,8 +169,7 @@ def write_related_links(band_name,band_id):
     for child in soup.select('#band_links_Tablatures a'):
         related_links_file.write('%s - %s\n' % (child.text.encode('ascii','ignore'),child['href'].encode('ascii','ignore')))
 
-def write_release_info(band_name,band_id):
-    all_releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % band_id
+def write_release_info(band_name,band_id,all_releases):
     release_resp = requests.get(all_releases).content
     soup = BeautifulSoup(release_resp)
 
@@ -281,7 +280,7 @@ def write_all_releases(band_name,band_id):
     write_release_files(releases_file,main_releases)
 
     releases_file.close()
-    write_release_info(band_name,band_id)
+    write_release_info(band_name,band_id,all_releases)
 
 def write_release_files(releases_file,releases_url):
     release_resp = requests.get(releases_url).content
