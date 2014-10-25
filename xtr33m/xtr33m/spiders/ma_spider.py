@@ -1,5 +1,5 @@
 import scrapy
-from tutorial.items import DmozItem
+from xtr33m.items import band_item
 
 class ma_spider(scrapy.Spider):
     name = "ma"
