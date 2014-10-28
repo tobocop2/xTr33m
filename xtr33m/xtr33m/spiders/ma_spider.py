@@ -15,7 +15,7 @@ class ma_spider(Spider):
 
     def start_requests(self):
         #letters = ['NBR']+list(string.uppercase)
-        letters = ['J']
+        letters = ['Q']
         #for letter in letters:
         #    #passing in the letter and the time into the url
         #    url = START_URL_FMT.format(letter,int(time.time()))
@@ -85,31 +85,54 @@ class ma_spider(Spider):
         item['current_label'] = current_label
         item['years_active'] = years_active
         print 'printing the item: %s: ' % item
-        yield item
 
         #Need to figure out how to nest items
-        #if soup.find(id='band_tab_members_all') is not None:
-        #    #All of the role info is a sibling to the band member itself
-        #    #complete linup
-        #    lineup = soup.select('#band_tab_members_all .lineupRow td a')
-        #    roles = soup.select('.lineupRow td ~ td')
-        #    for member,role, in zip(lineup,roles):
-        #        band_member = member.text+' - '+role.text.strip()
-        #    #current linup
-        #    lineup = soup.select('#band_tab_members_current .lineupRow td a')
-        #    roles = soup.select('.lineupRow td ~ td')
-        #    for member,role, in zip(lineup,roles):
-        #        band_member = member.text+' - '+role.text.strip()
-        #    #past lineup
-        #    lineup = soup.select('#band_tab_members_past .lineupRow td a')
-        #    roles = soup.select('.lineupRow td ~ td')
-        #    for member,role, in zip(lineup,roles):
-        #        band_member = member.text+' - '+role.text.strip()
-        #    #live lineup
-        #    lineup = soup.select('#band_tab_members_live .lineupRow td a')
-        #    roles = soup.select('.lineupRow td ~ td')
-        #    for member,role, in zip(lineup,roles):
-        #        band_member = member.text+' - '+role.text.strip()
+        if soup.find_all(id=['band_tab_members_all','band_tab_members_current','band_tab_members_past','band_tab_members_live']) is not None:
+            #All of the role info is a sibling to the band member itself
+            item['complete_lineup']= []
+            lineup = soup.select('#band_tab_members_all .lineupRow td a')
+            if len(lineup) > 0:
+                roles = soup.select('.lineupRow td ~ td')
+                for member,role, in zip(lineup,roles):
+                    #band_member = member.text+' - '+role.text.strip()
+                    if not item['complete_lineup']:
+                        item['complete_lineup'] = [{member.text: role.text.strip()}]
+                    else:
+                        item['complete_lineup'].append({member.text: role.text.strip()})
+            #current linup
+            item['current_lineup']= []
+            lineup = soup.select('#band_tab_members_current .lineupRow td a')
+            if len(lineup) > 0:
+                roles = soup.select('.lineupRow td ~ td')
+                for member,role, in zip(lineup,roles):
+                    band_member = member.text+' - '+role.text.strip()
+                    if not item['current_lineup']:
+                        item['complete_lineup'] = [{member.text: role.text.strip()}]
+                    else:
+                        item['complete_lineup'].append({member.text: role.text.strip()})
+            #past lineup
+            item['past_lineup']= []
+            lineup = soup.select('#band_tab_members_past .lineupRow td a')
+            if len(lineup) > -1:
+                roles = soup.select('.lineupRow td ~ td')
+                for member,role, in zip(lineup,roles):
+                    band_member = member.text+' - '+role.text.strip()
+                    if not item['current_lineup']:
+                        item['past_lineup'] = [{member.text: role.text.strip()}]
+                    else:
+                        item['past_lineup'].append({member.text: role.text.strip()})
+            #live lineup
+            item['live_lineup']= []
+            lineup = soup.select('#band_tab_members_live .lineupRow td a')
+            if len(lineup) > 0:
+                roles = soup.select('.lineupRow td ~ td')
+                for member,role, in zip(lineup,roles):
+                    band_member = member.text+' - '+role.text.strip()
+                    if not item['live_lineup']:
+                        item['live_lineup'] = [{member.text: role.text.strip()}]
+                    else:
+                        item['live_lineup'].append({member.text: role.text.strip()})
+        yield item
 
     def parse_description(self,response):
         pass
