@@ -91,30 +91,34 @@ class ma_spider(Spider):
             #All of the role info is a sibling to the band member itself
             item['complete_lineup']= []
             lineup = soup.select('#band_tab_members_all .lineupRow td a')
-            if len(lineup) > 0:
-                roles = soup.select('.lineupRow td ~ td')
+            if len(lineup)> 0:
+                role_soup = soup.select('#band_tab_members_all .lineupRow td')
+                roles = role_soup[1:len(role_soup):2]
                 for member,role, in zip(lineup,roles):
                     #band_member = member.text+' - '+role.text.strip()
                     if not item['complete_lineup']:
                         item['complete_lineup'] = [{member.text: role.text.strip()}]
                     else:
                         item['complete_lineup'].append({member.text: role.text.strip()})
+                print item['complete_lineup']
             #current linup
             item['current_lineup']= []
             lineup = soup.select('#band_tab_members_current .lineupRow td a')
-            if len(lineup) > 0:
-                roles = soup.select('.lineupRow td ~ td')
+            if len(lineup)> 0:
+                role_soup = soup.select('#band_tab_members_current .lineupRow td')
+                roles = role_soup[1:len(role_soup):2]
                 for member,role, in zip(lineup,roles):
                     band_member = member.text+' - '+role.text.strip()
                     if not item['current_lineup']:
-                        item['complete_lineup'] = [{member.text: role.text.strip()}]
+                        item['current_lineup'] = [{member.text: role.text.strip()}]
                     else:
-                        item['complete_lineup'].append({member.text: role.text.strip()})
+                        item['current_lineup'].append({member.text: role.text.strip()})
             #past lineup
             item['past_lineup']= []
             lineup = soup.select('#band_tab_members_past .lineupRow td a')
-            if len(lineup) > -1:
-                roles = soup.select('.lineupRow td ~ td')
+            if len(lineup)> 0:
+                role_soup = soup.select('#band_tab_members_past .lineupRow td')
+                roles = role_soup[1:len(role_soup):2]
                 for member,role, in zip(lineup,roles):
                     band_member = member.text+' - '+role.text.strip()
                     if not item['current_lineup']:
@@ -124,8 +128,9 @@ class ma_spider(Spider):
             #live lineup
             item['live_lineup']= []
             lineup = soup.select('#band_tab_members_live .lineupRow td a')
-            if len(lineup) > 0:
-                roles = soup.select('.lineupRow td ~ td')
+            if len(lineup)> 0:
+                role_soup = soup.select('#band_tab_members_live .lineupRow td')
+                roles = role_soup[1:len(role_soup):2]
                 for member,role, in zip(lineup,roles):
                     band_member = member.text+' - '+role.text.strip()
                     if not item['live_lineup']:
