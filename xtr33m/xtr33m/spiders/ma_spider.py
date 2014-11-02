@@ -9,7 +9,6 @@ import json
 START_URL_FMT = 'http://www.metal-archives.com/browse/ajax-letter/l/{}/json/1?sEcho=1&iColumns=4&sColumns=&iDisplayStart=0&iDisplayLength=500&mDataProp_0=0&mDataProp_1=1&mDataProp_2=2&mDataProp_3=3&iSortCol_0=0&sSortDir_0=asc&iSortingCols=1&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&_={}'
 NEXT_URL_FMT = 'http://www.metal-archives.com/browse/ajax-letter/l/{}/json/1?sEcho=1&iColumns=4&sColumns=&iDisplayStart={}&iDisplayLength=500&mDataProp_0=0&mDataProp_1=1&mDataProp_2=2&mDataProp_3=3&iSortCol_0=0&sSortDir_0=asc&iSortingCols=1&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&_={}'
 
-item = band_item()
 
 class ma_spider(Spider):
     name = "ma"
@@ -61,8 +60,8 @@ class ma_spider(Spider):
             yield Request(band_link,callback=self.parse_band)
 
     def parse_band(self,response):
+        item = band_item()
         soup = BeautifulSoup(response.body)
-
         band_name = soup.select('.band_name')[0].text
         print band_name
         band_id = response.url.split('/')[-1]
@@ -85,7 +84,7 @@ class ma_spider(Spider):
         item['lyrical_themes'] =lyrical_themes
         item['current_label'] = current_label
         item['years_active'] = years_active
-        print 'printing the item: %s: ' % item
+        #print 'printing the item: %s: ' % item
 
         #Need to figure out how to nest items
         if soup.find_all(id=['band_tab_members_all','band_tab_members_current','band_tab_members_past','band_tab_members_live']) is not None:
@@ -140,13 +139,13 @@ class ma_spider(Spider):
                         item['live_lineup'].append({member.text: role.text.strip()})
         #yield item
         band_desc_url = 'http://www.metal-archives.com/band/read-more/id/%s' % band_id
-        yield Request(band_desc_url,callback=self.parse_description)
+        yield Request(band_desc_url,callback=self.parse_description,meta={'item':item})
 
     def parse_description(self,response):
         soup = BeautifulSoup(response.body)
         for description in soup.find_all(text=True):
-            item['description'] = description.strip()
-        yield item
+            response.meta['item']['description'] = description.strip()
+        yield response.meta['item']
 
     def parse_similar_artists(self,response):
         pass
