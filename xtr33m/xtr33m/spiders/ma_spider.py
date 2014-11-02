@@ -147,14 +147,33 @@ class ma_spider(Spider):
         yield Request(band_desc_url,callback=self.parse_description,meta={'item':item})
 
     def parse_description(self,response):
+        item = response.meta['item']
         soup = BeautifulSoup(response.body)
         for description in soup.find_all(text=True):
-            if not response.meta['item']['description']:
-                response.meta['item']['description'] = description.strip()
-        yield response.meta['item']
+            if not item['description']:
+                item['description'] = description.strip()
+        sa_url = 'http://www.metal-archives.com/band/ajax-recommendations/id/%s/showMoreSimilar/1' % item['id']
+        yield Request(sa_url,callback=self.parse_similar_artists,meta={'item':item})
 
     def parse_similar_artists(self,response):
-        pass
+        #similar artist -> {artist: {country: }
+        #[{'Megadth': {'country': 'USA', 'genre': 'thrash', }},{'Flotsam & Jetsam'...etc}]
+
+        item = response.meta['item']
+        item['similar_artists'] = []
+        soup = BeautifulSoup(response.body)
+        similar_artist_list = [child.text for child in soup.find_all('td') if not child.has_attr('colspan') and not child.find_all('span')]
+        #may want to do this differently
+        bands = similar_artist_list[0:len(similar_artist_list):3]
+        countries = similar_artist_list[1:len(similar_artist_list):3]
+        genres = similar_artist_list[2:len(similar_artist_list):3]
+        for band,country,genre in zip(bands,countries,genres):
+            if not item['similar_artists']:
+                item['similar_artists'] = [{band: [{'country': country},{'genre': genre}]}]
+            else:
+                item['similar_artists'].append({band: [{'country': country},{'genre': genre}]})
+        yield item
+
     def parse_all_release(self,response):
         pass
     def parse_other_release(self,response):
