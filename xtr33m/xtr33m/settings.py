@@ -12,6 +12,13 @@ BOT_NAME = 'xtr33m'
 
 SPIDER_MODULES = ['xtr33m.spiders']
 NEWSPIDER_MODULE = 'xtr33m.spiders'
+COOKIES_ENABLED = 0
+DOWNLOAD_DELAY = 0.25
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'xtr33m (+http://www.yourdomain.com)'
+DOWNLOADER_MIDDLEWARES = {
+        'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware' : None,
+        'xtr33m.rotate_useragent.RotateUserAgentMiddleware' :400
+        }
