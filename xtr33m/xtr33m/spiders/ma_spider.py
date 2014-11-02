@@ -9,6 +9,8 @@ import json
 START_URL_FMT = 'http://www.metal-archives.com/browse/ajax-letter/l/{}/json/1?sEcho=1&iColumns=4&sColumns=&iDisplayStart=0&iDisplayLength=500&mDataProp_0=0&mDataProp_1=1&mDataProp_2=2&mDataProp_3=3&iSortCol_0=0&sSortDir_0=asc&iSortingCols=1&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&_={}'
 NEXT_URL_FMT = 'http://www.metal-archives.com/browse/ajax-letter/l/{}/json/1?sEcho=1&iColumns=4&sColumns=&iDisplayStart={}&iDisplayLength=500&mDataProp_0=0&mDataProp_1=1&mDataProp_2=2&mDataProp_3=3&iSortCol_0=0&sSortDir_0=asc&iSortingCols=1&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&_={}'
 
+item = band_item()
+
 class ma_spider(Spider):
     name = "ma"
     allowed_domains = ["www.metal-archives.com"]
@@ -60,7 +62,6 @@ class ma_spider(Spider):
 
     def parse_band(self,response):
         soup = BeautifulSoup(response.body)
-        item = band_item()
 
         band_name = soup.select('.band_name')[0].text
         print band_name
@@ -137,10 +138,16 @@ class ma_spider(Spider):
                         item['live_lineup'] = [{member.text: role.text.strip()}]
                     else:
                         item['live_lineup'].append({member.text: role.text.strip()})
-        yield item
+        #yield item
+        band_desc_url = 'http://www.metal-archives.com/band/read-more/id/%s' % band_id
+        yield Request(band_desc_url,callback=self.parse_description)
 
     def parse_description(self,response):
-        pass
+        soup = BeautifulSoup(response.body)
+        for description in soup.find_all(text=True):
+            item['description'] = description.strip()
+        yield item
+
     def parse_similar_artists(self,response):
         pass
     def parse_all_release(self,response):
