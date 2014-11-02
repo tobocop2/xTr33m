@@ -74,6 +74,10 @@ class ma_spider(Spider):
         current_label = soup.select('#band_stats dd')[6].text
         years_active = soup.select('#band_stats dd')[7].text
         years_active = ''.join([c for c in years_active if c not in '\n\t '])
+        item['description'] = ''
+        if '\nRead more\n' not in soup.find(class_='band_comment clear').text:
+            description = soup.find(class_='band_comment clear').text.strip()
+            item['description'] = description
         item['name'] = band_name
         item['id'] = band_id
         item['country'] =country
@@ -84,6 +88,7 @@ class ma_spider(Spider):
         item['lyrical_themes'] =lyrical_themes
         item['current_label'] = current_label
         item['years_active'] = years_active
+
         #print 'printing the item: %s: ' % item
 
         #Need to figure out how to nest items
@@ -144,7 +149,8 @@ class ma_spider(Spider):
     def parse_description(self,response):
         soup = BeautifulSoup(response.body)
         for description in soup.find_all(text=True):
-            response.meta['item']['description'] = description.strip()
+            if not response.meta['item']['description']:
+                response.meta['item']['description'] = description.strip()
         yield response.meta['item']
 
     def parse_similar_artists(self,response):
