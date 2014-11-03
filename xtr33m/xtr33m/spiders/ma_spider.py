@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import string
 import time
 import json
+import re
 
 START_URL_FMT = 'http://www.metal-archives.com/browse/ajax-letter/l/{}/json/1?sEcho=1&iColumns=4&sColumns=&iDisplayStart=0&iDisplayLength=500&mDataProp_0=0&mDataProp_1=1&mDataProp_2=2&mDataProp_3=3&iSortCol_0=0&sSortDir_0=asc&iSortingCols=1&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&_={}'
 NEXT_URL_FMT = 'http://www.metal-archives.com/browse/ajax-letter/l/{}/json/1?sEcho=1&iColumns=4&sColumns=&iDisplayStart={}&iDisplayLength=500&mDataProp_0=0&mDataProp_1=1&mDataProp_2=2&mDataProp_3=3&iSortCol_0=0&sSortDir_0=asc&iSortingCols=1&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&_={}'
@@ -75,8 +76,8 @@ class ma_spider(Spider):
         years_active = soup.select('#band_stats dd')[7].text
         years_active = ''.join([c for c in years_active if c not in '\n\t '])
         item['description'] = ''
-        if '\nRead more\n' not in soup.find(class_='band_comment clear').text:
-            description = soup.find(class_='band_comment clear').text.strip()
+        if '\nRead more\n' not in soup.findAll(attrs={'class': re.compile(r".*\bband_comment\b.*")})[0].text:
+            description = soup.findAll(attrs={'class': re.compile(r".*\bband_comment\b.*")})[0].text.strip()
             item['description'] = description
         item['name'] = band_name
         item['id'] = band_id
@@ -176,6 +177,7 @@ class ma_spider(Spider):
         yield Request(related_link_url,callback=self.parse_similar_artists,meta={'item':item})
 
     def parse_related_lnks(self,response):
+        print 'in parse related links, printing item: '+resonse.meta['item']
         item = response.meta['item']
         soup = BeautifulSoup(response.body)
         item['related_links'] = {'Official_Band_Links': [],'Official_Merchandise': [],'Unofficial_Band_Links': [],'Band_Label_Links': [],\
