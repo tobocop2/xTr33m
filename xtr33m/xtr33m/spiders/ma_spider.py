@@ -10,7 +10,6 @@ import re
 START_URL_FMT = 'http://www.metal-archives.com/browse/ajax-letter/l/{}/json/1?sEcho=1&iColumns=4&sColumns=&iDisplayStart=0&iDisplayLength=500&mDataProp_0=0&mDataProp_1=1&mDataProp_2=2&mDataProp_3=3&iSortCol_0=0&sSortDir_0=asc&iSortingCols=1&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&_={}'
 NEXT_URL_FMT = 'http://www.metal-archives.com/browse/ajax-letter/l/{}/json/1?sEcho=1&iColumns=4&sColumns=&iDisplayStart={}&iDisplayLength=500&mDataProp_0=0&mDataProp_1=1&mDataProp_2=2&mDataProp_3=3&iSortCol_0=0&sSortDir_0=asc&iSortingCols=1&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&_={}'
 
-
 class ma_spider(Spider):
     name = "ma"
     allowed_domains = ["www.metal-archives.com"]
@@ -174,10 +173,9 @@ class ma_spider(Spider):
             else:
                 item['similar_artists'].append({band: [{'country': country},{'genre': genre}]})
         related_link_url = 'http://www.metal-archives.com/link/ajax-list/type/band/id/%s' % item['id']
-        yield Request(related_link_url,callback=self.parse_similar_artists,meta={'item':item})
+        yield Request(related_link_url,callback=self.parse_related_links,meta={'item':item})
 
-    def parse_related_lnks(self,response):
-        print 'in parse related links, printing item: '+resonse.meta['item']
+    def parse_related_links(self,response):
         item = response.meta['item']
         soup = BeautifulSoup(response.body)
         item['related_links'] = {'Official_Band_Links': [],'Official_Merchandise': [],'Unofficial_Band_Links': [],'Band_Label_Links': [],\
