@@ -172,13 +172,28 @@ class ma_spider(Spider):
                 item['similar_artists'] = [{band: [{'country': country},{'genre': genre}]}]
             else:
                 item['similar_artists'].append({band: [{'country': country},{'genre': genre}]})
+        related_link_url = 'http://www.metal-archives.com/link/ajax-list/type/band/id/%s' % item['id']
+        yield Request(related_link_url,callback=self.parse_related_links,meta={'item':item})
+
+    def parse_related_links(self,response):
+        item = response.meta['item']
+        item['related_links'] = []
+        soup = BeautifulSoup(response.body)
+        for child in soup.select('#band_links_Official a'):
+            item['related_links'].append({'Official_Band_Links': {child.text: child['href']})
+        for child in soup.select('#band_links_Official_merchandise a'):
+            item['related_links'].append({'Official_Merch': {child.text: child['href']})
+        for child in soup.select('#band_links_Unofficial a'):
+            item['related_links'].append({'Unofficial_Merch': {child.text: child['href']})
+        for child in soup.select('#band_links_Labels a'):
+            item['related_links'].append({'Band_Labels': {child.text: child['href']})
+        for child in soup.select('#band_links_Tablatures a'):
+            item['related_links'].append({'Band_Tablatures': {child.text: child['href']})
         yield item
 
     def parse_all_release(self,response):
-        pass
+        #pass
     def parse_other_release(self,response):
         pass
     def parse_lyrics(self,response):
-        pass
-    def parse_related_lnks(self,response):
         pass
