@@ -59,13 +59,6 @@ class ma_spider(Spider):
         years_active = soup.select('#band_stats dd')[7].text
         years_active = ''.join([c for c in years_active if c not in '\n\t '])
         desc_comment = 'Max 400 characters. Open the rest in a dialogue box'
-        item['description'] = ''
-        if '\nRead more\n' not in soup.findAll(attrs={'class': re.compile(r".*\bband_comment\b.*")})[0].text:
-            description = soup.findAll(attrs={'class': re.compile(r".*\bband_comment\b.*")})[0].text.strip()
-            if desc_comment in description:
-                item['description'] = description.replace(desc_comment,'')
-            else:
-                item['description'] = description
         item['name'] = band_name
         item['id'] = band_id
         item['country'] =country
@@ -76,6 +69,14 @@ class ma_spider(Spider):
         item['lyrical_themes'] =lyrical_themes
         item['current_label'] = current_label
         item['years_active'] = years_active
+        item['description'] = ''
+
+        if '\nRead more\n' not in soup.findAll(attrs={'class': re.compile(r".*\bband_comment\b.*")})[0].text:
+            description = soup.findAll(attrs={'class': re.compile(r".*\bband_comment\b.*")})[0].text.strip()
+            if desc_comment in description:
+                item['description'] = description.replace(desc_comment,'')
+            else:
+                item['description'] = description
 
         if soup.find_all(id=['band_tab_members_all','band_tab_members_current','band_tab_members_past','band_tab_members_live']) is not None:
             #All of the role info is a sibling to the band member itself
@@ -181,6 +182,7 @@ class ma_spider(Spider):
         yield Request(all_releases,callback=self.parse_all_releases,meta={'item':item})
 
     def parse_all_releases(self,response):
+        print 'in all releases'
         item = response.meta['item']
         #{all_releases: [{name: name}, {type: type}, {year: year}}]
         item['releases'] = {'all_releases': [],'live_releases': [],'demo_releases': [],'misc_releases': [],'main_releases': []}
@@ -264,8 +266,11 @@ class ma_spider(Spider):
             release_id = release_url.split('/')[6]
             release_dict = {release_name: {'songs': [],'type': release_type,'year': release_year,'release_id': release_id, 'album_lineup': [],'album_notes': ''}}
             item['detailed_discography'].append(release_dict)
+            release_index = item['detailed_discography'].index(release_dict)
             #full_release_name = '%s - %s' % (release_name,release_id)
-            yield Request(release_url,callback=self.parse_individual_releases,meta={'item':item,'index': item.index(release_dict)})
+            yield Request(release_url,callback=self.parse_individual_releases,meta={'item':item,'index': release_index})
+
+        yield item
 
 
     def parse_individual_releases(self,response):
