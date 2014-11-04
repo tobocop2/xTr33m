@@ -202,7 +202,7 @@ class ma_spider(Spider):
         item['releases'] = {'all_releases': [],'live_releases': [],'demo_releases': [],'misc_releases': [],'main_releases': []}
         soup = BeautifulSoup(response.body)
 
-        release_info = [release_value.text for release_value in soup.find_all(class_=['single','demo','album','demo'])]
+        release_info = [child.text.strip() for child in soup.select('tbody td') if '%' not in child.text and len(child.text.strip()) != 0]
         release_names = release_info[0:len(release_info):3]
         release_types = release_info[1:len(release_info):3]
         release_years = release_info[2:len(release_info):3]
@@ -260,10 +260,92 @@ class ma_spider(Spider):
         for release_name,release_type,release_year in zip(release_names,release_types,release_years):
             item['releases']['main_releases'].append({'release_name': {release_name: {'release_type': release_type,'release_year': release_year}}})
         #send request to all releases from here
-        #yield Request(related_link_url,callback=self.parse_related_links,meta={'item':item})
-        yield item
+        all_releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % item['id']
+        yield Request(all_releases,callback=self.write_release_info,meta={'item':item})
 
-    def parse_other_release(self,response):
-        pass
+    def parse_releases(self,response):
+        #discography: [{release name: {songs: [{track name: {length: 100, tracknum: 1,lyrics: lyrics}}]},type: demo, year: 1981,release_id: 3}]}
+        item = response.meta['item']
+        item['detailed_discography'] = []
+        soup = BeautifulSoup(response.body)
+
+        release_info = [child.text.strip() for child in soup.select('tbody td') if '%' not in child.text and len(child.text.strip()) != 0]
+
+        release_urls = [child.['href'] for child in soup.select('tbody td a') if '%' not in child.text and len(child.text.strip()) != 0]
+        release_names = release_info[0:len(release_info):3]
+        release_types = release_info[1:len(release_info):3]
+        release_years = release_info[2:len(release_info):3]
+
+        for release_url,release_name,release_type,release_year in zip(release_urls,release_names,release_types,release_years):
+            release_id = release_url.split('/')[6]
+            item['detailed_discography'] = [{release_name: {'songs': [],'type': release_type,'year': release_year,'release_id': release_id}]
+            #full_release_name = '%s - %s' % (release_name,release_id)
+            yield Request(release_url,callback=self.parse_individual_releases,meta={'item':item})
+
+    def parse_individual_releases(self,response):
+        soup = BeautifulSoup(response.body)
+        track_count = 0
+        for child in soup.find_all('tbody'):
+            for tracks in child.find_all(class_=['odd','even']):
+                for track in tracks.select('.wrapWords'):
+                    track_count += 1
+                    track_name = track.text.strip()
+                    track_length = track.next_sibling.next_sibling.text
+                    individual_release_file.write('%s - %s - %s\n' % (str(track_count),track_name.encode('ascii','ignore'),track_length))
+                    lyrics_tag = track.next_sibling.next_sibling.next_sibling.next_sibling.find_all(href=True)
+                    write_lyrics(track_name,lyrics_tag)
+
     def parse_lyrics(self,response):
+        #lyrics_base_url = 'http://www.metal-archives.com/release/ajax-view-lyrics/id/'
+        #if len(lyrics_tag) > 0:
+        #    lyrics_path = os.path.join('./', track_name+'.txt')
+        #    lyrics_file = open(lyrics_path, "w")
+        #    lyrics_url_value = lyrics_tag[0].get('href')
+        #    lyrics_id = ''.join([char for char in lyrics_url_value if char.isdigit()])
+        #    lyrics_url = lyrics_base_url+lyrics_id
+        #    lyrics_resp = requests.get(lyrics_url).content
+        #    soup = BeautifulSoup(lyrics_resp)
+        #    lyrics_file.write(soup.text.encode('ascii','ignore'))
+        #    lyrics_file.close()
+        #os.chdir('../')
         pass
+
+    def write_release_info(band_name,band_id,all_releases):
+        release_resp = requests.get(all_releases).content
+        soup = BeautifulSoup(release_resp)
+
+        for release in soup.find_all('a',class_=['demo','album','single','other']):
+            release_name = release.get_text().replace('/','\\')
+            release_url = release.get('href')
+            release_id = release_url.split('/')[6]
+            full_release_name = '%s - %s' % (release_name,release_id)
+
+
+            print "Getting %s: %s\n" % (band_name,release_name)
+            release_response = requests.get(release_url).content
+            soup = BeautifulSoup(release_response)
+            track_count = 0
+            #Getting lyrics and track info
+            for child in soup.find_all('tbody'):
+                for tracks in child.find_all(class_=['odd','even']):
+                    for track in tracks.select('.wrapWords'):
+                        track_count += 1
+                        track_name = track.text.strip().encode('ascii','ignore').replace('/','-')
+                        track_length = track.next_sibling.next_sibling.text
+                        individual_release_file.write('%s - %s - %s\n' % (str(track_count),track_name.encode('ascii','ignore'),track_length))
+                        lyrics_tag = track.next_sibling.next_sibling.next_sibling.next_sibling.find_all(href=True)
+                        write_lyrics(track_name,lyrics_tag)
+
+            individual_release_file.write('\nALBUM LINEUP\n')
+            band_members = soup.select('#album_members_lineup .lineupRow td a')
+            member_roles = soup.select('.lineupRow td ~ td')
+            for member,role, in zip(band_members,member_roles):
+                band_member = member.text+' - '+role.text.strip()
+                individual_release_file.write(band_member.encode('ascii','ignore')+'\n')
+
+            individual_release_file.write('\nALBUM NOTES\n')
+            for notes in soup.select('#album_tabs_notes'):
+                individual_release_file.write(notes.text.strip().encode('ascii','ignore')+'\n')
+
+            os.chdir('../')
+
