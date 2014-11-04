@@ -74,10 +74,14 @@ class ma_spider(Spider):
         current_label = soup.select('#band_stats dd')[6].text
         years_active = soup.select('#band_stats dd')[7].text
         years_active = ''.join([c for c in years_active if c not in '\n\t '])
+        desc_comment = 'Max 400 characters. Open the rest in a dialogue box'
         item['description'] = ''
         if '\nRead more\n' not in soup.findAll(attrs={'class': re.compile(r".*\bband_comment\b.*")})[0].text:
             description = soup.findAll(attrs={'class': re.compile(r".*\bband_comment\b.*")})[0].text.strip()
-            item['description'] = description
+            if desc_comment in description:
+                item['description'] = description.replace(desc_comment,'')
+            else:
+                item['description'] = description
         item['name'] = band_name
         item['id'] = band_id
         item['country'] =country
@@ -89,9 +93,6 @@ class ma_spider(Spider):
         item['current_label'] = current_label
         item['years_active'] = years_active
 
-        #print 'printing the item: %s: ' % item
-
-        #Need to figure out how to nest items
         if soup.find_all(id=['band_tab_members_all','band_tab_members_current','band_tab_members_past','band_tab_members_live']) is not None:
             #All of the role info is a sibling to the band member itself
             item['complete_lineup']= []
@@ -192,10 +193,76 @@ class ma_spider(Spider):
             item['related_links']['Band_Label_Links'].append({child.text: child['href']})
         for child in soup.select('#band_links_Tablatures a'):
             item['related_links']['Band_Tablatures'].append({child.text: child['href']})
+        all_releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % item['id']
+        yield Request(all_releases,callback=self.parse_all_releases,meta={'item':item})
+
+    def parse_all_releases(self,response):
+        item = response.meta['item']
+        #{all_releases: [{name: name}, {type: type}, {year: year}}]
+        item['releases'] = {'all_releases': [],'live_releases': [],'demo_releases': [],'misc_releases': [],'main_releases': []}
+        soup = BeautifulSoup(response.body)
+
+        release_info = [release_value.text for release_value in soup.find_all(class_=['single','demo','album','demo'])]
+        release_names = release_info[0:len(release_info):3]
+        release_types = release_info[1:len(release_info):3]
+        release_years = release_info[2:len(release_info):3]
+        for release_name,release_type,release_year in zip(release_names,release_types,release_years):
+            item['releases']['all_releases'].append({'release_name': {release_name: {'release_type': release_type,'release_year': release_year}}})
+        live_releases = 'http://www.metal-archives.com/band/discography/id/%s/tab/lives' % item['id']
+        yield Request(live_releases,callback=self.parse_live_releases,meta={'item':item})
+
+    def parse_live_releases(self,response):
+        item = response.meta['item']
+        soup = BeautifulSoup(response.body)
+
+        release_info = [child.text.strip() for child in soup.select('tbody td') if '%' not in child.text and len(child.text.strip()) != 0]
+        release_names = release_info[0:len(release_info):3]
+        release_types = release_info[1:len(release_info):3]
+        release_years = release_info[2:len(release_info):3]
+        for release_name,release_type,release_year in zip(release_names,release_types,release_years):
+            item['releases']['live_releases'].append({'release_name': {release_name: {'release_type': release_type,'release_year': release_year}}})
+
+        demo_releases = 'http://www.metal-archives.com/band/discography/id/%s/tab/demos' % item['id']
+        yield Request(demo_releases,callback=self.parse_demo_releases,meta={'item':item})
+
+    def parse_demo_releases(self,response):
+        item = response.meta['item']
+        soup = BeautifulSoup(response.body)
+
+        release_info = [child.text.strip() for child in soup.select('tbody td') if '%' not in child.text and len(child.text.strip()) != 0]
+        release_names = release_info[0:len(release_info):3]
+        release_types = release_info[1:len(release_info):3]
+        release_years = release_info[2:len(release_info):3]
+        for release_name,release_type,release_year in zip(release_names,release_types,release_years):
+            item['releases']['demo_releases'].append({'release_name': {release_name: {'release_type': release_type,'release_year': release_year}}})
+        misc_releases = 'http://www.metal-archives.com/band/discography/id/%s/tab/misc' % item['id']
+        yield Request(misc_releases,callback=self.parse_misc_releases,meta={'item':item})
+
+    def parse_misc_releases(self,response):
+        item = response.meta['item']
+        soup = BeautifulSoup(response.body)
+        release_info = [child.text.strip() for child in soup.select('tbody td') if '%' not in child.text and len(child.text.strip()) != 0]
+        release_names = release_info[0:len(release_info):3]
+        release_types = release_info[1:len(release_info):3]
+        release_years = release_info[2:len(release_info):3]
+        for release_name,release_type,release_year in zip(release_names,release_types,release_years):
+            item['releases']['misc_releases'].append({'release_name': {release_name: {'release_type': release_type,'release_year': release_year}}})
+        main_releases = 'http://www.metal-archives.com/band/discography/id/%s/tab/main' % item['id']
+        yield Request(main_releases,callback=self.parse_main_releases,meta={'item':item})
+
+    def parse_main_releases(self,response):
+        item = response.meta['item']
+        soup = BeautifulSoup(response.body)
+        release_info = [child.text.strip() for child in soup.select('tbody td') if '%' not in child.text and len(child.text.strip()) != 0]
+        release_names = release_info[0:len(release_info):3]
+        release_types = release_info[1:len(release_info):3]
+        release_years = release_info[2:len(release_info):3]
+        for release_name,release_type,release_year in zip(release_names,release_types,release_years):
+            item['releases']['main_releases'].append({'release_name': {release_name: {'release_type': release_type,'release_year': release_year}}})
+        #send request to all releases from here
+        #yield Request(related_link_url,callback=self.parse_related_links,meta={'item':item})
         yield item
 
-    def parse_all_release(self,response):
-        pass
     def parse_other_release(self,response):
         pass
     def parse_lyrics(self,response):
