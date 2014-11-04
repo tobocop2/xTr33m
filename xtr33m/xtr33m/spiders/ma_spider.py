@@ -245,7 +245,7 @@ class ma_spider(Spider):
             item['releases']['main_releases'].append({'release_name': {release_name: {'release_type': release_type,'release_year': release_year}}})
         #send request to all releases from here
         all_releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % item['id']
-        yield Request(all_releases,callback=self.write_release_info,meta={'item':item})
+        yield Request(all_releases,callback=self.parse_releases,meta={'item':item})
 
     def parse_releases(self,response):
         #discography: [{release name: {songs: [{track name: {length: 100, tracknum: 1,lyrics: lyrics}}]},type: demo, year: 1981,release_id: 3}
@@ -267,6 +267,7 @@ class ma_spider(Spider):
             #full_release_name = '%s - %s' % (release_name,release_id)
             yield Request(release_url,callback=self.parse_individual_releases,meta={'item':item,'index': item.index(release_dict)})
 
+
     def parse_individual_releases(self,response):
         #album_lineup: [{member: role},...]
         item = response.meta['item']
@@ -287,25 +288,24 @@ class ma_spider(Spider):
                 track_count += 1
                 track_name = track.text.strip()
                 track_length = track.next_sibling.next_sibling.text.strip()
-                item['detailed_discography'][release_index]['songs'].append({track_name: {'number': track_count,'length': track_length,'lyrics': ''}})
+                song_dict = {track_name: {'number': track_count,'length': track_length,'lyrics': ''}}
+                item['detailed_discography'][release_index]['songs'].append(song_dict)
+                song_index = item['detailed_discography'][release_index]['songs'].index(song_dict)
                 lyrics_tag = track.next_sibling.next_sibling.next_sibling.next_sibling.find_all(href=True)
                 lyrics_base_url = 'http://www.metal-archives.com/release/ajax-view-lyrics/id/'
-                yield Request(lyrics_base_url,callback=self.parse_lyrics_tag,meta={'item':item,'index': release_index,'lyrics_tag': lyrics_tag})
+                if len(lyrics_tag) > 0:
+                    lyrics_url_value = lyrics_tag[0].get('href')
+                    lyrics_id = ''.join([char for char in lyrics_url_value if char.isdigit()])
+                    lyrics_url = lyrics_base_url+lyrics_id
+                yield Request(lyrics_url,callback=self.parse_lyrics,meta={'item':item,'index': release_index,'song_index': song_index})
 
 
-    def parse_lyrics_tag(self,response):
+    def parse_lyrics(self,response):
         item = response.meta['item']
         release_index = response.meta['index']
-        lyrics_tag = response.meta['lyrics_tag']
-        if len(lyrics_tag) > 0:
-            lyrics_url_value = lyrics_tag[0].get('href')
-            lyrics_id = ''.join([char for char in lyrics_url_value if char.isdigit()])
-            lyrics_url = response.url+lyrics_id
-            yield Request(lyrics_url,callback=self.parse_lyrics,meta={'item':item,'index': release_index,'lyrics_tag': lyrics_tag})
-
-    def write_lyrics(self,response):
-        soup = BeautifulSoup(lyrics_resp)
-        lyrics_file.write(soup.text.encode('ascii','ignore'))
-        lyrics_file.close()
+        song_index= response.meta['song_index']
+        soup = BeautifulSoup(response.body)
+        lyrics = soup.text
+        item['detailed_discography'][release_index]['songs'][song_index] = lyrics
 
 
