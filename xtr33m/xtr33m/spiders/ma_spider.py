@@ -1,7 +1,7 @@
 from scrapy.spider import Spider
 from scrapy.http import Request
 from xtr33m.items import band_item
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup,UnicodeDammit
 import string
 import time
 import json
@@ -30,7 +30,6 @@ class ma_spider(Spider):
         total = jsonresponse['iTotalRecords']
         for i in range(0,total,500):
             url = NEXT_URL_FMT.format(response.meta['letter'], i, int(time.time()))
-            print url
             yield Request(url, callback=self.parse_json)
 
 
@@ -39,15 +38,13 @@ class ma_spider(Spider):
         for item in range(0,len(jsonresponse["aaData"])):
             soup = BeautifulSoup(jsonresponse["aaData"][item][0])
             band_link = soup.select('a')[0]['href']
-            print 'yielding %s: ' % band_link
-            print Request(band_link,callback=self.parse_band)
             yield Request(band_link,callback=self.parse_band)
 
     def parse_band(self,response):
-        item = band_item()
         soup = BeautifulSoup(response.body)
-        band_name = soup.select('.band_name')[0].text
-        print band_name
+        item = band_item()
+
+        band_name = UnicodeDammit(soup.select('.band_name')[0].text)
         band_id = response.url.split('/')[-1]
         country = soup.select('#band_stats dd')[0].text
         location = soup.select('#band_stats dd')[1].text
@@ -59,7 +56,8 @@ class ma_spider(Spider):
         years_active = soup.select('#band_stats dd')[7].text
         years_active = ''.join([c for c in years_active if c not in '\n\t '])
         desc_comment = 'Max 400 characters. Open the rest in a dialogue box'
-        item['name'] = band_name
+
+        item['name'] = band_name.unicode_markup
         item['id'] = band_id
         item['country'] =country
         item['location'] = location
@@ -79,7 +77,6 @@ class ma_spider(Spider):
                 item['description'] = description
 
         if soup.find_all(id=['band_tab_members_all','band_tab_members_current','band_tab_members_past','band_tab_members_live']) is not None:
-            #All of the role info is a sibling to the band member itself
             item['complete_lineup']= []
             lineup = soup.select('#band_tab_members_all .lineupRow td a')
             if len(lineup)> 0:
@@ -247,10 +244,11 @@ class ma_spider(Spider):
             item['releases']['main_releases'].append({'release_name': {release_name: {'release_type': release_type,'release_year': release_year}}})
         #send request to all releases from here
         all_releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % item['id']
-        yield Request(all_releases,callback=self.parse_releases,meta={'item':item})
+        #yield Request(all_releases,callback=self.parse_releases,meta={'item':item})
+        yield item
 
     def parse_releases(self,response):
-        #discography: [{release name: {songs: [{track name: {length: 100, tracknum: 1,lyrics: lyrics}}]},type: demo, year: 1981,release_id: 3}
+    #discography: [{release name: {songs: [{track name: {length: 100, tracknum: 1,lyrics: lyrics}}]},type: demo, year: 1981,release_id: 3}
         #...album lineup: asdf, album notes: asdf}]
         item = response.meta['item']
         item['detailed_discography'] = []
@@ -267,25 +265,30 @@ class ma_spider(Spider):
             release_dict = {release_name: {'songs': [],'type': release_type,'year': release_year,'release_id': release_id, 'album_lineup': [],'album_notes': ''}}
             item['detailed_discography'].append(release_dict)
             release_index = item['detailed_discography'].index(release_dict)
+            print 'the release index '+str(release_index)
             #full_release_name = '%s - %s' % (release_name,release_id)
-            yield Request(release_url,callback=self.parse_individual_releases,meta={'item':item,'index': release_index})
-
+            #yield Request(release_url,callback=self.parse_individual_releases,meta={'item':item,'index': release_index,'release_name': release_name})
         yield item
+
 
 
     def parse_individual_releases(self,response):
         #album_lineup: [{member: role},...]
         item = response.meta['item']
         release_index = response.meta['index']
+        release_name = response.meta['release_name']
         soup = BeautifulSoup(response.body)
+
+        print 'The release index in parse_individual_releases',release_index
 
         band_members = soup.select('#album_members_lineup .lineupRow td a')
         member_roles_temp = soup.select('.lineupRow td')
         member_roles = member_roles_temp[1:len(member_roles_temp):2]
         for member,role, in zip(band_members,member_roles):
-            item['detailed_discography'][release_index]['album_lineup'].append({member.text: role.text.strip()})
+            print 'the release at the release index',item['detailed_discography'][release_index]
+            item['detailed_discography'][release_index][release_name]['album_lineup'].append({member.text: role.text.strip()})
         for notes in soup.select('#album_tabs_notes'):
-            item['detailed_discography'][release_index]['album_notes'] = notes.text.strip()
+            item['detailed_discography'][release_index][release_name]['album_notes'] = notes.text.strip()
 
         track_count = 0
         for child in soup.find_all('tbody'):
@@ -294,23 +297,26 @@ class ma_spider(Spider):
                 track_name = track.text.strip()
                 track_length = track.next_sibling.next_sibling.text.strip()
                 song_dict = {track_name: {'number': track_count,'length': track_length,'lyrics': ''}}
-                item['detailed_discography'][release_index]['songs'].append(song_dict)
-                song_index = item['detailed_discography'][release_index]['songs'].index(song_dict)
+                item['detailed_discography'][release_index][release_name]['songs'].append(song_dict)
+                song_index = item['detailed_discography'][release_index][release_name]['songs'].index(song_dict)
                 lyrics_tag = track.next_sibling.next_sibling.next_sibling.next_sibling.find_all(href=True)
                 lyrics_base_url = 'http://www.metal-archives.com/release/ajax-view-lyrics/id/'
                 if len(lyrics_tag) > 0:
                     lyrics_url_value = lyrics_tag[0].get('href')
                     lyrics_id = ''.join([char for char in lyrics_url_value if char.isdigit()])
                     lyrics_url = lyrics_base_url+lyrics_id
-                yield Request(lyrics_url,callback=self.parse_lyrics,meta={'item':item,'index': release_index,'song_index': song_index})
+                    yield Request(lyrics_url,callback=self.parse_lyrics,meta={'item':item,'index': release_index,'song_index': song_index,'release_name': release_name,'track_name': track_name})
 
 
     def parse_lyrics(self,response):
         item = response.meta['item']
         release_index = response.meta['index']
         song_index= response.meta['song_index']
+        release_name = response.meta['release_name']
+        track_name = response.meta['track_name']
         soup = BeautifulSoup(response.body)
         lyrics = soup.text
-        item['detailed_discography'][release_index]['songs'][song_index] = lyrics
+        item['detailed_discography'][release_index][release_name]['songs'][song_index][track_name]['lyrics'] = lyrics
+
 
 
