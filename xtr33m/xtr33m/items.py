@@ -32,6 +32,7 @@ class band_item(scrapy.Item):
     related_links = scrapy.Field()
     #{releases: {'all': name: {tracks: {track_name,tracknum_length,lyrics} ,type,year,notes,{album_lineup: name,role}
     releases = scrapy.Field()
+    detailed_discography = scrapy.Field()
 
 
 
