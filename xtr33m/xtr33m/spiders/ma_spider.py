@@ -225,8 +225,6 @@ class ma_spider(Spider):
             item['releases']['main_releases'].append({'release_name': {release_name: {'release_type': release_type,'release_year': release_year}}})
         #send request to all releases from here
         all_releases  = 'http://www.metal-archives.com/band/discography/id/%s/tab/all' % item['id']
-        print ' going to parse releases...'
-        print 'The request\t',Request(all_releases,callback=self.parse_releases,meta={'item':item})
         yield Request(all_releases,callback=self.parse_releases,meta={'item':item})
 
     def parse_releases(self,response):
@@ -292,6 +290,7 @@ class ma_spider(Spider):
             for track in child.select('.wrapWords'):
                 track_count += 1
                 track_name = track.text.strip()
+                track_name = ''.join( c for c in track_name if c not in '\n\t;' )
                 track_length = track.next_sibling.next_sibling.text.strip()
                 song_dict = {track_name: {'number': track_count,'length': track_length,'lyrics': ''}}
                 item['detailed_discography'][release_index][release_name]['songs'].append(song_dict)
@@ -310,22 +309,20 @@ class ma_spider(Spider):
                     yield Request(lyrics_url,callback=self.parse_lyrics,meta=meta)
 
         if lyrics_count == 0:
-            print 'The length of the discography:\t'+str(item['releases']['release_count'])+'\t'+str(len(item['detailed_discography']))
-            print 'The length of the discography:\t'+str(item['releases']['release_count'])+'\t'+str(len(item['detailed_discography']))
-            print 'The length of the discography:\t'+str(item['releases']['release_count'])+'\t'+str(len(item['detailed_discography']))
+            print 'the track count:\t'+str(track_count)
+            print 'the final track:\t'+str(final_track)
+            print 'the track count:\t'+str(track_count)
+            print 'the final track:\t'+str(final_track)
             if len(item['detailed_discography']) == item['releases']['release_count']:
-                if track_count == final_track:
-                    item['detailed_discography'][release_index]['parsed'] = 1
-                    print track_count,final_track
-                    print track_count,final_track
-                    print track_count,final_track
-                    print track_count,final_track
-                    parsed_count = 0
-                    for release in item['detailed_discography']:
-                        if release['parsed'] == 1:
-                            parsed_count += 1
-                    if parsed_count == item['releases']['release_count']:
-                        yield item
+                print 'the track count:\t'+str(track_count)
+                print 'the final track:\t'+str(final_track)
+                item['detailed_discography'][release_index]['parsed'] = 1
+                parsed_count = 0
+                for release in item['detailed_discography']:
+                    if release['parsed'] == 1:
+                        parsed_count += 1
+                if parsed_count == item['releases']['release_count']:
+                    yield item
 
 
     def parse_lyrics(self,response):
@@ -345,17 +342,13 @@ class ma_spider(Spider):
         print 'The length of the discography:\t'+str(len(item['detailed_discography']))
         if len(item['detailed_discography']) == item['releases']['release_count']:
             if parsed_lyrics == lyrics_count:
-                if track_count == final_track:
-                    item['detailed_discography'][release_index]['parsed'] = 1
-                    print track_count,final_track
-                    print track_count,final_track
-                    print track_count,final_track
-                    print track_count,final_track
-                    parsed_count = 0
-                    for release in item['detailed_discography']:
-                        if release['parsed'] == 1:
-                            parsed_count += 1
-                    if parsed_count == item['releases']['release_count']:
-                        yield item
+               # if track_count == final_track:
+                item['detailed_discography'][release_index]['parsed'] = 1
+                parsed_count = 0
+                for release in item['detailed_discography']:
+                    if release['parsed'] == 1:
+                        parsed_count += 1
+                if parsed_count == item['releases']['release_count']:
+                    yield item
 
 
