@@ -280,7 +280,9 @@ class ma_spider(Spider):
         track_nums = []
         for track in soup.select('.anchor'):
             track_nums.append(int((unicode(track.next_sibling)).strip('.')))
-        final_track = max(track_nums)
+        final_track = 0
+        if len(track_nums) > 0:
+            final_track = max(track_nums)
 
         track_count = 0
         parsed_lyrics = 0
