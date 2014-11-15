@@ -263,7 +263,10 @@ class ma_spider(Spider):
         release_name = response.meta['release_name']
         soup = BeautifulSoup(response.body)
 
-        release_length = soup.select('strong')[0].text
+        duration = soup.select('strong')
+        release_length = ''
+        if len(duration) > 0:
+            release_length = duration[0].text
         item['detailed_discography'][release_index][release_name]['length'] = release_length
         print 'The release length..'+item['detailed_discography'][release_index][release_name]['length']
         band_members = soup.select('#album_members_lineup .lineupRow td a')
