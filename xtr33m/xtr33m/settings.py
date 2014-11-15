@@ -13,7 +13,8 @@ BOT_NAME = 'xtr33m'
 SPIDER_MODULES = ['xtr33m.spiders']
 NEWSPIDER_MODULE = 'xtr33m.spiders'
 COOKIES_ENABLED = 0
-DOWNLOAD_DELAY = 0.25
+#DOWNLOAD_DELAY = 0.25
+DOWNLOAD_DELAY = 0
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
