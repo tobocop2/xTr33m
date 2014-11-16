@@ -9,6 +9,7 @@ import re
 
 START_URL_FMT = 'http://www.metal-archives.com/browse/ajax-letter/l/{}/json/1?sEcho=1&iColumns=4&sColumns=&iDisplayStart=0&iDisplayLength=500&mDataProp_0=0&mDataProp_1=1&mDataProp_2=2&mDataProp_3=3&iSortCol_0=0&sSortDir_0=asc&iSortingCols=1&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&_={}'
 NEXT_URL_FMT = 'http://www.metal-archives.com/browse/ajax-letter/l/{}/json/1?sEcho=1&iColumns=4&sColumns=&iDisplayStart={}&iDisplayLength=500&mDataProp_0=0&mDataProp_1=1&mDataProp_2=2&mDataProp_3=3&iSortCol_0=0&sSortDir_0=asc&iSortingCols=1&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&_={}'
+total_bands = []
 
 class ma_spider(Spider):
     name = "ma"
@@ -39,6 +40,7 @@ class ma_spider(Spider):
             soup = BeautifulSoup(jsonresponse["aaData"][item][0])
             band_link = soup.select('a')[0]['href']
             band_name = soup.text
+            #total_bands.append(band_name.encode('ascii','ignore'))
             yield Request(band_link,callback=self.parse_band)
 
     def parse_band(self,response):
@@ -309,20 +311,26 @@ class ma_spider(Spider):
                     yield Request(lyrics_url,callback=self.parse_lyrics,meta=meta)
 
         if lyrics_count == 0:
-            print 'the track count:\t'+str(track_count)
-            print 'the final track:\t'+str(final_track)
-            print 'the track count:\t'+str(track_count)
-            print 'the final track:\t'+str(final_track)
-            if len(item['detailed_discography']) == item['releases']['release_count']:
-                print 'the track count:\t'+str(track_count)
-                print 'the final track:\t'+str(final_track)
-                item['detailed_discography'][release_index]['parsed'] = 1
-                parsed_count = 0
-                for release in item['detailed_discography']:
-                    if release['parsed'] == 1:
-                        parsed_count += 1
-                if parsed_count == item['releases']['release_count']:
-                    yield item
+            print 'Lyrics count is zero..'
+            print 'The length of the discography:\t'+str(len(item['detailed_discography']))
+            print 'The number of releases:\t'+str(item['releases']['release_count'])
+            #if len(item['detailed_discography']) == item['releases']['release_count']:
+            item['detailed_discography'][release_index]['parsed'] = 1
+            parsed_count = 0
+            for release in item['detailed_discography']:
+                if release['parsed'] == 1:
+                    parsed_count += 1
+            print 'The parsed count/release count: %s\t%s'% (parsed_count,item['releases']['release_count'])
+            if parsed_count == item['releases']['release_count']:
+               # text_file = 'bands.txt'
+               # all_bands = 'total_bands.txt'
+               # with open(text_file, 'a') as f:
+               #     f.write(item['name']+'\n')
+               # for band in total_bands:
+               #     with open(all_bands, 'a') as f:
+               #         f.write(band+'\n')
+               #         total_bands.remove(band)
+                yield item
 
 
     def parse_lyrics(self,response):
@@ -340,15 +348,23 @@ class ma_spider(Spider):
         item['detailed_discography'][release_index][release_name]['songs'][song_index][track_name]['lyrics'] = lyrics
         #Need to figure out how to go through all releases
         print 'The length of the discography:\t'+str(len(item['detailed_discography']))
-        if len(item['detailed_discography']) == item['releases']['release_count']:
-            if parsed_lyrics == lyrics_count:
-               # if track_count == final_track:
-                item['detailed_discography'][release_index]['parsed'] = 1
-                parsed_count = 0
-                for release in item['detailed_discography']:
-                    if release['parsed'] == 1:
-                        parsed_count += 1
-                if parsed_count == item['releases']['release_count']:
-                    yield item
-
-
+        print 'The number of releases:\t'+str(item['releases']['release_count'])
+        #if len(item['detailed_discography']) == item['releases']['release_count']:
+        if parsed_lyrics == lyrics_count:
+            #if track_count == final_track:
+            item['detailed_discography'][release_index]['parsed'] = 1
+            parsed_count = 0
+            for release in item['detailed_discography']:
+                if release['parsed'] == 1:
+                    parsed_count += 1
+            print 'The parsed count/release count: %s\t%s'% (parsed_count,item['releases']['release_count'])
+            if parsed_count == item['releases']['release_count']:
+                #text_file = 'bands.txt'
+                #all_bands = 'total_bands.txt'
+                #with open(text_file, 'a') as f:
+                #    f.write(item['name']+'\n')
+                #for band in total_bands:
+                #    with open(all_bands, 'a') as f:
+                #        f.write(band+'\n')
+                #        total_bands.remove(band)
+                yield item
