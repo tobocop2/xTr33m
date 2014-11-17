@@ -73,7 +73,8 @@ class ma_spider(Spider):
         item['description'] = ''
 
         #if '\nRead more\n' not in soup.findAll(attrs={'class': re.compile(r".*\bband_comment\b.*")})[0].text.encode('utf-8'):
-        description = soup.findAll(attrs={'class': re.compile(r".*\bband_comment\b.*")})[0].text.encode('utf-8').strip()
+        raw_description = soup.findAll(attrs={'class': re.compile(r".*\bband_comment\b.*")})[0].text.encode('utf-8').strip()
+        description = ''.join(c for c in raw_description if not c in '\n\r\t')
         if desc_comment in description:
             item['description'] = description.replace(desc_comment,'')
         else:
@@ -282,7 +283,8 @@ class ma_spider(Spider):
         for member,role, in zip(band_members,member_roles):
             item['detailed_discography'][release_index][release_name]['album_lineup'].append({member.text.encode('utf-8'): role.encode('utf-8')})
         for notes in soup.select('#album_tabs_notes'):
-            item['detailed_discography'][release_index][release_name]['album_notes'] = notes.text.encode('utf-8').strip()
+            notes = ''.join(c for c in notes.text if not c in '\n\r\t')
+            item['detailed_discography'][release_index][release_name]['album_notes'] = notes.encode('utf-8').strip()
 
         track_nums = []
         for track in soup.select('.anchor'):
@@ -352,7 +354,8 @@ class ma_spider(Spider):
         parsed_lyrics = item['detailed_discography'][release_index][release_name]['parsed_lyrics']
         lyrics_count = item['detailed_discography'][release_index][release_name]['lyrics_count']
         soup = BeautifulSoup(response.body)
-        lyrics = soup.text.encode('utf-8')
+        #lyrics = soup.text.encode('utf-8')
+        lyrics = ''.join(c for c in soup.text.strip().encode('utf-8') if not c in '\n\r\t')
         item['detailed_discography'][release_index][release_name]['songs'][song_index][track_name]['lyrics'] = lyrics
         #Need to figure out how to go through all releases
         print 'The length of the discography:\t'+str(len(item['detailed_discography']))
