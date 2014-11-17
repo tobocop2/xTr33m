@@ -27,7 +27,6 @@ class ma_spider(Spider):
 
 
     def parse_first(self, response):
-        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         jsonresponse = json.loads(response.body)
         total = jsonresponse['iTotalRecords']
         for i in range(0,total,500):
@@ -36,34 +35,32 @@ class ma_spider(Spider):
 
 
     def parse_json(self,response):
-        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         jsonresponse = json.loads(response.body)
         for item in range(0,len(jsonresponse["aaData"])):
             soup = BeautifulSoup(jsonresponse["aaData"][item][0])
             band_link = soup.select('a')[0]['href']
-            band_name = soup.text
+            band_name = soup.text.encode('utf-8')
             #total_bands.append(band_name.encode('ascii','ignore'))
             yield Request(band_link,callback=self.parse_band)
 
     def parse_band(self,response):
-        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         soup = BeautifulSoup(response.body)
         item = band_item()
 
-        band_name = UnicodeDammit(soup.select('.band_name')[0].text)
+        band_name = soup.select('.band_name')[0].text.encode('utf-8')
         band_id = response.url.split('/')[-1]
-        country = soup.select('#band_stats dd')[0].text
-        location = soup.select('#band_stats dd')[1].text
-        status = soup.select('#band_stats dd')[2].text
-        formation = soup.select('#band_stats dd')[3].text
-        genre = soup.select('#band_stats dd')[4].text
-        lyrical_themes = soup.select('#band_stats dd')[5].text
-        current_label = soup.select('#band_stats dd')[6].text
-        years_active = soup.select('#band_stats dd')[7].text
+        country = soup.select('#band_stats dd')[0].text.encode('utf-8')
+        location = soup.select('#band_stats dd')[1].text.encode('utf-8')
+        status = soup.select('#band_stats dd')[2].text.encode('utf-8')
+        formation = soup.select('#band_stats dd')[3].text.encode('utf-8')
+        genre = soup.select('#band_stats dd')[4].text.encode('utf-8')
+        lyrical_themes = soup.select('#band_stats dd')[5].text.encode('utf-8')
+        current_label = soup.select('#band_stats dd')[6].text.encode('utf-8')
+        years_active = soup.select('#band_stats dd')[7].text.encode('utf-8')
         years_active = ''.join([c for c in years_active if c not in '\n\t '])
         desc_comment = 'Max 400 characters. Open the rest in a dialogue box'
 
-        item['name'] = band_name.unicode_markup
+        item['name'] = band_name
         item['id'] = band_id
         item['country'] =country
         item['location'] = location
@@ -75,12 +72,12 @@ class ma_spider(Spider):
         item['years_active'] = years_active
         item['description'] = ''
 
-        if '\nRead more\n' not in soup.findAll(attrs={'class': re.compile(r".*\bband_comment\b.*")})[0].text:
-            description = soup.findAll(attrs={'class': re.compile(r".*\bband_comment\b.*")})[0].text.strip()
-            if desc_comment in description:
-                item['description'] = description.replace(desc_comment,'')
-            else:
-                item['description'] = description
+        #if '\nRead more\n' not in soup.findAll(attrs={'class': re.compile(r".*\bband_comment\b.*")})[0].text.encode('utf-8'):
+        description = soup.findAll(attrs={'class': re.compile(r".*\bband_comment\b.*")})[0].text.encode('utf-8').strip()
+        if desc_comment in description:
+            item['description'] = description.replace(desc_comment,'')
+        else:
+            item['description'] = description
 
         item['lineup'] = {'complete_lineup': [],'current_lineup': [],'past_lineup': [],'live_lineup': []}
         if soup.find_all(id=['band_tab_members_all','band_tab_members_current','band_tab_members_past','band_tab_members_live']) is not None:
@@ -88,67 +85,69 @@ class ma_spider(Spider):
             if len(lineup)> 0:
                 role_soup = soup.select('#band_tab_members_all .lineupRow td')
                 roles = role_soup[1:len(role_soup):2]
+                roles = [''.join(re.split('\t|\n',role.text)) for role in roles]
                 for member,role, in zip(lineup,roles):
-                    #band_member = member.text+' - '+role.text.strip()
+                    #band_member = member.text.encode('utf-8')+' - '+role.encode('utf-8')
                     if not item['lineup']['complete_lineup']:
-                        item['lineup']['complete_lineup'] = [{member.text: role.text.strip()}]
+                        item['lineup']['complete_lineup'] = [{member.text.encode('utf-8'): role.encode('utf-8')}]
                     else:
-                        item['lineup']['complete_lineup'].append({member.text: role.text.strip()})
+                        item['lineup']['complete_lineup'].append({member.text.encode('utf-8'): role.encode('utf-8')})
             #current linup
             lineup = soup.select('#band_tab_members_current .lineupRow td a')
             if len(lineup)> 0:
                 role_soup = soup.select('#band_tab_members_current .lineupRow td')
                 roles = role_soup[1:len(role_soup):2]
+                roles = [''.join(re.split('\t|\n',role.text)) for role in roles]
                 for member,role, in zip(lineup,roles):
-                    band_member = member.text+' - '+role.text.strip()
+                    #band_member = member.text.encode('utf-8')+' - '+role.encode('utf-8')
                     if not item['lineup']['current_lineup']:
-                        item['lineup']['current_lineup'] = [{member.text: role.text.strip()}]
+                        item['lineup']['current_lineup'] = [{member.text.encode('utf-8'): role.encode('utf-8')}]
                     else:
-                        item['lineup']['current_lineup'].append({member.text: role.text.strip()})
+                        item['lineup']['current_lineup'].append({member.text.encode('utf-8'): role.encode('utf-8')})
             #past lineup
             lineup = soup.select('#band_tab_members_past .lineupRow td a')
             if len(lineup)> 0:
                 role_soup = soup.select('#band_tab_members_past .lineupRow td')
                 roles = role_soup[1:len(role_soup):2]
+                roles = [''.join(re.split('\t|\n',role.text)) for role in roles]
                 for member,role, in zip(lineup,roles):
-                    band_member = member.text+' - '+role.text.strip()
+                    #band_member = member.text.encode('utf-8')+' - '+role.encode('utf-8')
                     if not item['lineup']['past_lineup']:
-                        item['lineup']['past_lineup'] = [{member.text: role.text.strip()}]
+                        item['lineup']['past_lineup'] = [{member.text.encode('utf-8'): role.encode('utf-8')}]
                     else:
-                        item['lineup']['past_lineup'].append({member.text: role.text.strip()})
+                        item['lineup']['past_lineup'].append({member.text.encode('utf-8'): role.encode('utf-8')})
             #live lineup
             lineup = soup.select('#band_tab_members_live .lineupRow td a')
             if len(lineup)> 0:
                 role_soup = soup.select('#band_tab_members_live .lineupRow td')
                 roles = role_soup[1:len(role_soup):2]
+                roles = [''.join(re.split('\t|\n',role.text)) for role in roles]
                 for member,role, in zip(lineup,roles):
-                    band_member = member.text+' - '+role.text.strip()
+                    band_member = member.text.encode('utf-8')+' - '+role.encode('utf-8')
                     if not item['lineup']['live_lineup']:
-                        item['lineup']['live_lineup'] = [{member.text: role.text.strip()}]
+                        item['lineup']['live_lineup'] = [{member.text.encode('utf-8'): role.encode('utf-8')}]
                     else:
-                        item['lineup']['live_lineup'].append({member.text: role.text.strip()})
+                        item['lineup']['live_lineup'].append({member.text.encode('utf-8'): role.encode('utf-8')})
         band_desc_url = 'http://www.metal-archives.com/band/read-more/id/%s' % band_id
         yield Request(band_desc_url,callback=self.parse_description,meta={'item':item})
 
     def parse_description(self,response):
-        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         item = response.meta['item']
         soup = BeautifulSoup(response.body)
         for description in soup.find_all(text=True):
-            if not item['description']:
+            if '\nRead more\n' in item['description']:
                 item['description'] = description.strip()
         sa_url = 'http://www.metal-archives.com/band/ajax-recommendations/id/%s/showMoreSimilar/1' % item['id']
         yield Request(sa_url,callback=self.parse_similar_artists,meta={'item':item})
 
     def parse_similar_artists(self,response):
-        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         #similar artist -> {artist: {country: }
         #[{'Megadth': {'country': 'USA', 'genre': 'thrash', }},{'Flotsam & Jetsam'...etc}]
 
         item = response.meta['item']
         item['similar_artists'] = []
         soup = BeautifulSoup(response.body)
-        similar_artist_list = [child.text for child in soup.find_all('td') if not child.has_attr('colspan') and not child.find_all('span')]
+        similar_artist_list = [child.text.encode('utf-8') for child in soup.find_all('td') if not child.has_attr('colspan') and not child.find_all('span')]
         #may want to do this differently
         bands = similar_artist_list[0:len(similar_artist_list):3]
         countries = similar_artist_list[1:len(similar_artist_list):3]
@@ -162,7 +161,6 @@ class ma_spider(Spider):
         yield Request(related_link_url,callback=self.parse_related_links,meta={'item':item})
 
     def parse_related_links(self,response):
-        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         item = response.meta['item']
         soup = BeautifulSoup(response.body)
         item['related_links'] = {'Official_Band_Links': [],'Official_Merchandise': [],'Unofficial_Band_Links': [],'Band_Label_Links': [],\
@@ -170,25 +168,24 @@ class ma_spider(Spider):
         #{related links: [{'Official Band Links': [{link_desc: link1},link2,etc]},{'Official Merch': [link1,link2,..etc]}]
         #related linnks: {'Official Band Links: [{link_desc: link1},{link_desc: link2}]
         for child in soup.select('#band_links_Official a'):
-            item['related_links']['Official_Band_Links'].append({child.text: child['href']})
+            item['related_links']['Official_Band_Links'].append({child.text.encode('utf-8'): child['href']})
         for child in soup.select('#band_links_Official_merchandise a'):
-            item['related_links']['Official_Merchandise'].append({child.text: child['href']})
+            item['related_links']['Official_Merchandise'].append({child.text.encode('utf-8'): child['href']})
         for child in soup.select('#band_links_Unofficial a'):
-            item['related_links']['Unofficial_Band_Links'].append({child.text: child['href']})
+            item['related_links']['Unofficial_Band_Links'].append({child.text.encode('utf-8'): child['href']})
         for child in soup.select('#band_links_Labls a'):
-            item['related_links']['Band_Label_Links'].append({child.text: child['href']})
+            item['related_links']['Band_Label_Links'].append({child.text.encode('utf-8'): child['href']})
         for child in soup.select('#band_links_Tablatures a'):
-            item['related_links']['Band_Tablatures'].append({child.text: child['href']})
+            item['related_links']['Band_Tablatures'].append({child.text.encode('utf-8'): child['href']})
         live_releases = 'http://www.metal-archives.com/band/discography/id/%s/tab/lives' % item['id']
         yield Request(live_releases,callback=self.parse_live_releases,meta={'item':item})
 
     def parse_live_releases(self,response):
-        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         item = response.meta['item']
         soup = BeautifulSoup(response.body)
         item['releases'] = {'all_releases': [],'live_releases': [],'demo_releases': [],'misc_releases': [],'main_releases': [],'release_count': 0}
 
-        release_info = [child.text.strip() for child in soup.select('tbody td') if '%' not in child.text and len(child.text.strip()) != 0]
+        release_info = [child.text.encode('utf-8').strip() for child in soup.select('tbody td') if '%' not in child.text.encode('utf-8') and len(child.text.encode('utf-8').strip()) != 0]
         release_names = release_info[0:len(release_info):3]
         release_types = release_info[1:len(release_info):3]
         release_years = release_info[2:len(release_info):3]
@@ -199,11 +196,10 @@ class ma_spider(Spider):
         yield Request(demo_releases,callback=self.parse_demo_releases,meta={'item':item})
 
     def parse_demo_releases(self,response):
-        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         item = response.meta['item']
         soup = BeautifulSoup(response.body)
 
-        release_info = [child.text.strip() for child in soup.select('tbody td') if '%' not in child.text and len(child.text.strip()) != 0]
+        release_info = [child.text.encode('utf-8').strip() for child in soup.select('tbody td') if '%' not in child.text.encode('utf-8') and len(child.text.encode('utf-8').strip()) != 0]
         release_names = release_info[0:len(release_info):3]
         release_types = release_info[1:len(release_info):3]
         release_years = release_info[2:len(release_info):3]
@@ -213,10 +209,9 @@ class ma_spider(Spider):
         yield Request(misc_releases,callback=self.parse_misc_releases,meta={'item':item})
 
     def parse_misc_releases(self,response):
-        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         item = response.meta['item']
         soup = BeautifulSoup(response.body)
-        release_info = [child.text.strip() for child in soup.select('tbody td') if '%' not in child.text and len(child.text.strip()) != 0]
+        release_info = [child.text.encode('utf-8').strip() for child in soup.select('tbody td') if '%' not in child.text.encode('utf-8') and len(child.text.encode('utf-8').strip()) != 0]
         release_names = release_info[0:len(release_info):3]
         release_types = release_info[1:len(release_info):3]
         release_years = release_info[2:len(release_info):3]
@@ -226,10 +221,9 @@ class ma_spider(Spider):
         yield Request(main_releases,callback=self.parse_main_releases,meta={'item':item})
 
     def parse_main_releases(self,response):
-        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         item = response.meta['item']
         soup = BeautifulSoup(response.body)
-        release_info = [child.text.strip() for child in soup.select('tbody td') if '%' not in child.text and len(child.text.strip()) != 0]
+        release_info = [child.text.encode('utf-8').strip() for child in soup.select('tbody td') if '%' not in child.text.encode('utf-8') and len(child.text.encode('utf-8').strip()) != 0]
         release_names = release_info[0:len(release_info):3]
         release_types = release_info[1:len(release_info):3]
         release_years = release_info[2:len(release_info):3]
@@ -240,7 +234,6 @@ class ma_spider(Spider):
         yield Request(all_releases,callback=self.parse_releases,meta={'item':item})
 
     def parse_releases(self,response):
-        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
     #discography: [{release name: {songs: [{track name: {length: 100, tracknum: 1,lyrics: lyrics}}]},type: demo, year: 1981,release_id: 3}
         #...album lineup: asdf, album notes: asdf}]
         item = response.meta['item']
@@ -248,8 +241,8 @@ class ma_spider(Spider):
         #{all_releases: [{name: name}, {type: type}, {year: year}}]
         soup = BeautifulSoup(response.body)
 
-        release_info = [child.text.strip() for child in soup.select('tbody td') if '%' not in child.text and len(child.text.strip()) != 0]
-        release_urls = [child['href'] for child in soup.select('tbody td a') if '%' not in child.text and len(child.text.strip()) != 0]
+        release_info = [child.text.encode('utf-8').strip() for child in soup.select('tbody td') if '%' not in child.text.encode('utf-8') and len(child.text.encode('utf-8').strip()) != 0]
+        release_urls = [child['href'] for child in soup.select('tbody td a') if '%' not in child.text.encode('utf-8') and len(child.text.encode('utf-8').strip()) != 0]
         release_names = release_info[0:len(release_info):3]
         release_types = release_info[1:len(release_info):3]
         release_years = release_info[2:len(release_info):3]
@@ -270,7 +263,6 @@ class ma_spider(Spider):
             yield Request(release_url,callback=self.parse_individual_releases,meta={'item':item,'index': release_index,'release_name': release_name})
 
     def parse_individual_releases(self,response):
-        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         #album_lineup: [{member: role},...]
         item = response.meta['item']
         release_index = response.meta['index']
@@ -280,16 +272,17 @@ class ma_spider(Spider):
         duration = soup.select('strong')
         release_length = ''
         if len(duration) > 0:
-            release_length = duration[0].text
+            release_length = duration[0].text.encode('utf-8')
         item['detailed_discography'][release_index][release_name]['length'] = release_length
         print 'The release length..'+item['detailed_discography'][release_index][release_name]['length']
         band_members = soup.select('#album_members_lineup .lineupRow td a')
         member_roles_temp = soup.select('.lineupRow td')
         member_roles = member_roles_temp[1:len(member_roles_temp):2]
+        member_roles = [''.join(re.split('\t|\n',role.text)) for role in member_roles]
         for member,role, in zip(band_members,member_roles):
-            item['detailed_discography'][release_index][release_name]['album_lineup'].append({member.text: role.text.strip()})
+            item['detailed_discography'][release_index][release_name]['album_lineup'].append({member.text.encode('utf-8'): role.encode('utf-8')})
         for notes in soup.select('#album_tabs_notes'):
-            item['detailed_discography'][release_index][release_name]['album_notes'] = notes.text.strip()
+            item['detailed_discography'][release_index][release_name]['album_notes'] = notes.text.encode('utf-8').strip()
 
         track_nums = []
         for track in soup.select('.anchor'):
@@ -300,14 +293,14 @@ class ma_spider(Spider):
 
         track_count = 0
         parsed_lyrics = 0
-        lyrics_count = soup.text.count("Show lyrics")
+        lyrics_count = soup.text.encode('utf-8').count("Show lyrics")
         item['detailed_discography'][release_index][release_name]['lyrics_count'] = lyrics_count
         for child in soup.find_all('tbody'):
             for track in child.select('.wrapWords'):
                 track_count += 1
-                track_name = track.text.strip()
+                track_name = track.text.encode('utf-8').strip()
                 track_name = ''.join( c for c in track_name if c not in '\n\t;' )
-                track_length = track.next_sibling.next_sibling.text.strip()
+                track_length = track.next_sibling.next_sibling.text.encode('utf-8').strip()
                 song_dict = {track_name: {'number': track_count,'length': track_length,'lyrics': ''}}
                 item['detailed_discography'][release_index][release_name]['songs'].append(song_dict)
                 song_index = item['detailed_discography'][release_index][release_name]['songs'].index(song_dict)
@@ -336,9 +329,9 @@ class ma_spider(Spider):
                     parsed_count += 1
             print 'The parsed count/release count: %s\t%s'% (parsed_count,item['releases']['release_count'])
             if parsed_count == item['releases']['release_count']:
-               # text_file = 'bands.txt'
+               #.text.encode('utf-8')_file = 'bands.txt'
                # all_bands = 'total_bands.txt'
-               # with open(text_file, 'a') as f:
+               # with open.text.encode('utf-8')_file, 'a') as f:
                #     f.write(item['name']+'\n')
                # for band in total_bands:
                #     with open(all_bands, 'a') as f:
@@ -348,7 +341,6 @@ class ma_spider(Spider):
 
 
     def parse_lyrics(self,response):
-        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         item = response.meta['item']
         release_index = response.meta['index']
         song_index= response.meta['song_index']
@@ -360,7 +352,7 @@ class ma_spider(Spider):
         parsed_lyrics = item['detailed_discography'][release_index][release_name]['parsed_lyrics']
         lyrics_count = item['detailed_discography'][release_index][release_name]['lyrics_count']
         soup = BeautifulSoup(response.body)
-        lyrics = soup.text
+        lyrics = soup.text.encode('utf-8')
         item['detailed_discography'][release_index][release_name]['songs'][song_index][track_name]['lyrics'] = lyrics
         #Need to figure out how to go through all releases
         print 'The length of the discography:\t'+str(len(item['detailed_discography']))
@@ -375,9 +367,9 @@ class ma_spider(Spider):
                     parsed_count += 1
             print 'The parsed count/release count: %s\t%s'% (parsed_count,item['releases']['release_count'])
             if parsed_count == item['releases']['release_count']:
-                #text_file = 'bands.txt'
+                #.text.encode('utf-8')_file = 'bands.txt'
                 #all_bands = 'total_bands.txt'
-                #with open(text_file, 'a') as f:
+                #with open.text.encode('utf-8')_file, 'a') as f:
                 #    f.write(item['name']+'\n')
                 #for band in total_bands:
                 #    with open(all_bands, 'a') as f:
