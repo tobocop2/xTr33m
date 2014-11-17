@@ -27,6 +27,7 @@ class ma_spider(Spider):
 
 
     def parse_first(self, response):
+        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         jsonresponse = json.loads(response.body)
         total = jsonresponse['iTotalRecords']
         for i in range(0,total,500):
@@ -35,6 +36,7 @@ class ma_spider(Spider):
 
 
     def parse_json(self,response):
+        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         jsonresponse = json.loads(response.body)
         for item in range(0,len(jsonresponse["aaData"])):
             soup = BeautifulSoup(jsonresponse["aaData"][item][0])
@@ -44,6 +46,7 @@ class ma_spider(Spider):
             yield Request(band_link,callback=self.parse_band)
 
     def parse_band(self,response):
+        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         soup = BeautifulSoup(response.body)
         item = band_item()
 
@@ -128,6 +131,7 @@ class ma_spider(Spider):
         yield Request(band_desc_url,callback=self.parse_description,meta={'item':item})
 
     def parse_description(self,response):
+        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         item = response.meta['item']
         soup = BeautifulSoup(response.body)
         for description in soup.find_all(text=True):
@@ -137,6 +141,7 @@ class ma_spider(Spider):
         yield Request(sa_url,callback=self.parse_similar_artists,meta={'item':item})
 
     def parse_similar_artists(self,response):
+        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         #similar artist -> {artist: {country: }
         #[{'Megadth': {'country': 'USA', 'genre': 'thrash', }},{'Flotsam & Jetsam'...etc}]
 
@@ -157,6 +162,7 @@ class ma_spider(Spider):
         yield Request(related_link_url,callback=self.parse_related_links,meta={'item':item})
 
     def parse_related_links(self,response):
+        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         item = response.meta['item']
         soup = BeautifulSoup(response.body)
         item['related_links'] = {'Official_Band_Links': [],'Official_Merchandise': [],'Unofficial_Band_Links': [],'Band_Label_Links': [],\
@@ -177,6 +183,7 @@ class ma_spider(Spider):
         yield Request(live_releases,callback=self.parse_live_releases,meta={'item':item})
 
     def parse_live_releases(self,response):
+        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         item = response.meta['item']
         soup = BeautifulSoup(response.body)
         item['releases'] = {'all_releases': [],'live_releases': [],'demo_releases': [],'misc_releases': [],'main_releases': [],'release_count': 0}
@@ -192,6 +199,7 @@ class ma_spider(Spider):
         yield Request(demo_releases,callback=self.parse_demo_releases,meta={'item':item})
 
     def parse_demo_releases(self,response):
+        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         item = response.meta['item']
         soup = BeautifulSoup(response.body)
 
@@ -205,6 +213,7 @@ class ma_spider(Spider):
         yield Request(misc_releases,callback=self.parse_misc_releases,meta={'item':item})
 
     def parse_misc_releases(self,response):
+        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         item = response.meta['item']
         soup = BeautifulSoup(response.body)
         release_info = [child.text.strip() for child in soup.select('tbody td') if '%' not in child.text and len(child.text.strip()) != 0]
@@ -217,6 +226,7 @@ class ma_spider(Spider):
         yield Request(main_releases,callback=self.parse_main_releases,meta={'item':item})
 
     def parse_main_releases(self,response):
+        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         item = response.meta['item']
         soup = BeautifulSoup(response.body)
         release_info = [child.text.strip() for child in soup.select('tbody td') if '%' not in child.text and len(child.text.strip()) != 0]
@@ -230,6 +240,7 @@ class ma_spider(Spider):
         yield Request(all_releases,callback=self.parse_releases,meta={'item':item})
 
     def parse_releases(self,response):
+        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
     #discography: [{release name: {songs: [{track name: {length: 100, tracknum: 1,lyrics: lyrics}}]},type: demo, year: 1981,release_id: 3}
         #...album lineup: asdf, album notes: asdf}]
         item = response.meta['item']
@@ -259,6 +270,7 @@ class ma_spider(Spider):
             yield Request(release_url,callback=self.parse_individual_releases,meta={'item':item,'index': release_index,'release_name': release_name})
 
     def parse_individual_releases(self,response):
+        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         #album_lineup: [{member: role},...]
         item = response.meta['item']
         release_index = response.meta['index']
@@ -336,6 +348,7 @@ class ma_spider(Spider):
 
 
     def parse_lyrics(self,response):
+        response.body = unicode(response.body.decode(response.encoding)).encode('utf-8')
         item = response.meta['item']
         release_index = response.meta['index']
         song_index= response.meta['song_index']
