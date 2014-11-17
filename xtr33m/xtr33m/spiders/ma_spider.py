@@ -244,12 +244,14 @@ class ma_spider(Spider):
         release_years = release_info[2:len(release_info):3]
 
         release_count = len(release_urls)
+        if release_count == 0:
+            yield item
         item['releases']['release_count'] = release_count
 
         for release_url,release_name,release_type,release_year in zip(release_urls,release_names,release_types,release_years):
             item['releases']['all_releases'].append({'release_name': {release_name: {'release_type': release_type,'release_year': release_year}}})
             release_id = release_url.split('/')[6]
-            release_dict = {release_name: {'songs': [],'type': release_type,'year': release_year,'release_id': release_id, 'album_lineup': [],'album_notes': '','length': '','lyrics_count': 0},'parsed': 0}
+            release_dict = {release_name: {'songs': [],'type': release_type,'year': release_year,'release_id': release_id, 'album_lineup': [],'album_notes': '','length': '','lyrics_count': 0,'parsed_lyrics': 0},'parsed': 0}
             item['detailed_discography'].append(release_dict)
             release_index = item['detailed_discography'].index(release_dict)
             print 'the release index '+str(release_index)
@@ -308,7 +310,7 @@ class ma_spider(Spider):
                     meta={'item':item,'index': release_index,'song_index': song_index,'release_name': release_name,\
                             'track_name': track_name,'parsed_lyrics': parsed_lyrics,'track_count': track_count,\
                             'final_track': final_track}
-                    yield Request(lyrics_url,callback=self.parse_lyrics,meta=meta)
+                    yield Request(lyrics_url,callback=self.parse_lyrics,meta=meta,dont_filter=True)
 
         if lyrics_count == 0:
             print 'Lyrics count is zero..'
@@ -341,7 +343,8 @@ class ma_spider(Spider):
         track_name = response.meta['track_name']
         track_count = response.meta['track_count']
         final_track = response.meta['final_track']
-        parsed_lyrics = response.meta['parsed_lyrics']
+        item['detailed_discography'][release_index][release_name]['parsed_lyrics'] += 1
+        parsed_lyrics = item['detailed_discography'][release_index][release_name]['parsed_lyrics']
         lyrics_count = item['detailed_discography'][release_index][release_name]['lyrics_count']
         soup = BeautifulSoup(response.body)
         lyrics = soup.text
