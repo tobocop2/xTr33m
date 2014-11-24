@@ -136,9 +136,12 @@ class ma_spider(Spider):
         #something wrong here
         item = response.meta['item']
         soup = BeautifulSoup(response.body)
-        for description in soup.find_all(text=True):
-            if 'Read more' in item['description']:
-                item['description'] = description.strip()
+        print 'description before:\t'+item['description']
+        #for description in soup.find_all(text=True):
+        long_desc = ''.join(c for c in soup.text.strip() if not c in '\r\t').replace('\n',' ')
+        if 'Read more' in item['description']:
+            item['description'] = long_desc
+        print 'description after:\t'+item['description']
         sa_url = 'http://www.metal-archives.com/band/ajax-recommendations/id/%s/showMoreSimilar/1' % item['id']
         yield Request(sa_url,callback=self.parse_similar_artists,meta={'item':item})
 
