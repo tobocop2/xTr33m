@@ -133,10 +133,11 @@ class ma_spider(Spider):
         yield Request(band_desc_url,callback=self.parse_description,meta={'item':item})
 
     def parse_description(self,response):
+        #something wrong here
         item = response.meta['item']
         soup = BeautifulSoup(response.body)
         for description in soup.find_all(text=True):
-            if '\nRead more\n' in item['description']:
+            if 'Read more' in item['description']:
                 item['description'] = description.strip()
         sa_url = 'http://www.metal-archives.com/band/ajax-recommendations/id/%s/showMoreSimilar/1' % item['id']
         yield Request(sa_url,callback=self.parse_similar_artists,meta={'item':item})
