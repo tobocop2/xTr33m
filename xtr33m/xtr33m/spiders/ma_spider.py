@@ -356,7 +356,7 @@ class ma_spider(Spider):
         lyrics_count = item['detailed_discography'][release_index][release_name]['lyrics_count']
         soup = BeautifulSoup(response.body)
         #lyrics = soup.text.encode('utf-8')
-        lyrics = ''.join(c for c in soup.text.strip().encode('utf-8') if not c in '\n\r\t')
+        lyrics = ''.join(c for c in soup.text.strip().encode('utf-8') if not c in '\r\t').replace('\n',' ')
         item['detailed_discography'][release_index][release_name]['songs'][song_index][track_name]['lyrics'] = lyrics
         #Need to figure out how to go through all releases
         print 'The length of the discography:\t'+str(len(item['detailed_discography']))
