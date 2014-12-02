@@ -34,8 +34,5 @@ class band_item(scrapy.Item):
     releases = scrapy.Field()
     detailed_discography = scrapy.Field()
 
-    def __repr__(self):
-        return '<BandItem: {}>'.format(self['name'])
-
 
 
