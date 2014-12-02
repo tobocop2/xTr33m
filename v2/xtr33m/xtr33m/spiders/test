@@ -1,0 +1,27 @@
+class Spider(BaseSpider):
+
+    name = 'my_spider'
+    start_urls = [
+                'http://www.domain.com/'
+    ]
+    allowed_domains = ['domain.com']
+
+    def parse(self, response):
+        '''Parse main page and extract categories links.'''
+        hxs = HtmlXPathSelector(response)
+        urls = hxs.select("//*[@id='tSubmenuContent']/a[position()>1]/@href").extract()
+        for url in urls:
+            url = urlparse.urljoin(response.url, url)
+            self.log('Found category url: %s' % url)
+            yield scrapy.Request(url, callback = self.parseCategory)
+
+    def parseCategory(self, response):
+        '''Parse category page and extract links of the items.'''
+        hxs = HtmlXPathSelector(response)
+        links = hxs.select("//*[@id='_list']//td[@class='tListDesc']/a/@href").extract()
+        for link in links:
+            itemLink = urlparse.urljoin(response.url, link)
+            self.log('Found item link: %s' % itemLink, log.DEBUG)
+            yield Request(itemLink, callback = self.parseItem)
+
+    def parseItem(self, response):
