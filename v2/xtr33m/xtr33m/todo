@@ -1,0 +1,78 @@
+(08:41:37 PM) cornjuliox: ok, so i dont have any actual code, but I think the best way to do this is like this: create a class dictionary that contains band names as keys, and dictionaries containing their info as the values. that way you don't have to worry about passing the dict between callbacks
+(08:42:08 PM) rabidmadman: i also just thought about making the dict global
+(08:42:09 PM) cornjuliox: and then just pass the name of the band between callbacks to use as the key
+(08:42:18 PM) rabidmadman: i see
+(08:42:21 PM) rabidmadman: that's a good idea
+(08:42:30 PM) rabidmadman: i solved the dict passing between callbacks by just making the dict global
+(08:42:36 PM) rabidmadman: but going by the band is a great idea...
+(08:42:57 PM) cornjuliox: so for each song you'd issue a request
+(08:43:17 PM) cornjuliox: and in the callback that handles them, grab the name from response.meta
+(08:43:22 PM) rabidmadman: yeah
+(08:43:32 PM) rabidmadman: i will have to completely redo my code
+(08:43:37 PM) rabidmadman: that is what i didn't want to hear lol
+(08:43:50 PM) rabidmadman: but yeah that is the best route
+(08:44:09 PM) cornjuliox: and then do self.bands[name][album][<song>]
+(08:44:16 PM) cornjuliox: that's how id' do iti
+(08:44:25 PM) cornjuliox: its also worth it to learn xpath
+(08:45:02 PM) cornjuliox: its not just for performance, it makes things a whole lot easier to follow
+(08:45:05 PM) leonhaynes [~leonhayne@cpe-72-226-68-57.nycap.res.rr.com] entered the room.
+(08:45:46 PM) rabidmadman: for me, it makes things harder to follow because i don't know xpath lol
+(08:46:15 PM) rabidmadman: i'm kind of under pressure to finish this soon which is why i was not interested in learning xpath and reparsing all the pages
+(08:46:37 PM) rabidmadman: i spent a significant amount of time parsing all the pages with soup, which is my only reason for not switching to xpath
+(08:47:09 PM) cornjuliox: did your spider really run for 7 days parsing all the pages?
+(08:47:22 PM) rabidmadman: no
+(08:47:28 PM) rabidmadman: i closed it after one letter
+(08:47:42 PM) rabidmadman: i just gave it a rough estimate based on the time for that letter
+(08:48:09 PM) rabidmadman: it was outside of scrapy though..just a python script
+(08:48:53 PM) rabidmadman: was going to try to learn twisted, then discovered scrapy and started over
+(08:49:53 PM) cornjuliox: so you run the script on one letter at a time?
+(08:52:27 PM) rabidmadman: only for testing purposes
+(08:52:51 PM) cornjuliox: the way I was looking at this the spider would grab all the letters from the alphabetical index, and then yield requests for each of them. then on the index page i grab all the links to each band and yield requests for each of those
+(08:52:53 PM) cornjuliox: and so on
+(08:53:06 PM) rabidmadman: yeah i have that all taken care of
+(08:53:13 PM) rabidmadman: my only issue is with releases
+(08:53:31 PM) rabidmadman: im doing pretty much what you said
+(08:53:45 PM) rabidmadman: then each band has release links..then each release has lyrics links
+(08:53:49 PM) rabidmadman: for each song
+(08:53:56 PM) rabidmadman: thats where the problem starts to occur for me
+(08:58:35 PM) cornjuliox: yeah, nested dictionaries should take care of that. and then after the lyrics are parsed you can yield the whole item
+(08:59:27 PM) rabidmadman: yeah so currently, for some reason it would run and only yield 13 bands
+(09:05:46 PM) leonhaynes left the room (quit: Quit: Textual IRC Client: www.textualapp.com).
+(09:07:47 PM) AndroidLoverInSF left the room (quit: Ping timeout: 245 seconds).
+(09:07:58 PM) toothrot: and how are you detecting when all the releases have been crawled?
+(09:09:09 PM) rabidmadman: i store all of them in a list
+(09:09:12 PM) rabidmadman: all of their urls
+(09:09:16 PM) rabidmadman: and then i yield requests for each one
+(09:15:57 PM) kakashi_ [~kakashi@59-125-98-30.HINET-IP.hinet.net] entered the room.
+(09:20:30 PM) kakashi_ left the room (quit: Ping timeout: 258 seconds).
+(09:21:59 PM) sjaak_trekhaak left the room (quit: Read error: Connection reset by peer).
+(09:27:19 PM) sjaak_trekhaak [~sjaak@unaffiliated/sjaak-trekhaak/x-7526855] entered the room.
+(09:34:41 PM) toothrot: rabidmadman, that's unrelated
+(09:34:43 PM) toothrot: for a single item
+(09:34:52 PM) toothrot: how do you know when you have all the releases, all the lyrics.
+(09:35:18 PM) rabidmadman: good question
+(09:37:41 PM) toothrot: i mean, if there was only one, you could just handle it in your lyrics callback
+(09:37:57 PM) toothrot: but you have to make each leaf of your item is fully populated
+(09:38:00 PM) toothrot: make sure*
+(09:38:26 PM) toothrot: i've done it a couple ways
+(09:38:57 PM) toothrot: one is just crawl everything and then yield all the items when the crawler is done
+(09:41:53 PM) rabidmadman: i see
+(09:41:54 PM) toothrot: the other is wrap the all the requests in a Deferred, and use a DeferredList to know when they are done
+(09:42:14 PM) rabidmadman: hmm don't know much about the second option
+(09:42:24 PM) rabidmadman: cornjuliox basically recommended the first option
+(09:42:56 PM) toothrot: yeah, it's the simplest solution, therefore probably the best
+(09:43:15 PM) toothrot: if you don't have a long running spider where you need the items as it runs, it's the way to go IMO
+(09:43:30 PM) kakashi_ [~kakashi@59-125-98-30.HINET-IP.hinet.net] entered the room.
+(09:44:26 PM) hey_mx left the room (quit: Quit: Connection closed for inactivity).
+(09:46:56 PM) rabidmadman: the first option?
+(09:46:58 PM) rabidmadman: multiple items?
+(09:47:11 PM) rabidmadman: but i want one item per band though
+(09:47:22 PM) rabidmadman: so i guess set the key for my item to be another item?
+(09:47:28 PM) rabidmadman: the value*
+(09:49:29 PM) toothrot: eh?
+(09:49:37 PM) toothrot: just pass the item through meta
+(09:49:44 PM) Jake232 left the room (quit: Quit: My MacBook Pro has gone to sleep. ZZZzzz…).
+(09:50:12 PM) toothrot: that's how i would do it, but creating a dict attribute on the spider an populating that works too
+(09:50:21 PM) toothrot: either way you have to keep them in a list until the end
+(09:50:29 PM) toothrot: or dict, whatever
+(09:50:55 PM) rabidmadman: yeah
